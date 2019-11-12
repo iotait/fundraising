@@ -4,6 +4,7 @@ class ChangeDataTypeForAmount < ActiveRecord::Migration[6.0]
       t.change :amount, :float
     end
   end
+
   def self.down
     change_table :donations do |t|
       t.change :amount, :integer

@@ -1,3 +1,3 @@
 class Student < ApplicationRecord
-    has_many :donations
+  has_many :donations
 end
