@@ -1,0 +1,1418 @@
+  [1m[35m (29.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 11:25:46 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 11:27:13 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 11:28:07 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 11:28:40 -0500
+Processing by FundraisingController#index as HTML
+Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.0ms | Allocations: 1755)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 11:30:20 -0500
+Processing by FundraisingController#index as HTML
+Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.0ms | Allocations: 1757)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 11:30:43 -0500
+Processing by FundraisingController#index as HTML
+  Rendering fundraising/index.html.erb within layouts/application
+  Rendered fundraising/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 363)
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 0.0ms | Allocations: 13955)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 11:34:56 -0500
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 190)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.0ms | Allocations: 11615)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 11:36:56 -0500
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 190)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/twernecke/environment/fundraising_app/public/packs-test
+Completed 200 OK in 11170ms (Views: 11163.7ms | ActiveRecord: 0.0ms | Allocations: 8574)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 11:38:16 -0500
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 199)
+Completed 200 OK in 51ms (Views: 43.9ms | ActiveRecord: 0.0ms | Allocations: 8159)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/about" for 127.0.0.1 at 2019-11-11 13:33:41 -0500
+Started GET "/" for 127.0.0.1 at 2019-11-11 13:33:41 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/about" for 127.0.0.1 at 2019-11-11 13:34:50 -0500
+Started GET "/" for 127.0.0.1 at 2019-11-11 13:34:50 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 199)
+Completed 200 OK in 219ms (Views: 183.8ms | ActiveRecord: 0.0ms | Allocations: 8178)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/about" for 127.0.0.1 at 2019-11-11 13:35:42 -0500
+Started GET "/" for 127.0.0.1 at 2019-11-11 13:35:42 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 199)
+Completed 200 OK in 53ms (Views: 43.7ms | ActiveRecord: 0.0ms | Allocations: 8197)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/about" for 127.0.0.1 at 2019-11-11 13:37:01 -0500
+Started GET "/" for 127.0.0.1 at 2019-11-11 13:37:01 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 199)
+Completed 200 OK in 50ms (Views: 42.2ms | ActiveRecord: 0.0ms | Allocations: 8217)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/about" for 127.0.0.1 at 2019-11-11 13:40:25 -0500
+Started GET "/" for 127.0.0.1 at 2019-11-11 13:40:25 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 199)
+Completed 200 OK in 54ms (Views: 46.7ms | ActiveRecord: 0.0ms | Allocations: 8238)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 13:40:45 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.6ms | Allocations: 198)
+Completed 200 OK in 61ms (Views: 55.2ms | ActiveRecord: 0.0ms | Allocations: 8258)
+Started GET "/" for 127.0.0.1 at 2019-11-11 13:40:45 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 86)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 2321)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 13:45:27 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.6ms | Allocations: 211)
+Completed 200 OK in 47ms (Views: 41.4ms | ActiveRecord: 0.0ms | Allocations: 8333)
+Started GET "/" for 127.0.0.1 at 2019-11-11 13:45:27 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 97)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 2335)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 13:51:18 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.9ms | Allocations: 228)
+Completed 200 OK in 70ms (Views: 64.4ms | ActiveRecord: 0.0ms | Allocations: 8471)
+Started GET "/" for 127.0.0.1 at 2019-11-11 13:51:18 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 112)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 2351)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:02:17 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 13.5ms | Allocations: 230)
+Completed 200 OK in 180ms (Views: 161.3ms | ActiveRecord: 0.0ms | Allocations: 8490)
+  [1m[35m (21.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:03:33 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 46.4ms | Allocations: 7120)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.0ms | Allocations: 8927)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:04:48 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 17.2ms | Allocations: 308)
+Completed 200 OK in 147ms (Views: 128.0ms | ActiveRecord: 0.0ms | Allocations: 8582)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:04:48 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:05:11 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 66.8ms | Allocations: 7128)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.0ms | Allocations: 8935)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:09:00 -0500
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 14:09:00 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 10.3ms | Allocations: 228)
+Completed 200 OK in 222ms (Views: 195.6ms | ActiveRecord: 0.0ms | Allocations: 8529)
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-11-11 14:09:00 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 106)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 2344)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:10:46 -0500
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 14:10:46 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 1.1ms | Allocations: 228)
+Completed 200 OK in 67ms (Views: 36.3ms | ActiveRecord: 0.0ms | Allocations: 8549)
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:10:46 -0500
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-11-11 14:10:46 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 106)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 2344)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:12:12 -0500
+Processing by DonationsController#index as HTML
+Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.0ms | Allocations: 1755)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 14:12:12 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 227)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.0ms | Allocations: 8447)
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:12:12 -0500
+Processing by DonationsController#index as HTML
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 310)
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-11-11 14:12:12 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 106)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 2344)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:14:18 -0500
+Processing by DonationsController#index as HTML
+Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.0ms | Allocations: 1755)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 14:14:18 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.9ms | Allocations: 227)
+Completed 200 OK in 43ms (Views: 40.9ms | ActiveRecord: 0.0ms | Allocations: 8472)
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:14:18 -0500
+Processing by DonationsController#index as HTML
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 310)
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-11-11 14:14:18 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 106)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 2344)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:16:46 -0500
+Processing by DonationsController#index as HTML
+Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.0ms | Allocations: 1757)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 14:16:46 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.8ms | Allocations: 227)
+Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 0.0ms | Allocations: 8487)
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:16:46 -0500
+Processing by DonationsController#index as HTML
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 310)
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-11-11 14:16:46 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 2344)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:17:19 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 44.4ms | Allocations: 7131)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.0ms | Allocations: 8940)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 14:17:19 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.6ms | Allocations: 111)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.0ms | Allocations: 7595)
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:17:19 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 27.7ms | Allocations: 6565)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms | Allocations: 6865)
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-11-11 14:17:19 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 2344)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:17:42 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 229)
+Completed 200 OK in 64ms (Views: 57.4ms | ActiveRecord: 0.0ms | Allocations: 8653)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 14:17:43 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.6ms | Allocations: 111)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 2787)
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:17:43 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 2106)
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-11-11 14:17:43 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 2344)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:19:09 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 230)
+Completed 200 OK in 50ms (Views: 43.5ms | ActiveRecord: 0.0ms | Allocations: 8670)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:19:24 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 308)
+Completed 200 OK in 57ms (Views: 51.0ms | ActiveRecord: 0.0ms | Allocations: 8762)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:19:24 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:19:41 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 308)
+Completed 200 OK in 40ms (Views: 33.4ms | ActiveRecord: 0.0ms | Allocations: 8782)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:19:41 -0500
+Processing by DonationsController#new as HTML
+Completed 406 Not Acceptable in 4ms (ActiveRecord: 0.0ms | Allocations: 1639)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "donations"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "donations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191111192117)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-11-11 19:24:35.291297"], ["updated_at", "2019-11-11 19:24:35.291297"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "5c0d6248f37f4dbda3409eaaa28b6beb3390381f"], ["created_at", "2019-11-11 19:24:35.296382"], ["updated_at", "2019-11-11 19:24:35.296382"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:24:35 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 308)
+Completed 200 OK in 41ms (Views: 34.7ms | ActiveRecord: 0.0ms | Allocations: 8807)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:24:35 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 14.3ms | Allocations: 4808)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 5251)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:25:04 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 308)
+Completed 200 OK in 50ms (Views: 43.9ms | ActiveRecord: 0.0ms | Allocations: 8826)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:25:04 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 631)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1074)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:26:21 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 308)
+Completed 200 OK in 55ms (Views: 48.3ms | ActiveRecord: 0.0ms | Allocations: 8849)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:26:21 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 123.5ms | Allocations: 6143)
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 0.9ms | Allocations: 9778)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:27:43 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 308)
+Completed 200 OK in 48ms (Views: 42.0ms | ActiveRecord: 0.0ms | Allocations: 8866)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:27:43 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1953)
+Completed 200 OK in 15ms (Views: 7.8ms | ActiveRecord: 0.7ms | Allocations: 7298)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:30:34 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 308)
+Completed 200 OK in 39ms (Views: 33.3ms | ActiveRecord: 0.0ms | Allocations: 8881)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:30:34 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2009)
+Completed 200 OK in 17ms (Views: 9.7ms | ActiveRecord: 0.7ms | Allocations: 7354)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 14:30:34 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"title"=>"50"}, "commit"=>"Submit"}
+Redirected to http://www.example.com/donations
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 207)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 14:30:34 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 2145)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:33:38 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered donations/index.html.erb within layouts/application (Duration: 27.3ms | Allocations: 8548)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.6ms | Allocations: 10706)
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:34:07 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 808)
+Completed 200 OK in 52ms (Views: 43.0ms | ActiveRecord: 0.6ms | Allocations: 9753)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:34:07 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3787)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms | Allocations: 6709)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "donations"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "donations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "amount" integer)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191111193826)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191111192117),
+(20191111193633);
+
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-11-11 19:38:53.957872"], ["updated_at", "2019-11-11 19:38:53.957872"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "79af46eccb0a0254e99f7b55e67296c15f541f83"], ["created_at", "2019-11-11 19:38:53.963754"], ["updated_at", "2019-11-11 19:38:53.963754"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:38:54 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 808)
+Completed 200 OK in 49ms (Views: 39.9ms | ActiveRecord: 0.5ms | Allocations: 9783)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:38:54 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2007)
+Completed 200 OK in 16ms (Views: 9.6ms | ActiveRecord: 0.5ms | Allocations: 6724)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 14:38:54 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"amount"=>"50"}, "commit"=>"Donate"}
+Redirected to http://www.example.com/donations
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 207)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 14:38:54 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 142)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 2246)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:40:23 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 806)
+Completed 200 OK in 41ms (Views: 33.6ms | ActiveRecord: 0.5ms | Allocations: 9791)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:40:23 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2007)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 6724)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 14:40:23 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"amount"=>"50"}, "commit"=>"Donate"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDonation Create (0.6ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount") VALUES (?, ?, ?)[0m  [["created_at", "2019-11-11 19:40:23.999241"], ["updated_at", "2019-11-11 19:40:23.999241"], ["amount", 50]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 5ms (ActiveRecord: 2.2ms | Allocations: 748)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 14:40:24 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 165)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 2269)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:40:34 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3283)
+Completed 200 OK in 44ms (Views: 37.0ms | ActiveRecord: 0.8ms | Allocations: 12005)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:40:34 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2001)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 4263)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 14:40:34 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"amount"=>"50"}, "commit"=>"Donate"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDonation Create (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount") VALUES (?, ?, ?)[0m  [["created_at", "2019-11-11 19:40:34.920218"], ["updated_at", "2019-11-11 19:40:34.920218"], ["amount", 50]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 5ms (ActiveRecord: 2.2ms | Allocations: 748)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 14:40:34 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 166)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 2270)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 14:40:34 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 2782)
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:40:34 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 163)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 2269)
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-11-11 14:40:35 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 106)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 2344)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:55:11 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 855)
+Completed 200 OK in 112ms (Views: 104.6ms | ActiveRecord: 0.5ms | Allocations: 9888)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:55:11 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2262)
+Completed 200 OK in 14ms (Views: 8.0ms | ActiveRecord: 0.5ms | Allocations: 7577)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 14:55:11 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 2782)
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:55:11 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 139)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 2245)
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-11-11 14:55:11 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 106)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 2344)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:57:09 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 855)
+Completed 200 OK in 51ms (Views: 44.3ms | ActiveRecord: 0.5ms | Allocations: 9903)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 14:57:10 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2263)
+Completed 200 OK in 14ms (Views: 7.9ms | ActiveRecord: 0.5ms | Allocations: 7578)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 14:57:10 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"donor"=>"", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDonation Create (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-11-11 19:57:10.053879"], ["updated_at", "2019-11-11 19:57:10.053879"], ["amount", 50], ["donor", ""]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 4ms (ActiveRecord: 2.0ms | Allocations: 783)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 14:57:10 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 169)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 2273)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 14:57:10 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 2782)
+Started GET "/" for 127.0.0.1 at 2019-11-11 14:57:10 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 155)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.2ms | Allocations: 2261)
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-11-11 14:57:10 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 2344)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 15:00:54 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (12.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 40.3ms | Allocations: 3935)
+Completed 200 OK in 200ms (Views: 147.7ms | ActiveRecord: 13.7ms | Allocations: 13002)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 15:00:54 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 67.9ms | Allocations: 2256)
+Completed 200 OK in 74ms (Views: 72.6ms | ActiveRecord: 0.0ms | Allocations: 4519)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 15:00:54 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"donor"=>"", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDonation Create (6.0ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-11-11 20:00:54.576270"], ["updated_at", "2019-11-11 20:00:54.576270"], ["amount", 50], ["donor", ""]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 11ms (ActiveRecord: 7.6ms | Allocations: 783)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 15:00:54 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 174)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 2278)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 15:00:54 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 16.5ms | Allocations: 106)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.0ms | Allocations: 2782)
+Started GET "/" for 127.0.0.1 at 2019-11-11 15:00:54 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 171)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 2277)
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-11-11 15:00:54 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 6.9ms | Allocations: 106)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 2344)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "donations"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "donations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "amount" float, "donor" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "goal" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191111205743)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191111192117),
+(20191111193633),
+(20191111193826),
+(20191111194429),
+(20191111205359);
+
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-11-11 21:00:05.735399"], ["updated_at", "2019-11-11 21:00:05.735399"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "24574e1a56314d7d0e28e785b5d4d3508054d780"], ["created_at", "2019-11-11 21:00:05.740044"], ["updated_at", "2019-11-11 21:00:05.740044"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:00:05 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:01:03 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 891)
+Completed 200 OK in 159ms (Views: 116.6ms | ActiveRecord: 0.7ms | Allocations: 10026)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:03:37 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 891)
+Completed 200 OK in 48ms (Views: 35.4ms | ActiveRecord: 0.6ms | Allocations: 9849)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 16:03:37 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 30.0ms | Allocations: 2264)
+Completed 200 OK in 43ms (Views: 37.5ms | ActiveRecord: 0.4ms | Allocations: 7582)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:03:37 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 611)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.5ms | Allocations: 3332)
+Started GET "/students/new" for 127.0.0.1 at 2019-11-11 16:03:37 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 841)
+Completed 200 OK in 26ms (Views: 12.4ms | ActiveRecord: 0.4ms | Allocations: 5908)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 16:03:37 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 16.4ms | Allocations: 106)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.0ms | Allocations: 2782)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:03:37 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 139)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 2245)
+Started GET "/static_pages/home" for 127.0.0.1 at 2019-11-11 16:03:37 -0500
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:03:37 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 139)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms | Allocations: 2245)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:05:06 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 890)
+Completed 200 OK in 42ms (Views: 34.5ms | ActiveRecord: 0.5ms | Allocations: 9875)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 16:05:06 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2264)
+Completed 200 OK in 16ms (Views: 8.4ms | ActiveRecord: 0.6ms | Allocations: 7582)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:05:06 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 610)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.7ms | Allocations: 3331)
+Started GET "/students/new" for 127.0.0.1 at 2019-11-11 16:05:06 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 841)
+Completed 200 OK in 26ms (Views: 13.7ms | ActiveRecord: 0.4ms | Allocations: 5908)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 16:05:06 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 2782)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:05:06 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 139)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.2ms | Allocations: 2245)
+Started GET "/" for 127.0.0.1 at 2019-11-11 16:05:06 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 21.5ms | Allocations: 107)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.0ms | Allocations: 2345)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:05:07 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 139)
+Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.2ms | Allocations: 2248)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:06:59 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 889)
+Completed 200 OK in 58ms (Views: 49.4ms | ActiveRecord: 0.5ms | Allocations: 9887)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 16:06:59 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2264)
+Completed 200 OK in 16ms (Views: 10.5ms | ActiveRecord: 0.5ms | Allocations: 7582)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:06:59 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 610)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.5ms | Allocations: 3331)
+Started GET "/students/new" for 127.0.0.1 at 2019-11-11 16:06:59 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 841)
+Completed 200 OK in 29ms (Views: 17.4ms | ActiveRecord: 0.4ms | Allocations: 5908)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 16:06:59 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 2782)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:06:59 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 139)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.4ms | Allocations: 2245)
+Started GET "/" for 127.0.0.1 at 2019-11-11 16:06:59 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 107)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 2345)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:06:59 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 139)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 2250)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:08:57 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 889)
+Completed 200 OK in 43ms (Views: 35.0ms | ActiveRecord: 0.6ms | Allocations: 9907)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 16:08:58 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2263)
+Completed 200 OK in 16ms (Views: 8.3ms | ActiveRecord: 0.6ms | Allocations: 7581)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:08:58 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 610)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.6ms | Allocations: 3331)
+Started GET "/students/new" for 127.0.0.1 at 2019-11-11 16:08:58 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 848)
+Completed 200 OK in 23ms (Views: 10.1ms | ActiveRecord: 0.4ms | Allocations: 5915)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 16:08:58 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.5ms | Allocations: 106)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 2782)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:08:58 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 139)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.1ms | Allocations: 2245)
+Started GET "/" for 127.0.0.1 at 2019-11-11 16:08:58 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 107)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 2345)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:08:58 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 139)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 2250)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:19:02 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 891)
+Completed 200 OK in 44ms (Views: 37.3ms | ActiveRecord: 0.5ms | Allocations: 9934)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 16:19:02 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2263)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 0.4ms | Allocations: 7581)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 16:19:02 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDonation Create (0.7ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-11-11 21:19:02.181021"], ["updated_at", "2019-11-11 21:19:02.181021"], ["amount", 50.0], ["donor", "Grandpa"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms | Allocations: 784)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:19:02 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (1.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 169)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 1.1ms | Allocations: 2273)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:19:02 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 611)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.5ms | Allocations: 3332)
+Started GET "/students/new" for 127.0.0.1 at 2019-11-11 16:19:02 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 849)
+Completed 200 OK in 24ms (Views: 12.1ms | ActiveRecord: 0.4ms | Allocations: 5916)
+Started POST "/students" for 127.0.0.1 at 2019-11-11 16:19:02 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{"name"=>"Billy", "goal"=>"500"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Billy"], ["goal", 500.0], ["created_at", "2019-11-11 21:19:02.312881"], ["updated_at", "2019-11-11 21:19:02.312881"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/students
+Completed 302 Found in 6ms (ActiveRecord: 2.3ms | Allocations: 612)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:19:02 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 166)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.2ms | Allocations: 2273)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 16:19:02 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.4ms | Allocations: 111)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 2788)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:19:02 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 155)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 2261)
+Started GET "/" for 127.0.0.1 at 2019-11-11 16:19:02 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 107)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 2345)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:19:02 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 155)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 2261)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "donations"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "donations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "amount" float, "donor" varchar, "student_id" integer)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_student_id" ON "donations" ("student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "goal" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191111212834)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191111192117),
+(20191111193633),
+(20191111193826),
+(20191111194429),
+(20191111205359),
+(20191111205743);
+
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-11-11 21:31:17.211408"], ["updated_at", "2019-11-11 21:31:17.211408"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6b4694d3ac85e879a42248a25cabaaf58c2b6a10"], ["created_at", "2019-11-11 21:31:17.216183"], ["updated_at", "2019-11-11 21:31:17.216183"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:31:17 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 927)
+Completed 200 OK in 108ms (Views: 66.8ms | ActiveRecord: 0.5ms | Allocations: 10984)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 16:31:17 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2262)
+Completed 200 OK in 19ms (Views: 12.1ms | ActiveRecord: 0.5ms | Allocations: 8175)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 16:31:17 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+Redirected to http://www.example.com/donations
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms | Allocations: 2895)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:31:17 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 142)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 2246)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:31:17 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 633)
+Completed 200 OK in 18ms (Views: 14.3ms | ActiveRecord: 0.5ms | Allocations: 3412)
+Started GET "/students/new" for 127.0.0.1 at 2019-11-11 16:31:17 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 873)
+Completed 200 OK in 41ms (Views: 27.2ms | ActiveRecord: 0.4ms | Allocations: 5970)
+Started POST "/students" for 127.0.0.1 at 2019-11-11 16:31:17 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{"name"=>"Billy", "goal"=>"500"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Billy"], ["goal", 500.0], ["created_at", "2019-11-11 21:31:17.765324"], ["updated_at", "2019-11-11 21:31:17.765324"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/students
+Completed 302 Found in 5ms (ActiveRecord: 2.8ms | Allocations: 818)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:31:17 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 169)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 2274)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 16:31:17 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.3ms | Allocations: 111)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 2787)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:31:17 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 139)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 2245)
+Started GET "/" for 127.0.0.1 at 2019-11-11 16:31:17 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 107)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 2345)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:31:17 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 155)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.2ms | Allocations: 2261)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.7ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jeff"], ["goal", 100.0], ["created_at", "2019-11-11 21:35:26.337475"], ["updated_at", "2019-11-11 21:35:26.337475"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:35:26 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 805)
+Completed 200 OK in 49ms (Views: 38.5ms | ActiveRecord: 0.6ms | Allocations: 10392)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 16:35:26 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2508)
+Completed 200 OK in 29ms (Views: 20.6ms | ActiveRecord: 0.3ms | Allocations: 8182)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 16:35:26 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Create (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-11 21:35:26.519940"], ["updated_at", "2019-11-11 21:35:26.519940"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 37ms (ActiveRecord: 2.4ms | Allocations: 2850)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:35:26 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 166)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 2270)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:35:26 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 387)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.2ms | Allocations: 3064)
+Started GET "/students/new" for 127.0.0.1 at 2019-11-11 16:35:26 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 843)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 3090)
+Started POST "/students" for 127.0.0.1 at 2019-11-11 16:35:26 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{"name"=>"Billy", "goal"=>"500"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Billy"], ["goal", 500.0], ["created_at", "2019-11-11 21:35:26.650478"], ["updated_at", "2019-11-11 21:35:26.650478"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/students
+Completed 302 Found in 4ms (ActiveRecord: 2.3ms | Allocations: 642)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:35:26 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 190)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 2295)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 16:35:26 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.4ms | Allocations: 111)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 2787)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 16:35:26 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 155)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.6ms | Allocations: 2261)
+Started GET "/" for 127.0.0.1 at 2019-11-11 16:35:26 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 107)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 2345)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 16:35:26 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 187)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 2293)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (17.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (1.4ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jeff"], ["goal", 100.0], ["created_at", "2019-11-12 01:26:25.187633"], ["updated_at", "2019-11-12 01:26:25.187633"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:26:25 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 40.2ms | Allocations: 4249)
+Completed 200 OK in 639ms (Views: 629.2ms | ActiveRecord: 1.5ms | Allocations: 13830)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 20:26:25 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2501)
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.0ms | Allocations: 4735)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 20:26:25 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Create (18.1ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 01:26:25.938781"], ["updated_at", "2019-11-12 01:26:25.938781"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 26ms (ActiveRecord: 20.0ms | Allocations: 2269)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:26:25 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 174)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 2260)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 20:26:25 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 425)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms | Allocations: 3106)
+Started GET "/students/new" for 127.0.0.1 at 2019-11-11 20:26:26 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 843)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 3090)
+Started POST "/students" for 127.0.0.1 at 2019-11-11 20:26:26 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{"name"=>"Billy", "goal"=>"500"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Billy"], ["goal", 500.0], ["created_at", "2019-11-12 01:26:26.058848"], ["updated_at", "2019-11-12 01:26:26.058848"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/students
+Completed 302 Found in 4ms (ActiveRecord: 2.1ms | Allocations: 640)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 20:26:26 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 223)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 2327)
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-11 20:26:26 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 36.9ms | Allocations: 106)
+Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 0.0ms | Allocations: 2782)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:26:26 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 171)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 2257)
+Started GET "/" for 127.0.0.1 at 2019-11-11 20:26:26 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 13.7ms | Allocations: 107)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.0ms | Allocations: 2345)
+Started GET "/students" for 127.0.0.1 at 2019-11-11 20:26:26 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 220)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 2326)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.7ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jeff"], ["goal", 100.0], ["created_at", "2019-11-12 01:29:24.194296"], ["updated_at", "2019-11-12 01:29:24.194296"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:29:24 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 4266)
+Completed 200 OK in 86ms (Views: 78.6ms | ActiveRecord: 0.7ms | Allocations: 13873)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 20:29:24 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 2501)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 4735)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 20:29:24 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Create (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 01:29:24.375930"], ["updated_at", "2019-11-12 01:29:24.375930"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 12ms (ActiveRecord: 2.1ms | Allocations: 2265)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:29:24 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 190)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.2ms | Allocations: 2274)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jeff"], ["goal", 100.0], ["created_at", "2019-11-12 01:30:56.334548"], ["updated_at", "2019-11-12 01:30:56.334548"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:30:56 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 4282)
+Completed 200 OK in 135ms (Views: 126.6ms | ActiveRecord: 1.6ms | Allocations: 13908)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 20:30:56 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2501)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 4735)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 20:30:56 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (1.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Create (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 01:30:56.579719"], ["updated_at", "2019-11-12 01:30:56.579719"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 13ms (ActiveRecord: 3.3ms | Allocations: 2265)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:30:56 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 209)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.2ms | Allocations: 2295)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.6ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jeff"], ["goal", 100.0], ["created_at", "2019-11-12 01:31:54.067683"], ["updated_at", "2019-11-12 01:31:54.067683"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:31:54 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 4299)
+Completed 200 OK in 69ms (Views: 60.4ms | ActiveRecord: 2.0ms | Allocations: 13946)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 20:31:54 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 2501)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms | Allocations: 4735)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 20:31:54 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Create (0.8ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 01:31:54.262692"], ["updated_at", "2019-11-12 01:31:54.262692"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 22ms (ActiveRecord: 3.3ms | Allocations: 2265)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:31:54 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 223)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms | Allocations: 2308)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations"[0m
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDonation Destroy (0.6ms)[0m  [1m[31mDELETE FROM "donations" WHERE "donations"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDonation Destroy (0.9ms)[0m  [1m[31mDELETE FROM "donations" WHERE "donations"."id" = ?[0m  [["id", 2]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDonation Destroy (0.4ms)[0m  [1m[31mDELETE FROM "donations" WHERE "donations"."id" = ?[0m  [["id", 3]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDonation Destroy (0.4ms)[0m  [1m[31mDELETE FROM "donations" WHERE "donations"."id" = ?[0m  [["id", 4]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDonation Destroy (0.5ms)[0m  [1m[31mDELETE FROM "donations" WHERE "donations"."id" = ?[0m  [["id", 5]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "donations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.9ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jeff"], ["goal", 100.0], ["created_at", "2019-11-12 01:34:50.798820"], ["updated_at", "2019-11-12 01:34:50.798820"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:34:50 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 491)
+Completed 200 OK in 82ms (Views: 75.4ms | ActiveRecord: 0.3ms | Allocations: 9452)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 20:34:50 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2505)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 4740)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 20:34:50 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Create (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 01:34:50.995370"], ["updated_at", "2019-11-12 01:34:50.995370"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 10ms (ActiveRecord: 2.4ms | Allocations: 2267)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:34:51 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 158)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 2242)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.9ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jeff"], ["goal", 100.0], ["created_at", "2019-11-12 01:35:08.745372"], ["updated_at", "2019-11-12 01:35:08.745372"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:35:08 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 20.2ms | Allocations: 4250)
+Completed 200 OK in 83ms (Views: 73.3ms | ActiveRecord: 0.8ms | Allocations: 13926)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-11 20:35:08 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 12.1ms | Allocations: 2499)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 4732)
+Started POST "/donations" for 127.0.0.1 at 2019-11-11 20:35:08 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Create (1.0ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 01:35:09.033231"], ["updated_at", "2019-11-12 01:35:09.033231"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1]]
+  [1m[35m (121.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 256ms (ActiveRecord: 123.3ms | Allocations: 2271)
+Started GET "/donations" for 127.0.0.1 at 2019-11-11 20:35:09 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 174)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.3ms | Allocations: 2260)

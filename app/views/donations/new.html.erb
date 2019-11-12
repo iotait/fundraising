@@ -1,0 +1,9 @@
+<%= form_for @donation do |form| %>
+    <%= form.label :student_id %>
+    <%= form.text_field :student_id %>
+    <%= form.label :donor %>
+    <%= form.text_field :donor %>
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+    <%= form.submit "Submit" %>
+<% end %>
