@@ -1416,3 +1416,147 @@ Processing by DonationsController#index as HTML
   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
   Rendered donations/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 174)
 Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.3ms | Allocations: 2260)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (1.2ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jeff"], ["goal", 100.0], ["created_at", "2019-11-12 14:22:28.412987"], ["updated_at", "2019-11-12 14:22:28.412987"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-12 09:22:28 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 28.2ms | Allocations: 4266)
+Completed 200 OK in 222ms (Views: 188.1ms | ActiveRecord: 1.0ms | Allocations: 13967)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-12 09:22:28 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 314.9ms | Allocations: 2501)
+Completed 200 OK in 323ms (Views: 321.6ms | ActiveRecord: 0.0ms | Allocations: 4739)
+Started POST "/donations" for 127.0.0.1 at 2019-11-12 09:22:29 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Create (4.1ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 14:22:29.406254"], ["updated_at", "2019-11-12 14:22:29.406254"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 149ms (ActiveRecord: 4.6ms | Allocations: 2271)
+Started GET "/donations" for 127.0.0.1 at 2019-11-12 09:22:29 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 183)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 2267)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.6ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jeff"], ["goal", 100.0], ["created_at", "2019-11-12 14:24:32.922533"], ["updated_at", "2019-11-12 14:24:32.922533"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-12 09:24:32 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 4266)
+Completed 200 OK in 119ms (Views: 110.2ms | ActiveRecord: 1.7ms | Allocations: 13988)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-12 09:24:33 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 16.6ms | Allocations: 2501)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms | Allocations: 4735)
+Started POST "/donations" for 127.0.0.1 at 2019-11-12 09:24:33 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Create (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 14:24:33.180832"], ["updated_at", "2019-11-12 14:24:33.180832"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 20ms (ActiveRecord: 1.9ms | Allocations: 2269)
+Started GET "/donations" for 127.0.0.1 at 2019-11-12 09:24:33 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 183)
+Completed 200 OK in 43ms (Views: 41.3ms | ActiveRecord: 0.2ms | Allocations: 2267)
+  [1m[35m (86.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jeff"], ["goal", 100.0], ["created_at", "2019-11-12 14:26:17.536974"], ["updated_at", "2019-11-12 14:26:17.536974"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-12 09:26:17 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 806)
+Completed 200 OK in 111ms (Views: 101.6ms | ActiveRecord: 1.4ms | Allocations: 10548)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-12 09:26:17 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 2505)
+Completed 200 OK in 37ms (Views: 18.1ms | ActiveRecord: 0.3ms | Allocations: 8152)
+Started POST "/donations" for 127.0.0.1 at 2019-11-12 09:26:17 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Create (0.4ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 14:26:17.777953"], ["updated_at", "2019-11-12 14:26:17.777953"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 12ms (ActiveRecord: 0.8ms | Allocations: 2272)
+Started GET "/donations" for 127.0.0.1 at 2019-11-12 09:26:17 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 159)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.1ms | Allocations: 2243)
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Create (0.6ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jeff"], ["goal", 100.0], ["created_at", "2019-11-12 14:26:31.362469"], ["updated_at", "2019-11-12 14:26:31.362469"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-12 09:26:31 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 806)
+Completed 200 OK in 117ms (Views: 109.8ms | ActiveRecord: 0.4ms | Allocations: 10573)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-12 09:26:31 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 2505)
+Completed 200 OK in 42ms (Views: 22.5ms | ActiveRecord: 0.5ms | Allocations: 8152)
+Started POST "/donations" for 127.0.0.1 at 2019-11-12 09:26:31 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Create (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 14:26:31.655614"], ["updated_at", "2019-11-12 14:26:31.655614"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 25ms (ActiveRecord: 0.9ms | Allocations: 2272)
+Started GET "/donations" for 127.0.0.1 at 2019-11-12 09:26:31 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 159)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.1ms | Allocations: 2243)
+  [1m[35m (3.3ms)[0m  [1m[31mrollback transaction[0m
