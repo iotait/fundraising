@@ -1171,3 +1171,403 @@ Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 373
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-11-12 15:56:29 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 15.1ms | Allocations: 232)
+Completed 200 OK in 232ms (Views: 202.5ms | ActiveRecord: 0.0ms | Allocations: 6459)
+
+
+Started GET "/donations" for ::1 at 2019-11-12 15:56:31 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (13.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 31.9ms | Allocations: 1253)
+Completed 200 OK in 183ms (Views: 27.9ms | ActiveRecord: 13.8ms | Allocations: 5637)
+
+
+Started GET "/students" for ::1 at 2019-11-12 15:56:33 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1093)
+Completed 200 OK in 19ms (Views: 11.6ms | ActiveRecord: 1.0ms | Allocations: 5600)
+
+
+Started GET "/students/new" for ::1 at 2019-11-12 15:56:34 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 47.0ms | Allocations: 2320)
+Completed 200 OK in 64ms (Views: 54.1ms | ActiveRecord: 0.6ms | Allocations: 8434)
+
+
+Started POST "/students" for ::1 at 2019-11-12 15:56:41 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"DJPih4nfEnzS7zfHUpDmGn/4xPcD+ZErL4IGxug9sCf/VhrTkne7Yp2B23K1DduoACjhBcfZqcxn1vfbYItqow==", "student"=>{"name"=>"Bill", "goal"=>"500"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:11:in `create'
+  [1m[36mStudent Create (11.1ms)[0m  [1m[32mINSERT INTO "students" ("name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bill"], ["goal", 500.0], ["created_at", "2019-11-12 20:56:41.781550"], ["updated_at", "2019-11-12 20:56:41.781550"]]
+  ↳ app/controllers/students_controller.rb:11:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:11:in `create'
+Redirected to http://localhost:3000/students
+Completed 302 Found in 19ms (ActiveRecord: 12.6ms | Allocations: 2751)
+
+
+Started GET "/students" for ::1 at 2019-11-12 15:56:41 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:6:in `sum'
+  Rendered students/index.html.erb within layouts/application (Duration: 22.4ms | Allocations: 1546)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 1.0ms | Allocations: 4453)
+
+
+Started GET "/donations" for ::1 at 2019-11-12 15:56:43 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 603)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.4ms | Allocations: 3493)
+
+
+Started GET "/donations/new" for ::1 at 2019-11-12 15:56:45 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 72.5ms | Allocations: 1164)
+Completed 200 OK in 92ms (Views: 80.9ms | ActiveRecord: 1.2ms | Allocations: 7604)
+
+
+Started POST "/donations" for ::1 at 2019-11-12 15:56:54 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"authenticity_token"=>"VSknzT+RihCUU1Kh0fkPd4HIIQWiHBOqJlb9q/ArkVKROAPIQkKAB06xrKFvM0F5ez3L1xoYBTAZ52vs8zfefw==", "donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[36mDonation Create (0.6ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 20:56:54.228865"], ["updated_at", "2019-11-12 20:56:54.228865"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1]]
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+Redirected to http://localhost:3000/donations
+Completed 302 Found in 123ms (ActiveRecord: 2.5ms | Allocations: 4947)
+
+
+Started GET "/donations" for ::1 at 2019-11-12 15:56:54 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 623)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.3ms | Allocations: 3510)
+
+
+Started GET "/students" for ::1 at 2019-11-12 15:56:58 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:6:in `sum'
+  Rendered students/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1248)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.8ms | Allocations: 4168)
+
+
+Started GET "/donations" for ::1 at 2019-11-12 15:57:00 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 614)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 3489)
+
+
+Started GET "/donations/new" for ::1 at 2019-11-12 15:57:01 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 783)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 3674)
+
+
+Started POST "/donations" for ::1 at 2019-11-12 15:57:10 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"authenticity_token"=>"lImUWkDrU3LiIMlxYH3dKj9p7CP4humNnlL6DD3sC3VQmLBfPThZZTjCN3Het5MkxZwG8UCC/xeh42xLPvBEWA==", "donation"=>{"student_id"=>"1", "donor"=>"Grandma", "amount"=>"100"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[36mDonation Create (0.5ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 20:57:10.656721"], ["updated_at", "2019-11-12 20:57:10.656721"], ["amount", 100.0], ["donor", "Grandma"], ["student_id", 1]]
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+Redirected to http://localhost:3000/donations
+Completed 302 Found in 10ms (ActiveRecord: 2.6ms | Allocations: 3567)
+
+
+Started GET "/donations" for ::1 at 2019-11-12 15:57:10 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 630)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 3509)
+
+
+Started GET "/students" for ::1 at 2019-11-12 15:57:15 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:6:in `sum'
+  Rendered students/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1254)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.5ms | Allocations: 4164)
+
+
+Started GET "/" for ::1 at 2019-11-12 16:14:16 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.6ms | Allocations: 232)
+Completed 200 OK in 51ms (Views: 39.5ms | ActiveRecord: 0.0ms | Allocations: 6597)
+
+
+Started GET "/students" for ::1 at 2019-11-12 16:14:18 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/index.html.erb within layouts/application (Duration: 91.1ms | Allocations: 6254)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 1.1ms | Allocations: 8399)
+
+
+  
+ActionView::Template::Error (undefined method `student_id' for #<Student:0x00007f9a399a8488>):
+    4: 
+    5: <ul class="students">
+    6:     <% @students.each do |student| %>
+    7:     <li>Student ID: <%= student.student_id %>, Student: <%= student.name %>, Goal: <%= student.goal %>, Sum: <%= student.sum %></li>
+    8:     <% end %>
+    9: </ul>
+  
+app/views/students/index.html.erb:7
+app/views/students/index.html.erb:6
+Started GET "/students" for ::1 at 2019-11-12 16:14:42 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:6:in `sum'
+  Rendered students/index.html.erb within layouts/application (Duration: 21.5ms | Allocations: 7790)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 1.2ms | Allocations: 11667)
+
+
+Started GET "/students" for ::1 at 2019-11-12 16:16:04 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:6:in `sum'
+  Rendered students/index.html.erb within layouts/application (Duration: 19.6ms | Allocations: 8781)
+Completed 200 OK in 33ms (Views: 25.5ms | ActiveRecord: 2.5ms | Allocations: 13493)
+
+
+Started GET "/students/new" for ::1 at 2019-11-12 16:16:05 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2567)
+Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 5638)
+
+
+Started POST "/students" for ::1 at 2019-11-12 16:16:18 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"gYlgTDli1HXKz5q7zOPcBmBjXmxcqrFtqIj7EMzL/0pyTJgYIsp9a4Whdg4rfuG0H7N7npiKiYrg3AoNRH0lzg==", "student"=>{"id"=>"705", "name"=>"Brenda", "goal"=>"200"}, "commit"=>"Submit"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:11:in `create'
+  [1m[36mStudent Create (0.7ms)[0m  [1m[32mINSERT INTO "students" ("id", "name", "goal", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 705], ["name", "Brenda"], ["goal", 200.0], ["created_at", "2019-11-12 21:16:18.774371"], ["updated_at", "2019-11-12 21:16:18.774371"]]
+  ↳ app/controllers/students_controller.rb:11:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:11:in `create'
+Redirected to http://localhost:3000/students
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms | Allocations: 2763)
+
+
+Started GET "/students" for ::1 at 2019-11-12 16:16:18 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:6:in `sum'
+  [1m[36mDonation Load (0.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 705]]
+  ↳ app/models/student.rb:6:in `sum'
+  Rendered students/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1890)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.5ms | Allocations: 4803)
+
+
+Started GET "/students" for ::1 at 2019-11-12 16:17:18 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:6:in `sum'
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 705]]
+  ↳ app/models/student.rb:6:in `sum'
+  Rendered students/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1900)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.5ms | Allocations: 4812)
+
+
+Started GET "/students" for ::1 at 2019-11-12 16:34:15 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:6:in `sum'
+  [1m[36mDonation Load (0.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 705]]
+  ↳ app/models/student.rb:6:in `sum'
+  Rendered students/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1930)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.7ms | Allocations: 4848)
+
+
+Started GET "/donations" for ::1 at 2019-11-12 16:34:47 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 864)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.4ms | Allocations: 4337)
+
+
+Started GET "/students" for ::1 at 2019-11-12 16:34:50 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:6:in `sum'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 705]]
+  ↳ app/models/student.rb:6:in `sum'
+  Rendered students/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1894)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 1.0ms | Allocations: 4808)
+
+
+Started GET "/donations" for ::1 at 2019-11-12 16:34:53 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 630)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.7ms | Allocations: 3518)
+
+
+Started GET "/students" for ::1 at 2019-11-12 16:34:54 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:6:in `sum'
+  [1m[36mDonation Load (0.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 705]]
+  ↳ app/models/student.rb:6:in `sum'
+  Rendered students/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1889)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.7ms | Allocations: 4797)
+
+
+Started GET "/donations" for ::1 at 2019-11-12 16:34:55 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 630)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.3ms | Allocations: 3516)
+
+
+Started GET "/donations/new" for ::1 at 2019-11-12 16:34:56 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1165)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 4193)
+
+
+Started POST "/donations" for ::1 at 2019-11-12 16:35:16 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"authenticity_token"=>"kjzSJ54E8FaWBx4Ke6p0YDMsGBgCEqlVp8FxNPdBM0hWLfYi49f6QUzl4ArFYDpuydnyyroWv8+YcOdz9F18ZQ==", "donation"=>{"student_id"=>"705", "donor"=>"Mom", "amount"=>"75"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 705], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[36mDonation Create (0.6ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-12 21:35:16.020179"], ["updated_at", "2019-11-12 21:35:16.020179"], ["amount", 75.0], ["donor", "Mom"], ["student_id", 705]]
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+Redirected to http://localhost:3000/donations
+Completed 302 Found in 14ms (ActiveRecord: 2.7ms | Allocations: 4947)
+
+
+Started GET "/donations" for ::1 at 2019-11-12 16:35:16 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 647)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 3529)
+
+
+Started GET "/students" for ::1 at 2019-11-12 16:35:21 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:6:in `sum'
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 705]]
+  ↳ app/models/student.rb:6:in `sum'
+  Rendered students/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1905)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.6ms | Allocations: 4815)
+
+
+Started GET "/donations" for ::1 at 2019-11-12 16:35:29 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 646)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.3ms | Allocations: 3531)
+
+
+Started GET "/students" for ::1 at 2019-11-12 16:35:33 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:6:in `sum'
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 705]]
+  ↳ app/models/student.rb:6:in `sum'
+  Rendered students/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1900)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 1.4ms | Allocations: 4810)
+
+
+Started GET "/donations" for ::1 at 2019-11-12 16:35:34 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 646)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 3528)
+
+
