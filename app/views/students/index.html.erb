@@ -4,6 +4,6 @@
 
 <ul class="students">
     <% @students.each do |student| %>
-    <li>Student ID: <%= student.id %>, Student: <%= student.name %>, Goal: <%= student.goal %>, Sum: <%= student.sum %></li>
+    <a href ="/students/<%= student.id %>"><li>Student with ID: <%= student.id %> -- <%= student.name %></li></a>
     <% end %>
 </ul>

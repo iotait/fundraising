@@ -1,10 +1,10 @@
-<%= form_for @student do |form| %>
-    <%= form.label :id%>
-    <%= form.text_field :id%>
-    <%= form.label :teacher_id%>
-    <%= form.text_field :teacher_id%>
+<%= form_for @teacher do |form| %>
     <%= form.label :name %>
     <%= form.text_field :name %>
+    <%= form.label :email%>
+    <%= form.text_field :email%>
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
     <%= form.label :goal %>
     <%= form.text_field :goal %>
     <%= form.submit "Submit" %>
