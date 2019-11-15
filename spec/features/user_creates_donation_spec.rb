@@ -2,8 +2,9 @@ require "rails_helper"
 
 feature "User creates donation" do
   scenario "successfully" do
-    @teacher = Teacher.create!(name: "Jeff", email: "j@gmail.com", phone: "0123456789", goal: 100)
-    @student = Student.create!(id: 1, teacher_id: 1, name: "Bill", goal: 100)
+    @school = School.create!(name: "xyz", email: "xyz@gmail.com", phone: "1234567890", address: "123 school lane", about: "Buy desks", goal: 5000)
+    @teacher = Teacher.create!(school_id: 1, name: "Jeff", email: "j@gmail.com", phone: "0123456789", goal: 100)
+    @student = Student.create!(id: 1, school_id: 1, teacher_id: 1, name: "Bill", goal: 100)
     visit "/donations"
 
     click_on "Add a new donation"
