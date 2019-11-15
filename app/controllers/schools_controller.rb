@@ -1,4 +1,4 @@
-class SchoolController < ApplicationController
+class SchoolsController < ApplicationController
   before_action :set_school, only: [:show]
 
   def index
