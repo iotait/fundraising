@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  before_action :set_teacher, only: [:show]
+  before_action :set_admin, only: [:show]
 
   def index
     @admins = Admin.all

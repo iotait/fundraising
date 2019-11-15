@@ -2446,3 +2446,685 @@ Migrating to AddadminToschool (20191115191221)
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-11-15 14:24:08 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 232)
+Completed 200 OK in 129ms (Views: 110.6ms | ActiveRecord: 0.0ms | Allocations: 6462)
+
+
+Started GET "/admins" for ::1 at 2019-11-15 14:24:10 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:6
+  Rendered admins/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1227)
+Completed 200 OK in 20ms (Views: 13.8ms | ActiveRecord: 1.2ms | Allocations: 5549)
+
+
+Started GET "/admins/new" for ::1 at 2019-11-15 14:24:11 -0500
+Processing by AdminsController#new as HTML
+  Rendering admins/new.html.erb within layouts/application
+  Rendered admins/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 2574)
+Completed 200 OK in 32ms (Views: 18.4ms | ActiveRecord: 1.3ms | Allocations: 9268)
+
+
+Started POST "/admins" for ::1 at 2019-11-15 14:24:36 -0500
+Processing by AdminsController#create as HTML
+  Parameters: {"authenticity_token"=>"mOT/G9mH3FwmpR6P1keYbasYajgjVKj7Ah2JnWhxCXaqg81hMpJ7bd7lX16HxxSB00G1/joCem/Fl8cpECuxSA==", "admin"=>{"name"=>"Tanner Wernecke", "email"=>"t@gmail.com", "phone"=>"5405322160"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_controller.rb:18:in `create'
+  [1m[36mAdmin Create (0.9ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tanner Wernecke"], ["email", "t@gmail.com"], ["phone", "5405322160"], ["created_at", "2019-11-15 19:24:36.785192"], ["updated_at", "2019-11-15 19:24:36.785192"]]
+  ↳ app/controllers/admins_controller.rb:18:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_controller.rb:18:in `create'
+Redirected to http://localhost:3000/admins
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms | Allocations: 2696)
+
+
+Started GET "/admins" for ::1 at 2019-11-15 14:24:36 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:6
+  Rendered admins/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 630)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.3ms | Allocations: 3520)
+
+
+Started GET "/admins/1" for ::1 at 2019-11-15 14:24:39 -0500
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 3544)
+
+
+  
+NoMethodError (undefined method `set_teacher' for #<AdminsController:0x00007f8f7b1b1360>
+Did you mean?  set_trace_func):
+  
+activesupport (6.0.1) lib/active_support/callbacks.rb:429:in `block in make_lambda'
+activesupport (6.0.1) lib/active_support/callbacks.rb:182:in `block (2 levels) in halting_and_conditional'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.1) lib/active_support/callbacks.rb:183:in `block in halting_and_conditional'
+activesupport (6.0.1) lib/active_support/callbacks.rb:514:in `block in invoke_before'
+activesupport (6.0.1) lib/active_support/callbacks.rb:514:in `each'
+activesupport (6.0.1) lib/active_support/callbacks.rb:514:in `invoke_before'
+activesupport (6.0.1) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/twernecke/.rbenv/versions/2.6.3/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/twernecke/.rbenv/versions/2.6.3/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/twernecke/.rbenv/versions/2.6.3/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/admins" for ::1 at 2019-11-15 14:24:51 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:6
+  Rendered admins/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 618)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 3513)
+
+
+Started GET "/admins/1" for ::1 at 2019-11-15 14:24:55 -0500
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 3520)
+
+
+  
+NoMethodError (undefined method `set_teacher' for #<AdminsController:0x00007f8f796558c8>
+Did you mean?  set_trace_func):
+  
+activesupport (6.0.1) lib/active_support/callbacks.rb:429:in `block in make_lambda'
+activesupport (6.0.1) lib/active_support/callbacks.rb:182:in `block (2 levels) in halting_and_conditional'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.1) lib/active_support/callbacks.rb:183:in `block in halting_and_conditional'
+activesupport (6.0.1) lib/active_support/callbacks.rb:514:in `block in invoke_before'
+activesupport (6.0.1) lib/active_support/callbacks.rb:514:in `each'
+activesupport (6.0.1) lib/active_support/callbacks.rb:514:in `invoke_before'
+activesupport (6.0.1) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/twernecke/.rbenv/versions/2.6.3/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/twernecke/.rbenv/versions/2.6.3/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/twernecke/.rbenv/versions/2.6.3/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/admins/1" for ::1 at 2019-11-15 14:26:33 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:25:in `set_admin'
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mSchool Load (0.4ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."admin_id" = ?[0m  [["admin_id", 1]]
+  ↳ app/views/admins/show.html.erb:6
+  Rendered admins/show.html.erb within layouts/application (Duration: 14.3ms | Allocations: 3231)
+Completed 200 OK in 56ms (Views: 36.6ms | ActiveRecord: 2.6ms | Allocations: 18250)
+
+
+Started GET "/schools" for ::1 at 2019-11-15 14:26:37 -0500
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.6ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:6
+  Rendered schools/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 840)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.6ms | Allocations: 4378)
+
+
+Started GET "/schools/new" for ::1 at 2019-11-15 14:26:38 -0500
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2161)
+Completed 200 OK in 55ms (Views: 32.6ms | ActiveRecord: 1.1ms | Allocations: 10917)
+
+
+Started POST "/schools" for ::1 at 2019-11-15 14:27:25 -0500
+Processing by SchoolsController#create as HTML
+  Parameters: {"authenticity_token"=>"P3Z3O+40vmG5qyvTEPykuUIpgLLRUr0utPcnIChuHc7ahak4XyJB1hzGfqmluB8O5dBGUhaW8OEVXuyWLkNGXw==", "school"=>{"admin_id"=>"1", "name"=>"Wernecke Homeschool", "email"=>"whome@gmail.com", "phone"=>"5406783983", "address"=>"316 Greenfield Ave", "about"=>"We're doing this for E's college fund", "goal"=>"1000"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/schools_controller.rb:16:in `create'
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:16:in `create'
+  [1m[36mSchool Create (1.0ms)[0m  [1m[32mINSERT INTO "schools" ("name", "email", "phone", "address", "about", "goal", "created_at", "updated_at", "admin_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Wernecke Homeschool"], ["email", "whome@gmail.com"], ["phone", "5406783983"], ["address", "316 Greenfield Ave"], ["about", "We're doing this for E's college fund"], ["goal", 1000.0], ["created_at", "2019-11-15 19:27:25.442841"], ["updated_at", "2019-11-15 19:27:25.442841"], ["admin_id", 1]]
+  ↳ app/controllers/schools_controller.rb:16:in `create'
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/schools_controller.rb:16:in `create'
+Redirected to http://localhost:3000/schools
+Completed 302 Found in 40ms (ActiveRecord: 7.4ms | Allocations: 7028)
+
+
+Started GET "/schools" for ::1 at 2019-11-15 14:27:25 -0500
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:6
+  Rendered schools/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 632)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 3548)
+
+
+Started GET "/schools/1" for ::1 at 2019-11-15 14:27:28 -0500
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:23:in `set_school'
+  Rendering schools/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/models/school.rb:8:in `sum'
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/views/schools/show.html.erb:15
+  Rendered schools/show.html.erb within layouts/application (Duration: 12.3ms | Allocations: 2726)
+Completed 200 OK in 55ms (Views: 50.0ms | ActiveRecord: 1.3ms | Allocations: 6399)
+
+
+Started GET "/admins" for ::1 at 2019-11-15 14:27:30 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:6
+  Rendered admins/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 642)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 3536)
+
+
+Started GET "/admins/1" for ::1 at 2019-11-15 14:27:32 -0500
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:25:in `set_admin'
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."admin_id" = ?[0m  [["admin_id", 1]]
+  ↳ app/views/admins/show.html.erb:6
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/models/school.rb:8:in `sum'
+  Rendered admins/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1258)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.8ms | Allocations: 4663)
+
+
+Started GET "/teachers" for ::1 at 2019-11-15 14:27:36 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/views/teachers/index.html.erb:6
+  Rendered teachers/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 843)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.3ms | Allocations: 4359)
+
+
+Started GET "/teachers/new" for ::1 at 2019-11-15 14:27:37 -0500
+Processing by TeachersController#new as HTML
+  Rendering teachers/new.html.erb within layouts/application
+  Rendered teachers/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1642)
+Completed 200 OK in 25ms (Views: 14.6ms | ActiveRecord: 0.6ms | Allocations: 9173)
+
+
+Started POST "/teachers" for ::1 at 2019-11-15 14:28:07 -0500
+Processing by TeachersController#create as HTML
+  Parameters: {"authenticity_token"=>"It3GjREqujnPWhU7+Yz4vAWIzZcKVwLEpgaJ+CIsi3DC4WnAZzY8Yug85iXn62hg52AH4MOvCrJpjBI/NdK+ag==", "teacher"=>{"school_id"=>"1", "name"=>"Mom", "email"=>"mom@gmail.com", "phone"=>"5405391221", "goal"=>"600"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:18:in `create'
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:18:in `create'
+  [1m[36mTeacher Create (0.8ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "email", "phone", "goal", "created_at", "updated_at", "school_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mom"], ["email", "mom@gmail.com"], ["phone", "5405391221"], ["goal", 600.0], ["created_at", "2019-11-15 19:28:07.552981"], ["updated_at", "2019-11-15 19:28:07.552981"], ["school_id", 1]]
+  ↳ app/controllers/teachers_controller.rb:18:in `create'
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:18:in `create'
+Redirected to http://localhost:3000/teachers
+Completed 302 Found in 16ms (ActiveRecord: 6.9ms | Allocations: 3983)
+
+
+Started GET "/teachers" for ::1 at 2019-11-15 14:28:07 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/views/teachers/index.html.erb:6
+  Rendered teachers/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 627)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.2ms | Allocations: 3511)
+
+
+Started GET "/teachers/new" for ::1 at 2019-11-15 14:28:09 -0500
+Processing by TeachersController#new as HTML
+  Rendering teachers/new.html.erb within layouts/application
+  Rendered teachers/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1163)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 4062)
+
+
+Started POST "/teachers" for ::1 at 2019-11-15 14:28:30 -0500
+Processing by TeachersController#create as HTML
+  Parameters: {"authenticity_token"=>"dZomXhUtzKXIcxZF1WdueI1AhOT1oX8LefzhNrZaHnGVpokTYzFK/u8V5VvLAP6kb6hOkzxZd322dnrxoaQraw==", "teacher"=>{"school_id"=>"1", "name"=>"Dad", "email"=>"dad@gmail.com", "phone"=>"5406646651", "goal"=>"500"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:18:in `create'
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:18:in `create'
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "email", "phone", "goal", "created_at", "updated_at", "school_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dad"], ["email", "dad@gmail.com"], ["phone", "5406646651"], ["goal", 500.0], ["created_at", "2019-11-15 19:28:30.533174"], ["updated_at", "2019-11-15 19:28:30.533174"], ["school_id", 1]]
+  ↳ app/controllers/teachers_controller.rb:18:in `create'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:18:in `create'
+Redirected to http://localhost:3000/teachers
+Completed 302 Found in 10ms (ActiveRecord: 2.8ms | Allocations: 3667)
+
+
+Started GET "/teachers" for ::1 at 2019-11-15 14:28:30 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/views/teachers/index.html.erb:6
+  Rendered teachers/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 638)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.3ms | Allocations: 3522)
+
+
+Started GET "/students" for ::1 at 2019-11-15 14:28:39 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1158)
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 0.6ms | Allocations: 5898)
+
+
+Started GET "/students/new" for ::1 at 2019-11-15 14:28:40 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1650)
+Completed 200 OK in 28ms (Views: 13.1ms | ActiveRecord: 0.4ms | Allocations: 8611)
+
+
+Started POST "/students" for ::1 at 2019-11-15 14:29:02 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"3+ey/tCQY4+WP6edp7MLmRdiXoM36zpb/EWKR/tr/PWGsr9pQZUc1BLYtStKKFYQwxm3QIpjKaTV2dr3SqRxaQ==", "student"=>{"id"=>"1", "school_id"=>"1", "teacher_id"=>"1", "name"=>"Ethan", "goal"=>"200"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/students_controller.rb:16:in `create'
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:16:in `create'
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:16:in `create'
+  [1m[36mStudent Create (1.0ms)[0m  [1m[32mINSERT INTO "students" ("id", "name", "goal", "created_at", "updated_at", "teacher_id", "school_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["name", "Ethan"], ["goal", 200.0], ["created_at", "2019-11-15 19:29:02.923118"], ["updated_at", "2019-11-15 19:29:02.923118"], ["teacher_id", 1], ["school_id", 1]]
+  ↳ app/controllers/students_controller.rb:16:in `create'
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/students_controller.rb:16:in `create'
+Redirected to http://localhost:3000/students
+Completed 302 Found in 24ms (ActiveRecord: 8.1ms | Allocations: 5171)
+
+
+Started GET "/students" for ::1 at 2019-11-15 14:29:02 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 627)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 3540)
+
+
+Started GET "/donations" for ::1 at 2019-11-15 14:29:04 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1153)
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 1.1ms | Allocations: 5040)
+
+
+Started GET "/donations/new" for ::1 at 2019-11-15 14:29:05 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1419)
+Completed 200 OK in 27ms (Views: 12.7ms | ActiveRecord: 0.8ms | Allocations: 8488)
+
+
+Started POST "/donations" for ::1 at 2019-11-15 14:29:17 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"authenticity_token"=>"vK7t5tLWxL44x61L4qJo6O6iOws95X6okl7Y2/ZaDAzVXdpfbeYR6ihOdU+je6vRE0vBgxNq3ztn/nz155xaig==", "donation"=>{"student_id"=>"1", "donor"=>"Grandma", "amount"=>"150", "message"=>"Good luck!!"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[36mDonation Create (0.9ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id", "message") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-15 19:29:17.969261"], ["updated_at", "2019-11-15 19:29:17.969261"], ["amount", 150.0], ["donor", "Grandma"], ["student_id", 1], ["message", "Good luck!!"]]
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+Redirected to http://localhost:3000/donations
+Completed 302 Found in 13ms (ActiveRecord: 3.6ms | Allocations: 3871)
+
+
+Started GET "/donations" for ::1 at 2019-11-15 14:29:17 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 626)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.2ms | Allocations: 9946)
+
+
+Started GET "/donations/new" for ::1 at 2019-11-15 14:29:19 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 973)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 3870)
+
+
+Started POST "/donations" for ::1 at 2019-11-15 14:29:42 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"authenticity_token"=>"CsXs2iL97ogvTB3+cJFCiPuGpDi1aGOaGW1DVHZZYztjNttjnc073D/FxfoxSIGxBm9esJvnwgnszed6Z581vQ==", "donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"300", "message"=>"Go Ethan!"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[36mDonation Create (0.6ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id", "message") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-15 19:29:42.566712"], ["updated_at", "2019-11-15 19:29:42.566712"], ["amount", 300.0], ["donor", "Grandpa"], ["student_id", 1], ["message", "Go Ethan!"]]
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/donations_controller.rb:13:in `create'
+Redirected to http://localhost:3000/donations
+Completed 302 Found in 9ms (ActiveRecord: 2.7ms | Allocations: 3600)
+
+
+Started GET "/donations" for ::1 at 2019-11-15 14:29:42 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 636)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.2ms | Allocations: 3519)
+
+
+Started GET "/students" for ::1 at 2019-11-15 14:29:46 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 623)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.4ms | Allocations: 3540)
+
+
+Started GET "/students/1" for ::1 at 2019-11-15 14:29:47 -0500
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:23:in `set_student'
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/views/students/show.html.erb:15
+  Rendered students/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1533)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.5ms | Allocations: 5167)
+
+
+Started GET "/teachers" for ::1 at 2019-11-15 14:29:56 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/views/teachers/index.html.erb:6
+  Rendered teachers/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 643)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.4ms | Allocations: 3531)
+
+
+Started GET "/teachers/2" for ::1 at 2019-11-15 14:29:57 -0500
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTeacher Load (0.7ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:25:in `set_teacher'
+  Rendering teachers/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/views/teachers/show.html.erb:15
+  Rendered teachers/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1457)
+Completed 200 OK in 21ms (Views: 14.9ms | ActiveRecord: 1.1ms | Allocations: 5105)
+
+
+Started GET "/teachers/1" for ::1 at 2019-11-15 14:30:00 -0500
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (7.7ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:25:in `set_teacher'
+  Rendering teachers/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/views/teachers/show.html.erb:15
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  Rendered teachers/show.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2431)
+Completed 200 OK in 27ms (Views: 14.9ms | ActiveRecord: 8.2ms | Allocations: 5844)
+
+
+Started GET "/schools" for ::1 at 2019-11-15 14:30:04 -0500
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (3.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:6
+  Rendered schools/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 627)
+Completed 200 OK in 19ms (Views: 11.5ms | ActiveRecord: 3.2ms | Allocations: 3540)
+
+
+Started GET "/schools/1" for ::1 at 2019-11-15 14:30:06 -0500
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:23:in `set_school'
+  Rendering schools/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/models/school.rb:8:in `sum'
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mCACHE Teacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/views/schools/show.html.erb:15
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  Rendered schools/show.html.erb within layouts/application (Duration: 37.0ms | Allocations: 4843)
+Completed 200 OK in 50ms (Views: 46.3ms | ActiveRecord: 1.7ms | Allocations: 8257)
+
+
+Started GET "/admins" for ::1 at 2019-11-15 14:30:16 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  ↳ app/views/admins/index.html.erb:6
+  Rendered admins/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 623)
+Completed 200 OK in 18ms (Views: 9.9ms | ActiveRecord: 0.2ms | Allocations: 3518)
+
+
+Started GET "/admins/1" for ::1 at 2019-11-15 14:30:18 -0500
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:25:in `set_admin'
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."admin_id" = ?[0m  [["admin_id", 1]]
+  ↳ app/views/admins/show.html.erb:6
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/models/school.rb:8:in `sum'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mDonation Load (0.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  Rendered admins/show.html.erb within layouts/application (Duration: 12.8ms | Allocations: 3172)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 1.2ms | Allocations: 6582)
+
+
+Started GET "/schools/1" for ::1 at 2019-11-15 14:30:21 -0500
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:23:in `set_school'
+  Rendering schools/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/models/school.rb:8:in `sum'
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/views/schools/show.html.erb:15
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  Rendered schools/show.html.erb within layouts/application (Duration: 18.4ms | Allocations: 4841)
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 1.3ms | Allocations: 8249)
+
+
+Started GET "/schools/1" for ::1 at 2019-11-15 14:30:26 -0500
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:23:in `set_school'
+  Rendering schools/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/models/school.rb:8:in `sum'
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/views/schools/show.html.erb:15
+  [1m[36mCACHE Student Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  Rendered schools/show.html.erb within layouts/application (Duration: 16.0ms | Allocations: 4841)
+Completed 200 OK in 29ms (Views: 21.0ms | ActiveRecord: 1.5ms | Allocations: 8249)
+
+
+Started GET "/admins/1" for ::1 at 2019-11-15 14:30:31 -0500
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:25:in `set_admin'
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."admin_id" = ?[0m  [["admin_id", 1]]
+  ↳ app/views/admins/show.html.erb:6
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/models/school.rb:8:in `sum'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  Rendered admins/show.html.erb within layouts/application (Duration: 11.6ms | Allocations: 3172)
+Completed 200 OK in 29ms (Views: 21.3ms | ActiveRecord: 1.8ms | Allocations: 6577)
+
+
