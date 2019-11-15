@@ -11,7 +11,7 @@
 </p>
 
 <h3><%= @teacher.name%>'s class:</h3>
-<ul class="donations">
+<ul class="students">
     <% Student.where(teacher_id: @teacher.id).each do |student| %>
     <a href ="/students/<%= student.id %>"><li><%= student.name %>: <%= "$%.2f" % student.sum %></li></a>
     <% end %>

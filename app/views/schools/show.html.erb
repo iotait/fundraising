@@ -1,0 +1,18 @@
+<% provide(:h1, @school.name) %>
+
+<p>
+  <strong>Goal:</strong>
+  <%= "$%.2f" % @school.goal %>
+</p>
+
+<p>
+  <strong>Total Sum of the School:</strong>
+  <%= "$%.2f" % @school.sum %>
+</p>
+
+<h3><%= @school.name%>'s classes:</h3>
+<ul class="teachers">
+    <% Teacher.where(school_id: @school.id).each do |teacher| %>
+    <a href ="/teachers/<%= teacher.id %>"><li><%= teacher.name %>: <%= "$%.2f" % teacher.sum %></li></a>
+    <% end %>
+</ul>

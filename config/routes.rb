@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :donations, only: [:index, :new, :create]
   resources :students, only: [:index, :new, :create, :show]
   resources :teachers, only: [:index, :new, :create, :show]
+  resources :schools, only: [:index, :new, :create, :show]
 end

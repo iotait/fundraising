@@ -1,0 +1,9 @@
+<% provide(:h1, "Schools") %>
+<p>This is the school page for our walk-a-thon fundraiser</p>
+<%= link_to "Add a new school", new_school_path %>
+
+<ul class="schools">
+    <% @schools.each do |school| %>
+    <a href ="/schools/<%= school.id %>"><li>School with ID: <%= school.id %> -- <%= school.name %></li></a>
+    <% end %>
+</ul>
