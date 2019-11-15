@@ -2,7 +2,8 @@ require "rails_helper"
 
 feature "User creates student" do
   scenario "successfully" do
-    @school = School.create!(name: "xyz", email: "xyz@gmail.com", phone: "1234567890", address: "123 school lane", about: "Buy desks", goal: 5000)
+    @admin = Admin.create!(name: "Bill", email: "bill@incharge.com", phone: "3456789012")
+    @school = School.create!(admin_id: 1, name: "xyz", email: "xyz@gmail.com", phone: "1234567890", address: "123 school lane", about: "Buy desks", goal: 5000)
     @teacher = Teacher.create!(school_id: 1, name: "Jeff", email: "j@gmail.com", phone: "0123456789", goal: 100)
     visit "/students"
 
