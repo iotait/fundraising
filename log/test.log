@@ -3392,3 +3392,407 @@ Processing by TeachersController#index as HTML
   Rendered teachers/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 139)
 Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 2228)
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/admins" for 127.0.0.1 at 2019-11-15 13:57:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins"[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "donations"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "donations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "amount" float, "donor" varchar, "student_id" integer, "message" varchar)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_student_id" ON "donations" ("student_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "schools"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schools" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone" varchar, "address" varchar, "about" varchar, "goal" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "goal" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "teacher_id" integer, "school_id" integer)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_students_on_school_id" ON "students" ("school_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_students_on_teacher_id" ON "students" ("teacher_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone" varchar, "goal" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "school_id" integer)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_teachers_on_school_id" ON "teachers" ("school_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191115190103)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191111192117),
+(20191111193633),
+(20191111193826),
+(20191111194429),
+(20191111205359),
+(20191111205743),
+(20191111212834),
+(20191114182901),
+(20191114184003),
+(20191114184334),
+(20191115154158),
+(20191115162503),
+(20191115162516),
+(20191115162601),
+(20191115162622);
+
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-11-15 19:01:32.746184"], ["updated_at", "2019-11-15 19:01:32.746184"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "e9934318b2fa10f8a4932cc71b8ead8206ad7138"], ["created_at", "2019-11-15 19:01:32.751026"], ["updated_at", "2019-11-15 19:01:32.751026"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/admins" for 127.0.0.1 at 2019-11-15 14:01:32 -0500
+Processing by AdminsController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 2358)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/admins" for 127.0.0.1 at 2019-11-15 14:04:57 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  Rendered admins/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 899)
+Completed 200 OK in 983ms (Views: 971.1ms | ActiveRecord: 0.7ms | Allocations: 10689)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/admins" for 127.0.0.1 at 2019-11-15 14:06:04 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  Rendered admins/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 899)
+Completed 200 OK in 50ms (Views: 43.4ms | ActiveRecord: 0.5ms | Allocations: 10699)
+Started GET "/admins/new" for 127.0.0.1 at 2019-11-15 14:06:04 -0500
+Processing by AdminsController#new as HTML
+  Rendering admins/new.html.erb within layouts/application
+  Rendered admins/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2514)
+Completed 200 OK in 16ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 8412)
+Started POST "/admins" for 127.0.0.1 at 2019-11-15 14:06:04 -0500
+Processing by AdminsController#create as HTML
+  Parameters: {"admin"=>{"name"=>"XYZ", "email"=>"XYZ@gmail.com", "phone"=>"0123456789"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAdmin Create (0.5ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "XYZ"], ["email", "XYZ@gmail.com"], ["phone", "0123456789"], ["created_at", "2019-11-15 19:06:04.484473"], ["updated_at", "2019-11-15 19:06:04.484473"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admins
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms | Allocations: 827)
+Started GET "/admins" for 127.0.0.1 at 2019-11-15 14:06:04 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  Rendered admins/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 166)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 2255)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins"[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "donations"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "donations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "amount" float, "donor" varchar, "student_id" integer, "message" varchar)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_student_id" ON "donations" ("student_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "schools"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schools" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone" varchar, "address" varchar, "about" varchar, "goal" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "admin_id" integer)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_schools_on_admin_id" ON "schools" ("admin_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "goal" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "teacher_id" integer, "school_id" integer)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX "index_students_on_school_id" ON "students" ("school_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX "index_students_on_teacher_id" ON "students" ("teacher_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "phone" varchar, "goal" float, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "school_id" integer)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_teachers_on_school_id" ON "teachers" ("school_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191115191221)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191111192117),
+(20191111193633),
+(20191111193826),
+(20191111194429),
+(20191111205359),
+(20191111205743),
+(20191111212834),
+(20191114182901),
+(20191114184003),
+(20191114184334),
+(20191115154158),
+(20191115162503),
+(20191115162516),
+(20191115162601),
+(20191115162622),
+(20191115190103);
+
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-11-15 19:19:28.896839"], ["updated_at", "2019-11-15 19:19:28.896839"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "2c084045043359c3b7c3402d4552c8e23dc43377"], ["created_at", "2019-11-15 19:19:28.903009"], ["updated_at", "2019-11-15 19:19:28.903009"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/admins" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  Rendered admins/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 898)
+Completed 200 OK in 54ms (Views: 48.7ms | ActiveRecord: 0.4ms | Allocations: 10425)
+Started GET "/admins/new" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by AdminsController#new as HTML
+  Rendering admins/new.html.erb within layouts/application
+  Rendered admins/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2519)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 0.3ms | Allocations: 8422)
+Started POST "/admins" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by AdminsController#create as HTML
+  Parameters: {"admin"=>{"name"=>"XYZ", "email"=>"XYZ@gmail.com", "phone"=>"0123456789"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAdmin Create (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "XYZ"], ["email", "XYZ@gmail.com"], ["phone", "0123456789"], ["created_at", "2019-11-15 19:19:29.361053"], ["updated_at", "2019-11-15 19:19:29.361053"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/admins
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms | Allocations: 855)
+Started GET "/admins" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  Rendered admins/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 166)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 2253)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAdmin Create (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bill"], ["email", "bill@incharge.com"], ["phone", "3456789012"], ["created_at", "2019-11-15 19:19:29.385084"], ["updated_at", "2019-11-15 19:19:29.385084"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSchool Create (0.4ms)[0m  [1m[32mINSERT INTO "schools" ("name", "email", "phone", "address", "about", "goal", "created_at", "updated_at", "admin_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "xyz"], ["email", "xyz@gmail.com"], ["phone", "1234567890"], ["address", "123 school lane"], ["about", "Buy desks"], ["goal", 5000.0], ["created_at", "2019-11-15 19:19:29.525528"], ["updated_at", "2019-11-15 19:19:29.525528"], ["admin_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "email", "phone", "goal", "created_at", "updated_at", "school_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jeff"], ["email", "j@gmail.com"], ["phone", "0123456789"], ["goal", 100.0], ["created_at", "2019-11-15 19:19:29.583204"], ["updated_at", "2019-11-15 19:19:29.583204"], ["school_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("id", "name", "goal", "created_at", "updated_at", "teacher_id", "school_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["name", "Bill"], ["goal", 100.0], ["created_at", "2019-11-15 19:19:29.611684"], ["updated_at", "2019-11-15 19:19:29.611684"], ["teacher_id", 1], ["school_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 682)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.4ms | Allocations: 3807)
+Started GET "/donations/new" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by DonationsController#new as HTML
+  Rendering donations/new.html.erb within layouts/application
+  Rendered donations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1359)
+Completed 200 OK in 19ms (Views: 12.3ms | ActiveRecord: 0.3ms | Allocations: 7596)
+Started POST "/donations" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by DonationsController#create as HTML
+  Parameters: {"donation"=>{"student_id"=>"1", "donor"=>"Grandpa", "amount"=>"50", "message"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDonation Create (0.3ms)[0m  [1m[32mINSERT INTO "donations" ("created_at", "updated_at", "amount", "donor", "student_id", "message") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2019-11-15 19:19:29.686145"], ["updated_at", "2019-11-15 19:19:29.686145"], ["amount", 50.0], ["donor", "Grandpa"], ["student_id", 1], ["message", ""]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/donations
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms | Allocations: 1167)
+Started GET "/donations" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 162)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 2246)
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAdmin Create (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bill"], ["email", "bill@incharge.com"], ["phone", "3456789012"], ["created_at", "2019-11-15 19:19:29.710798"], ["updated_at", "2019-11-15 19:19:29.710798"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/schools" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  Rendered schools/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 373)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 3112)
+Started GET "/schools/new" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by SchoolsController#new as HTML
+  Rendering schools/new.html.erb within layouts/application
+  Rendered schools/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2097)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 4352)
+Started POST "/schools" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by SchoolsController#create as HTML
+  Parameters: {"school"=>{"admin_id"=>"1", "name"=>"XYZ", "email"=>"XYZ@gmail.com", "phone"=>"0123456789", "address"=>"123 School Lane", "about"=>"We're doing this to buy new desks", "goal"=>"5000"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSchool Create (0.3ms)[0m  [1m[32mINSERT INTO "schools" ("name", "email", "phone", "address", "about", "goal", "created_at", "updated_at", "admin_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "XYZ"], ["email", "XYZ@gmail.com"], ["phone", "0123456789"], ["address", "123 School Lane"], ["about", "We're doing this to buy new desks"], ["goal", 5000.0], ["created_at", "2019-11-15 19:19:29.826124"], ["updated_at", "2019-11-15 19:19:29.826124"], ["admin_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/schools
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1023)
+Started GET "/schools" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  Rendered schools/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 157)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 2264)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAdmin Create (0.6ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bill"], ["email", "bill@incharge.com"], ["phone", "3456789012"], ["created_at", "2019-11-15 19:19:29.854235"], ["updated_at", "2019-11-15 19:19:29.854235"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSchool Create (0.5ms)[0m  [1m[32mINSERT INTO "schools" ("name", "email", "phone", "address", "about", "goal", "created_at", "updated_at", "admin_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "xyz"], ["email", "xyz@gmail.com"], ["phone", "1234567890"], ["address", "123 school lane"], ["about", "Buy desks"], ["goal", 5000.0], ["created_at", "2019-11-15 19:19:29.859441"], ["updated_at", "2019-11-15 19:19:29.859441"], ["admin_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "email", "phone", "goal", "created_at", "updated_at", "school_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jeff"], ["email", "j@gmail.com"], ["phone", "0123456789"], ["goal", 100.0], ["created_at", "2019-11-15 19:19:29.863801"], ["updated_at", "2019-11-15 19:19:29.863801"], ["school_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/students" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 371)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 3106)
+Started GET "/students/new" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1595)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 3847)
+Started POST "/students" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{"id"=>"1", "school_id"=>"1", "teacher_id"=>"1", "name"=>"Billy", "goal"=>"500"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("id", "name", "goal", "created_at", "updated_at", "teacher_id", "school_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["name", "Billy"], ["goal", 500.0], ["created_at", "2019-11-15 19:19:29.952250"], ["updated_at", "2019-11-15 19:19:29.952250"], ["teacher_id", 1], ["school_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/students
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms | Allocations: 1155)
+Started GET "/students" for 127.0.0.1 at 2019-11-15 14:19:29 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 153)
+Completed 200 OK in 42ms (Views: 41.6ms | ActiveRecord: 0.1ms | Allocations: 2263)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAdmin Create (0.5ms)[0m  [1m[32mINSERT INTO "admins" ("name", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bill"], ["email", "bill@incharge.com"], ["phone", "3456789012"], ["created_at", "2019-11-15 19:19:30.012146"], ["updated_at", "2019-11-15 19:19:30.012146"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSchool Create (0.3ms)[0m  [1m[32mINSERT INTO "schools" ("name", "email", "phone", "address", "about", "goal", "created_at", "updated_at", "admin_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "xyz"], ["email", "xyz@gmail.com"], ["phone", "1234567890"], ["address", "123 school lane"], ["about", "Buy desks"], ["goal", 5000.0], ["created_at", "2019-11-15 19:19:30.015504"], ["updated_at", "2019-11-15 19:19:30.015504"], ["admin_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/teachers" for 127.0.0.1 at 2019-11-15 14:19:30 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 378)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 3094)
+Started GET "/teachers/new" for 127.0.0.1 at 2019-11-15 14:19:30 -0500
+Processing by TeachersController#new as HTML
+  Rendering teachers/new.html.erb within layouts/application
+  Rendered teachers/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1571)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 3804)
+Started POST "/teachers" for 127.0.0.1 at 2019-11-15 14:19:30 -0500
+Processing by TeachersController#create as HTML
+  Parameters: {"teacher"=>{"school_id"=>"1", "name"=>"Sarah", "email"=>"sarah@example.com", "phone"=>"123-456-7890", "goal"=>"500"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSchool Load (0.1ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("name", "email", "phone", "goal", "created_at", "updated_at", "school_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sarah"], ["email", "sarah@example.com"], ["phone", "123-456-7890"], ["goal", 500.0], ["created_at", "2019-11-15 19:19:30.111736"], ["updated_at", "2019-11-15 19:19:30.111736"], ["school_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/teachers
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms | Allocations: 949)
+Started GET "/teachers" for 127.0.0.1 at 2019-11-15 14:19:30 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 155)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 2242)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/static_pages/about" for 127.0.0.1 at 2019-11-15 14:19:30 -0500
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.4ms | Allocations: 106)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 2782)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/admins" for 127.0.0.1 at 2019-11-15 14:19:30 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+  Rendered admins/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 139)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 2228)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/donations" for 127.0.0.1 at 2019-11-15 14:19:30 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  Rendered donations/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 139)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 2225)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-11-15 14:19:30 -0500
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 107)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 2345)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/schools" for 127.0.0.1 at 2019-11-15 14:19:30 -0500
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  Rendered schools/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 139)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 2248)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/students" for 127.0.0.1 at 2019-11-15 14:19:30 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 139)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 2248)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/teachers" for 127.0.0.1 at 2019-11-15 14:19:30 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 139)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 2228)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m

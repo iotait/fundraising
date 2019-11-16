@@ -2,9 +2,11 @@ require "rails_helper"
 
 feature "User creates school" do
   scenario "successfully" do
+    @admin = Admin.create!(name: "Bill", email: "bill@incharge.com", phone: "3456789012")
     visit "/schools"
 
     click_on "Add a new school"
+    fill_in "Admin", with: 1
     fill_in "Name", with: "XYZ"
     fill_in "Email", with: "XYZ@gmail.com"
     fill_in "Phone", with: "0123456789"

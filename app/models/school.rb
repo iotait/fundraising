@@ -1,6 +1,7 @@
 class School < ApplicationRecord
   has_many :students
   has_many :teachers
+  belongs_to :admin
 
   def sum
     sum = 0.0
