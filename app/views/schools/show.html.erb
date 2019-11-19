@@ -12,7 +12,7 @@
 
 <h3><%= @school.name%>'s classes:</h3>
 <ul class="teachers">
-    <% Teacher.where(school_id: @school.id).each do |teacher| %>
+  <% Teacher.where(school_id: @school.id).each do |teacher| %>
     <a href ="/teachers/<%= teacher.id %>"><li><%= teacher.name %>: <%= "$%.2f" % teacher.sum %></li></a>
-    <% end %>
+  <% end %>
 </ul>

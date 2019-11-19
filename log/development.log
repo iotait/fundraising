@@ -3128,3 +3128,305 @@ Processing by AdminsController#show as HTML
 Completed 200 OK in 29ms (Views: 21.3ms | ActiveRecord: 1.8ms | Allocations: 6577)
 
 
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (21.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20191119212029)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar, "first_name" varchar, "last_name" varchar, "email" varchar, "phone" varchar, "goal" varchar, "about" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (3.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119212029"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropAdmins (20191119215157)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119215157"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (20.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropAdmins (20191119220037)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (31.7ms)[0m  [1m[35mDROP TABLE "admins"[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191119220037"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."type" = ? AND "users"."id" = ? LIMIT ?[0m  [["type", "Admin"], ["id", 1], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2019-11-19 17:03:31 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 14.7ms | Allocations: 232)
+Completed 200 OK in 222ms (Views: 169.4ms | ActiveRecord: 0.0ms | Allocations: 6503)
+
+
+Started GET "/admins" for ::1 at 2019-11-19 17:03:34 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."type" = ?[0m  [["type", "Admin"]]
+  ↳ app/views/admins/index.html.erb:6
+  Rendered admins/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 1166)
+Completed 200 OK in 95ms (Views: 30.6ms | ActiveRecord: 1.1ms | Allocations: 6529)
+
+
+Started GET "/admins/new" for ::1 at 2019-11-19 17:03:44 -0500
+Processing by AdminsController#new as HTML
+  Rendering admins/new.html.erb within layouts/application
+  Rendered admins/new.html.erb within layouts/application (Duration: 106.3ms | Allocations: 2946)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 1.7ms | Allocations: 15330)
+
+
+  
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    1: <%= form_for @admin do |form| %>
+    2:     <%= form.label :name %>
+    3:     <%= form.text_field :name %>
+    4:     <%= form.label :email%>
+    5:     <%= form.text_field :email%>
+    6:     <%= form.label :phone %>
+  
+app/models/user.rb:5:in `name'
+app/views/admins/new.html.erb:3
+app/views/admins/new.html.erb:1
+app/controllers/admins_controller.rb:14:in `new'
+Started GET "/admins" for ::1 at 2019-11-19 17:03:54 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."type" = ?[0m  [["type", "Admin"]]
+  ↳ app/views/admins/index.html.erb:6
+  Rendered admins/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 621)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 3578)
+
+
+Started GET "/admins" for ::1 at 2019-11-19 17:04:00 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."type" = ?[0m  [["type", "Admin"]]
+  ↳ app/views/admins/index.html.erb:6
+  Rendered admins/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 619)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 3568)
+
+
+Started GET "/schools" for ::1 at 2019-11-19 17:04:03 -0500
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (17.9ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:6
+  Rendered schools/index.html.erb within layouts/application (Duration: 39.3ms | Allocations: 7016)
+Completed 200 OK in 78ms (Views: 28.0ms | ActiveRecord: 18.8ms | Allocations: 12572)
+
+
+Started GET "/teachers" for ::1 at 2019-11-19 17:04:05 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/views/teachers/index.html.erb:6
+  Rendered teachers/index.html.erb within layouts/application (Duration: 27.0ms | Allocations: 5709)
+Completed 200 OK in 63ms (Views: 34.8ms | ActiveRecord: 1.2ms | Allocations: 10170)
+
+
+Started GET "/students" for ::1 at 2019-11-19 17:04:06 -0500
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:6
+  Rendered students/index.html.erb within layouts/application (Duration: 29.4ms | Allocations: 5125)
+Completed 200 OK in 94ms (Views: 35.5ms | ActiveRecord: 1.4ms | Allocations: 9966)
+
+
+Started GET "/donations" for ::1 at 2019-11-19 17:04:07 -0500
+Processing by DonationsController#index as HTML
+  Rendering donations/index.html.erb within layouts/application
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations"[0m
+  ↳ app/views/donations/index.html.erb:6
+  Rendered donations/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 5215)
+Completed 200 OK in 39ms (Views: 18.4ms | ActiveRecord: 1.4ms | Allocations: 9135)
+
+
+Started GET "/teachers" for ::1 at 2019-11-19 17:04:08 -0500
+Processing by TeachersController#index as HTML
+  Rendering teachers/index.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  ↳ app/views/teachers/index.html.erb:6
+  Rendered teachers/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 643)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.3ms | Allocations: 3572)
+
+
+Started GET "/schools" for ::1 at 2019-11-19 17:04:09 -0500
+Processing by SchoolsController#index as HTML
+  Rendering schools/index.html.erb within layouts/application
+  [1m[36mSchool Load (0.2ms)[0m  [1m[34mSELECT "schools".* FROM "schools"[0m
+  ↳ app/views/schools/index.html.erb:6
+  Rendered schools/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 627)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.2ms | Allocations: 3572)
+
+
+Started GET "/admins" for ::1 at 2019-11-19 17:04:11 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."type" = ?[0m  [["type", "Admin"]]
+  ↳ app/views/admins/index.html.erb:6
+  Rendered admins/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 624)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 3582)
+
+
+Started GET "/admins/new" for ::1 at 2019-11-19 17:04:13 -0500
+Processing by AdminsController#new as HTML
+  Rendering admins/new.html.erb within layouts/application
+  Rendered admins/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 768)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1223)
+
+
+  
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    1: <%= form_for @admin do |form| %>
+    2:     <%= form.label :name %>
+    3:     <%= form.text_field :name %>
+    4:     <%= form.label :email%>
+    5:     <%= form.text_field :email%>
+    6:     <%= form.label :phone %>
+  
+app/models/user.rb:5:in `name'
+app/views/admins/new.html.erb:3
+app/views/admins/new.html.erb:1
+app/controllers/admins_controller.rb:14:in `new'
+Started GET "/admins/new" for ::1 at 2019-11-19 17:05:22 -0500
+Processing by AdminsController#new as HTML
+  Rendering admins/new.html.erb within layouts/application
+  Rendered admins/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1517)
+Completed 200 OK in 68ms (Views: 66.2ms | ActiveRecord: 0.0ms | Allocations: 5436)
+
+
+Started POST "/admins" for ::1 at 2019-11-19 17:05:39 -0500
+Processing by AdminsController#create as HTML
+  Parameters: {"authenticity_token"=>"zfiW7/TkM9J/MdPoXtQaA0v1KFYs4qYjYG4/MNN5MWhIQZ0exmeKr9eKF/reuwSd7BKPFmFSMsjTGVl1JwMnjA==", "admin"=>{"first_name"=>"Bill", "last_name"=>"Controller", "email"=>"bill@con", "phone"=>"345"}, "commit"=>"Submit"}
+[31mUnpermitted parameters: :first_name, :last_name[0m
+Redirected to http://localhost:3000/admins
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms | Allocations: 1812)
+
+
+Started GET "/admins" for ::1 at 2019-11-19 17:05:39 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."type" = ?[0m  [["type", "Admin"]]
+  ↳ app/views/admins/index.html.erb:6
+  Rendered admins/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 833)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 3933)
+
+
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."type" = ? AND "users"."id" = ? LIMIT ?[0m  [["type", "Admin"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."type" = ? LIMIT ?[0m  [["type", "Admin"], ["LIMIT", 11]]
+Started GET "/admins" for ::1 at 2019-11-19 17:07:24 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."type" = ?[0m  [["type", "Admin"]]
+  ↳ app/views/admins/index.html.erb:6
+  Rendered admins/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 659)
+Completed 200 OK in 45ms (Views: 9.4ms | ActiveRecord: 0.9ms | Allocations: 5375)
+
+
+Started GET "/admins/new" for ::1 at 2019-11-19 17:07:26 -0500
+Processing by AdminsController#new as HTML
+  Rendering admins/new.html.erb within layouts/application
+  Rendered admins/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1176)
+Completed 200 OK in 31ms (Views: 8.8ms | ActiveRecord: 0.6ms | Allocations: 15515)
+
+
+Started POST "/admins" for ::1 at 2019-11-19 17:07:36 -0500
+Processing by AdminsController#create as HTML
+  Parameters: {"authenticity_token"=>"WSEvwK2ZxCNmqltX+lnG9tEs/EkLdouH+BCH9IQZE9IERx1YIYyKFO3WxFAVq+8jpgeg6ZbKPNIbhqiqlvMd9w==", "admin"=>{"first_name"=>"bill", "last_name"=>"bob", "email"=>"bill@bob", "phone"=>"345"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins_controller.rb:18:in `create'
+  [1m[36mAdmin Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("type", "first_name", "last_name", "email", "phone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["type", "Admin"], ["first_name", "bill"], ["last_name", "bob"], ["email", "bill@bob"], ["phone", "345"], ["created_at", "2019-11-19 22:07:36.032171"], ["updated_at", "2019-11-19 22:07:36.032171"]]
+  ↳ app/controllers/admins_controller.rb:18:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins_controller.rb:18:in `create'
+Redirected to http://localhost:3000/admins
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms | Allocations: 2779)
+
+
+Started GET "/admins" for ::1 at 2019-11-19 17:07:36 -0500
+Processing by AdminsController#index as HTML
+  Rendering admins/index.html.erb within layouts/application
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."type" = ?[0m  [["type", "Admin"]]
+  ↳ app/views/admins/index.html.erb:6
+  Rendered admins/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 663)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 3616)
+
+
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."type" = ? AND "users"."id" = ? LIMIT ?[0m  [["type", "Admin"], ["id", 1], ["LIMIT", 1]]
+Started GET "/admins/1" for ::1 at 2019-11-19 17:07:58 -0500
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."type" = ? AND "users"."id" = ? LIMIT ?[0m  [["type", "Admin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins_controller.rb:25:in `set_admin'
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mSchool Load (8.6ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."admin_id" = ?[0m  [["admin_id", 1]]
+  ↳ app/views/admins/show.html.erb:6
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/models/school.rb:8:in `sum'
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  Rendered admins/show.html.erb within layouts/application (Duration: 229.6ms | Allocations: 28076)
+Completed 200 OK in 240ms (Views: 221.5ms | ActiveRecord: 15.3ms | Allocations: 31948)
+
+
+Started GET "/schools/1" for ::1 at 2019-11-19 17:08:03 -0500
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.3ms)[0m  [1m[34mSELECT "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/schools_controller.rb:23:in `set_school'
+  Rendering schools/show.html.erb within layouts/application
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/models/school.rb:8:in `sum'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."school_id" = ?[0m  [["school_id", 1]]
+  ↳ app/views/schools/show.html.erb:15
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 1]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  [1m[36mCACHE Donation Load (0.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/models/student.rb:8:in `sum'
+  [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."teacher_id" = ?[0m  [["teacher_id", 2]]
+  ↳ app/models/teacher.rb:7:in `sum'
+  Rendered schools/show.html.erb within layouts/application (Duration: 36.6ms | Allocations: 5095)
+Completed 200 OK in 47ms (Views: 43.2ms | ActiveRecord: 1.2ms | Allocations: 9294)
+
+

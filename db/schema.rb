@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_15_191221) do
-
-  create_table "admins", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "phone"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2019_11_19_220037) do
 
   create_table "donations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -63,6 +55,18 @@ ActiveRecord::Schema.define(version: 2019_11_15_191221) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "school_id"
     t.index ["school_id"], name: "index_teachers_on_school_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "type"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "phone"
+    t.string "goal"
+    t.string "about"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

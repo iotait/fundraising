@@ -12,8 +12,8 @@
 
 <h3>Donations made to <%= @student.name%>:</h3>
 <ul class="donations">
-    <% Donation.where(student_id: @student.id).each do |donation| %>
+  <% Donation.where(student_id: @student.id).each do |donation| %>
     <li>From <%= donation.donor %>: <%= "$%.2f" % donation.amount %></li>
     <ul><li><%= donation.donor %> says: <%= donation.message %></li></ul>
-    <% end %>
+  <% end %>
 </ul>
