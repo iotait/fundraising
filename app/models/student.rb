@@ -1,7 +1,13 @@
-class Student < ApplicationRecord
+class Student < User
   has_many :donations
-  belongs_to :teacher
-  belongs_to :school
+  # belongs_to :teacher
+  # belongs_to :school
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true
+  validates :about, presence: true
+  validates :goal, presence: true
 
   def sum
     sum = 0.0
