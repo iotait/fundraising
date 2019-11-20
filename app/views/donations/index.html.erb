@@ -4,6 +4,6 @@
 
 <ul class="donations">
     <% @donations.each do |donation| %>
-    <li><%= donation.donor %> donated <%= "$%.2f" % donation.amount %></li>
+      <li><%= donation.donor %> donated <%= "$%.2f" % donation.amount %></li>
     <% end %>
 </ul>
