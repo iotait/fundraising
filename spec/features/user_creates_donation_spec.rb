@@ -9,7 +9,7 @@ feature "User creates donation" do
     visit "/donations"
 
     click_on "Add a new donation"
-    fill_in "Student", with: 3 #It is the third user created
+    fill_in "Student", with: 3 # It is the third user created
     fill_in "Donor", with: "Grandpa"
     fill_in "Amount", with: 50
     fill_in "Message", with: "Glad to help son!"

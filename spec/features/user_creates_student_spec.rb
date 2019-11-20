@@ -8,7 +8,7 @@ feature "User creates student" do
     visit "/students"
 
     click_on "Add a new student"
-    fill_in "Teacher", with: "2" #Second user created
+    fill_in "Teacher", with: "2" # Second user created
     fill_in "student_first_name", with: "Billy"
     fill_in "student_last_name", with: "Bunsly"
     fill_in "Email", with: "bb@gmail.com"
