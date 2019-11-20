@@ -1,2 +1,55 @@
 <% provide(:h1, "About") %>
-<p>This is the about page for public school's walk-a-thon fundraiser</p>
+<h3>How much could you raise?</h3>
+
+Number of students:<br>
+<input id="numStudents"><br>
+Percent of participation:<br>
+<input id="participation" type="range" min="50" max="100" value="75"><p id="sl1"></p><br>
+Number of donors per student:<br>
+<input id="donors" type="range" min="1" max="25" value="5"><p id="sl2"></p>
+<button onclick="calculate()">Calculate</button>
+<h4 id="answer"></h4>
+
+<script>
+  //Update slider for participation
+  var slider1 = document.getElementById("participation");
+  document.getElementById("sl1").innerHTML = slider1.value;
+
+  slider1.oninput = function() {
+    document.getElementById("sl1").innerHTML = this.value;
+  }
+
+  //Update slider for donors per student
+  var slider2 = document.getElementById("donors");
+  document.getElementById("sl2").innerHTML = slider2.value;
+
+  slider2.oninput = function() {
+    document.getElementById("sl2").innerHTML = this.value;
+  }
+
+  //Calculate the amount that could be raised
+  function calculate() {
+    var students = document.getElementById("numStudents").value;
+    var participants = document.getElementById("participation").value;
+    var donors = document.getElementById("donors").value;
+
+    var result = parseFloat(students) * (parseFloat(participants) / 100.0) * parseFloat(donors) * 25.70;
+    if (!isNaN(result)) {
+      document.getElementById("answer").innerHTML="You could raise $" + result.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    }
+  }
+</script>
+
+<%-# Style for the slider -%>
+<style>
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+</style>
