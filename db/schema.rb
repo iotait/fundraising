@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_221800) do
+ActiveRecord::Schema.define(version: 2019_11_20_020448) do
 
   create_table "donations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -33,17 +33,6 @@ ActiveRecord::Schema.define(version: 2019_11_19_221800) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "admin_id"
     t.index ["admin_id"], name: "index_schools_on_admin_id"
-  end
-
-  create_table "teachers", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "phone"
-    t.float "goal"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "school_id"
-    t.index ["school_id"], name: "index_teachers_on_school_id"
   end
 
   create_table "users", force: :cascade do |t|
