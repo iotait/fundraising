@@ -5,10 +5,6 @@
   <%= "$%.2f" % @teacher.goal %>
 </p>
 
-
-
-
-<% if false %>
 <p>
   <strong>Total Sum of Class:</strong>
   <%= "$%.2f" % @teacher.sum %>
@@ -20,4 +16,3 @@
     <a href ="/students/<%= student.id %>"><li><%= student.name %>: <%= "$%.2f" % student.sum %></li></a>
   <% end %>
 </ul>
-<% end %>

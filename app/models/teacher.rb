@@ -1,7 +1,8 @@
 class Teacher < User
   has_many :students
-  # belongs_to :school
+  belongs_to :school
 
+  validates :school_id, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true

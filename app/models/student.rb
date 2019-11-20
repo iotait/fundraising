@@ -1,8 +1,8 @@
 class Student < User
   has_many :donations
-  # belongs_to :teacher
-  # belongs_to :school
+  belongs_to :teacher
 
+  validates :teacher_id, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true
