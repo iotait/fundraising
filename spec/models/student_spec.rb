@@ -19,5 +19,10 @@ describe Student do
 
       expect(student.sum).to eq 100
     end
+
+    it "sums zero when no donations have been made" do
+      student = FactoryBot.create(:student)
+      expect(student.sum).to eq 0.0
+    end
   end
 end

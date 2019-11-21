@@ -20,5 +20,10 @@ describe School do
       
       expect(school.sum).to eq 100
     end
+
+    it "sums zero when no donations have been made" do
+      school = FactoryBot.create(:school_with_teacher_and_student)
+      expect(school.sum).to eq 0.0
+    end
   end
 end

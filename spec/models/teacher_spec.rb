@@ -16,8 +16,12 @@ describe Teacher do
   describe "calculating sum" do
     it "adds donations to get the sum" do
       teacher = FactoryBot.create(:teacher_with_student_and_donation)
-
       expect(teacher.sum).to eq 100
+    end
+
+    it "sums zero when no donations have been made" do
+      teacher = FactoryBot.create(:teacher_with_student)
+      expect(teacher.sum).to eq 0.0
     end
   end
 end
