@@ -2,7 +2,8 @@ require "rails_helper"
 
 describe School do
   describe 'associations' do
-    it { should belong_to(:admin).class_name('Admin') }
+    it { should belong_to(:admin).class_name("Admin") }
+    it { should have_many(:teachers).class_name("Teacher") }
   end
 
   describe "validations" do

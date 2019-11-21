@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe Donation do
   describe 'associations' do
-    it { should belong_to(:student).class_name('Student') }
+    it { should belong_to(:student).class_name("Student") }
   end
 
   describe "validations" do
