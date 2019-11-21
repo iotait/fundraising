@@ -15,11 +15,9 @@ describe Teacher do
 
   xdescribe "calculating sum" do
     it "adds donations to get the sum" do
-      teacher = FactoryBot.build(:teacher)
-      student = FactoryBot.build(:student)
-      donation = FactoryBot.build(:donation)
-      
-      expect(teacher.sum).to eq 100
+      donation = FactoryBot.create(:donation)
+
+      expect(Teacher.first.sum).to eq 100
     end
   end
 end
