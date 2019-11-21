@@ -4,27 +4,27 @@
 Number of students:<br>
 <input id="numStudents"><br>
 Percent of participation:<br>
-<input id="participation" type="range" min="50" max="100" value="75"><p id="sl1"></p><br>
+<input id="participation" type="range" min="50" max="100" value="75"><p id="participation-amount"></p><br>
 Number of donors per student:<br>
-<input id="donors" type="range" min="1" max="25" value="5"><p id="sl2"></p>
+<input id="donors" type="range" min="1" max="25" value="5"><p id="donor-amount"></p>
 <button onclick="calculate()">Calculate</button>
-<h4 id="answer"></h4>
+<h3 id="answer"></h3>
 
 <script>
   //Update slider for participation
-  var slider1 = document.getElementById("participation");
-  document.getElementById("sl1").innerHTML = slider1.value;
+  var participationSlider = document.getElementById("participation");
+  document.getElementById("participation-amount").innerHTML = participationSlider.value;
 
-  slider1.oninput = function() {
-    document.getElementById("sl1").innerHTML = this.value;
+  participationSlider.oninput = function() {
+    document.getElementById("participation-amount").innerHTML = this.value;
   }
 
   //Update slider for donors per student
-  var slider2 = document.getElementById("donors");
-  document.getElementById("sl2").innerHTML = slider2.value;
+  var donorSlider = document.getElementById("donors");
+  document.getElementById("donor-amount").innerHTML = donorSlider.value;
 
-  slider2.oninput = function() {
-    document.getElementById("sl2").innerHTML = this.value;
+  donorSlider.oninput = function() {
+    document.getElementById("donor-amount").innerHTML = this.value;
   }
 
   //Calculate the amount that could be raised
