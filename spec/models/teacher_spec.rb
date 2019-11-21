@@ -13,11 +13,11 @@ describe Teacher do
     it {should validate_presence_of(:email)}
   end
 
-  xdescribe "calculating sum" do
+  describe "calculating sum" do
     it "adds donations to get the sum" do
-      donation = FactoryBot.create(:donation)
+      teacher = FactoryBot.create(:teacher_with_student_and_donation)
 
-      expect(Teacher.first.sum).to eq 100
+      expect(teacher.sum).to eq 100
     end
   end
 end

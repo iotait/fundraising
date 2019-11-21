@@ -14,13 +14,11 @@ describe School do
     it {should validate_presence_of(:address)}
   end
 
-  xdescribe "calculating sum" do
+  describe "calculating sum" do
     it "adds donations to get the sum" do
-      teacher = FactoryBot.build(:teacher)
-      student = FactoryBot.build(:student)
-      donation = FactoryBot.build(:donation)
+      school = FactoryBot.create(:school_with_teacher_student_and_donation)
       
-      expect(teacher.sum).to eq 100
+      expect(school.sum).to eq 100
     end
   end
 end

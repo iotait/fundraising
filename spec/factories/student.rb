@@ -7,5 +7,11 @@ FactoryBot.define do
     goal { 200 }
 
     association :teacher
+
+    factory :student_with_donation do
+      after(:create) do |student|
+        create(:donation, student: student)
+      end
+    end
   end
 end
