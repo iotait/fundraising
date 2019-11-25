@@ -1,0 +1,43 @@
+name: Ruby CI 
+
+on: [push, pull_request]
+
+jobs:
+  standardrb:
+    name: StandardRb
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
+        
+    - name: Run StandardRb
+      run: |
+        sudo apt-get install -y sqlite3 libsqlite3-dev
+        sudo apt-get install libpq-dev
+        bundle install --jobs 4
+        bundle exec standardrb
+  
+  rspec:
+    name: Specs
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
+        
+    - name: Run specs
+      run: |
+        sudo apt-get install libpq-dev
+        sudo apt-get install -y sqlite3 libsqlite3-dev
+        bundle install --jobs 4
+        bundle exec rspec
+
