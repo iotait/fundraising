@@ -9,6 +9,7 @@ gem "jquery-rails"
 gem "turbolinks"
 gem "bootsnap", require: false
 gem "webpacker"
+gem "devise"
 
 group :development do
   gem "listen"
