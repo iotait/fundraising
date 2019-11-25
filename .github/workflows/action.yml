@@ -17,7 +17,7 @@ jobs:
         
     - name: Run StandardRb
       run: |
-        bundle update --bundler
+        gem install bundler
         sudo apt-get install -y sqlite3 libsqlite3-dev
         sudo apt-get install libpq-dev
         bundle install --jobs 4
@@ -37,7 +37,7 @@ jobs:
         
     - name: Run specs
       run: |
-        bundle update --bundler
+        gem install bundler
         sudo apt-get install libpq-dev
         sudo apt-get install -y sqlite3 libsqlite3-dev
         bundle install --jobs 4
