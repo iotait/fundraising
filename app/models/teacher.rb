@@ -1,6 +1,10 @@
-class Teacher < ApplicationRecord
+class Teacher < User
   has_many :students
   belongs_to :school
+
+  validates :school_id, presence: true
+  validates :phone, presence: true
+  validates :goal, presence: true
 
   def sum
     sum = 0.0

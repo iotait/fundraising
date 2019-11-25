@@ -3,7 +3,7 @@
 <%= link_to "Add a new student", new_student_path %>
 
 <ul class="students">
-    <% @students.each do |student| %>
+  <% @students.each do |student| %>
     <a href ="/students/<%= student.id %>"><li>Student with ID: <%= student.id %> -- <%= student.name %></li></a>
-    <% end %>
+  <% end %>
 </ul>

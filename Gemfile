@@ -17,12 +17,14 @@ end
 
 group :development, :test do
   gem "pry"
-  require "pry"
   gem "launchy"
   gem "rspec-rails"
+  gem "guard-rspec", require: false
   gem "standard"
 end
 
 group :test do
   gem "capybara"
+  gem "shoulda-matchers"
+  gem "factory_bot_rails"
 end
