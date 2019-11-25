@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root "static_pages#home"
   get "static_pages/about"
-  resources :donations, only: [:index, :new, :create]
-  resources :students, only: [:index, :new, :create, :show]
-  resources :teachers, only: [:index, :new, :create, :show]
-  resources :schools, only: [:index, :new, :create, :show]
-  resources :admins, only: [:index, :new, :create, :show]
+  resources :donations, only: [:index, :new, :create, :show]
+  resources :students
+  resources :teachers
+  resources :schools
+  resources :admins
 end

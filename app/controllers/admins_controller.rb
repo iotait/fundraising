@@ -1,22 +1,43 @@
 class AdminsController < ApplicationController
-  before_action :set_admin, only: [:show]
+  before_action :set_admin, only: [:show, :edit, :update]
   before_action :set_schools, only: [:show]
 
+  # GET /admins
   def index
     @admins = Admin.all
-    render :index
   end
 
+  # GET /admins/1
   def show
   end
 
+  # GET /admins/new
   def new
     @admin = Admin.new
-    render :new
   end
 
+  # GET /admins/1/edit
+  def edit
+  end
+
+  # POST /admins
   def create
     Admin.create(admin_params)
+    redirect_to admins_path
+  end
+
+  # PATCH/PUT /admins/1
+  def update
+    if @admin.update(admin_params)
+      redirect_to admins_path
+    else
+      render :edit
+    end
+  end
+
+  # DELETE /admins/1
+  def destroy
+    @admin.destroy
     redirect_to admins_path
   end
 
