@@ -1,5 +1,6 @@
 class SchoolsController < ApplicationController
   before_action :set_school, only: [:show]
+  before_action :set_teachers, only: [:show]
 
   def index
     @schools = School.all
@@ -21,6 +22,10 @@ class SchoolsController < ApplicationController
 
   def set_school
     @school = School.find(params[:id])
+  end
+
+  def set_teachers
+    @teachers = Teacher.where(school_id: @school.id)
   end
 
   def school_params

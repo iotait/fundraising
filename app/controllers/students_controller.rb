@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show]
+  before_action :set_donations, only: [:show]
 
   def index
     @students = Student.all
@@ -21,6 +22,10 @@ class StudentsController < ApplicationController
 
   def set_student
     @student = Student.find(params[:id])
+  end
+
+  def set_donations
+    @donations = Donation.where(student_id: @student.id)
   end
 
   def student_params

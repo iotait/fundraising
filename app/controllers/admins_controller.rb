@@ -1,5 +1,6 @@
 class AdminsController < ApplicationController
   before_action :set_admin, only: [:show]
+  before_action :set_schools, only: [:show]
 
   def index
     @admins = Admin.all
@@ -23,6 +24,10 @@ class AdminsController < ApplicationController
 
   def set_admin
     @admin = Admin.find(params[:id])
+  end
+
+  def set_schools
+    @schools = School.where(admin_id: @admin.id)
   end
 
   def admin_params
