@@ -26,8 +26,8 @@ class TeachersController < ApplicationController
     redirect_to teachers_path
   end
 
-   # PATCH/PUT /teachers/1
-   def update
+  # PATCH/PUT /teachers/1
+  def update
     if @teacher.update(teachers_path)
       redirect_to teachers_path
     else
