@@ -1,0 +1,21 @@
+<% provide(:title, "Students") %>
+<h1>Editing Student</h1>
+
+<%= form_for @student do |form| %>
+    <%= form.label :teacher_id %>
+    <%= form.text_field :teacher_id %>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+    <%= form.label :about %>
+    <%= form.text_field :about %>
+    <%= form.label :goal %>
+    <%= form.text_field :goal %>
+    <%= form.submit "Submit" %>
+<% end %>
+
+<%= link_to 'Show', @student %> |
+<%= link_to 'Back', students_path %>
