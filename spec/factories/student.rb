@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :student do
-    first_name { "Billy" }
-    last_name { "Jack" }
-    email { "bjack@gmail.com" }
-    about { "I want to help my school's drive" }
-    goal { 200 }
+    first_name { "student" }
+    sequence(:last_name) { |n| n.to_s }
+    sequence(:email) { |n| "student#{n}@test.com" }
+    password { "password" }
 
-    association :teacher
+    association :school
+    # association :teacher
 
     factory :student_with_donation do
       after(:create) do |student|

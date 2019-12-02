@@ -3,8 +3,6 @@ class Teacher < User
   belongs_to :school
 
   validates :school_id, presence: true
-  validates :phone, presence: true
-  validates :goal, presence: true
 
   def sum
     sum = 0.0

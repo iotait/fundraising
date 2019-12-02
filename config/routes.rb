@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root "static_pages#home"
-  get "static_pages/about"
-  resources :donations, only: [:index, :new, :create, :show]
-  resources :students
-  resources :teachers
-  resources :schools
-  resources :admins
+  devise_for :users, controllers: {registrations: "registrations"}
+  root "dashboard#index"
+  get "dashboard/about"
+  get "dashboard/user"
+  resources :donations, only: [:new, :create]
+  resources :students, only: [:show, :new, :create, :destroy]
+  # resources :teachers
+  resources :schools, only: [:show, :new, :edit, :create, :update, :destroy]
 end

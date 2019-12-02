@@ -10,7 +10,16 @@ describe User do
   describe "name" do
     it "joins first and last name together" do
       user = FactoryBot.create(:user)
-      expect(user.name).to eq "User Bob"
+      expect(user.name).to eq user.first_name + " " + user.last_name
+    end
+  end
+
+  describe "creating a new user" do
+    it "validates the uniqueness of email" do
+      original = FactoryBot.create(:user, email: "test@test.com")
+      duplicate = FactoryBot.build(:user, email: original.email)
+      duplicate.valid?
+      expect(duplicate.errors[:email]).to include "has already been taken"
     end
   end
 end

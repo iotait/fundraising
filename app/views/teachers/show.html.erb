@@ -1,6 +1,10 @@
 <% provide(:h1, @teacher.name) %>
 
 <p>
+  <a href = "/teachers/<%= @teacher.id %>/edit">Edit my profile</a>
+</p>
+
+<p>
   <strong>Goal:</strong>
   <%= dollar_format(@teacher.goal) %>
 </p>
@@ -10,9 +14,11 @@
   <%= dollar_format(@teacher.sum) %>
 </p>
 
-<h3><%= @teacher.name%>'s class:</h3>
+<h3>My class:</h3>
 <ul class="students">
   <% @students.each do |student| %>
-    <a href ="/students/<%= student.id %>"><li><%= student.name %>: <%= dollar_format(student.sum) %></li></a>
+    <li><a href ="/students/<%= student.id %>"><%= student.name %>: <%= dollar_format(student.sum) %></a> <a href = "/students/<%= student.id %>/edit">Edit</a></li>
   <% end %>
 </ul>
+
+<a href = "/students/new">Add a student</a>

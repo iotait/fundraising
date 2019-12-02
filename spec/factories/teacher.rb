@@ -5,6 +5,7 @@ FactoryBot.define do
     email { "Sue@gmail.com" }
     phone { "5403212345" }
     goal { 200 }
+    password { "password" }
 
     association :school
 
