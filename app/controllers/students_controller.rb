@@ -2,11 +2,6 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :set_donations, only: [:show]
 
-  # GET /students
-  def index
-    @students = Student.all
-  end
-
   # GET /students/1
   def show
   end
@@ -23,13 +18,13 @@ class StudentsController < ApplicationController
   # POST /students
   def create
     Student.create(student_params)
-    redirect_to students_path
+    redirect_to "/"
   end
 
   # PATCH/PUT /students/1
   def update
     if @student.update(student_params)
-      redirect_to students_path
+      redirect_to "/"
     else
       render :edit
     end
@@ -38,7 +33,7 @@ class StudentsController < ApplicationController
   # DELETE /students/1
   def destroy
     @student.destroy
-    redirect_to students_path
+    redirect_to "/"
   end
 
   private
@@ -52,6 +47,6 @@ class StudentsController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:teacher_id, :first_name, :last_name, :email, :about, :goal)
+    params.require(:student).permit(:school_id, :first_name, :last_name, :email, :about, :goal, :password) #:teacher_id
   end
 end

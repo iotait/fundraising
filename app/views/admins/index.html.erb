@@ -1,9 +1,0 @@
-<% provide(:h1, "Admins") %>
-<p>This is the admins page</p>
-<%= link_to "Add a new admin", new_admin_path %>
-
-<ul class="admins">
-    <% @admins.each do |admin| %>
-    <a href ="/admins/<%= admin.id %>"><li>Admin with ID: <%= admin.id %> -- <%= admin.name %></li></a>
-    <% end %>
-</ul>

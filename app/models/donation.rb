@@ -3,6 +3,5 @@ class Donation < ApplicationRecord
 
   validates :amount, presence: true
   validates :donor, presence: true
-  validates :message, presence: true
   validates :student_id, presence: true
 end

@@ -1,9 +1,0 @@
-<% provide(:h1, "Donations") %>
-<p>This is the donations page for public school's walk-a-thon fundraiser</p>
-<%= link_to "Add a new donation", new_donation_path %>
-
-<ul class="donations">
-    <% @donations.each do |donation| %>
-      <li><%= donation.donor %> donated <%= dollar_format(donation.amount) %></li>
-    <% end %>
-</ul>

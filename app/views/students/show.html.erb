@@ -1,14 +1,10 @@
 <% provide(:h1, @student.name) %>
 
-<p>
-  <strong>Goal:</strong>
-  <%= dollar_format(@student.goal) %>
-</p>
+<% if !@student.about.blank?%>
+  <p><%= @student.about %></p>
+<% end %>
 
-<p>
-  <strong>Total Sum:</strong>
-  <%= dollar_format(@student.sum) %>
-</p>
+<p> <strong><%= @student.name %>'s Sum:</strong> <%= dollar_format(@student.sum) %> </p>
 
 <h3>Donations made to <%= @student.name%>:</h3>
 <ul class="donations">
