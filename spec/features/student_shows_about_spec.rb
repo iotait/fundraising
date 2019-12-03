@@ -2,13 +2,8 @@ require "rails_helper"
 
 feature "student shows" do
   scenario "about section when present" do
-    admin = FactoryBot.create(:admin)
     student = FactoryBot.create(:student, about: "We want desks!")
-    visit "/users/sign_in"
-
-    fill_in "Email", with: admin.email
-    fill_in "Password", with: admin.password
-    click_on "Log in"
+    sign_in FactoryBot.create(:admin)
 
     visit "/students/" + student.id.to_s
 
@@ -16,13 +11,8 @@ feature "student shows" do
   end
 
   scenario "no about section when absent" do
-    admin = FactoryBot.create(:admin)
     student = FactoryBot.create(:student)
-    visit "/users/sign_in"
-
-    fill_in "Email", with: admin.email
-    fill_in "Password", with: admin.password
-    click_on "Log in"
+    sign_in FactoryBot.create(:admin)
 
     visit "/students/" + student.id.to_s
 
