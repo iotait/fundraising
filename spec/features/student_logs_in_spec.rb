@@ -2,15 +2,7 @@ require "rails_helper"
 
 feature "Student logs in" do
   scenario "successfully" do
-    student = FactoryBot.create(:student)
-    visit "/users/sign_in"
-
-    click_on "Log in"
-    fill_in "Email", with: student.email
-    fill_in "Password", with: student.password
-    click_on "Log in"
-
-    expect(page).to have_css "h2", text: student.name
+    sign_in FactoryBot.create(:student)
   end
 
   scenario "unsuccessfully" do
