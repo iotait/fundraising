@@ -1,6 +1,6 @@
 <% provide(:h1, @school.name) %>
 
-<% if !@school.about.blank?%>
+<% if @school.about.present?%>
   <p><%= @school.about %></p>
 <% end %>
 

@@ -3,7 +3,7 @@ require "rails_helper"
 feature "Student logs in" do
   scenario "successfully" do
     student = FactoryBot.create(:student)
-    visit "/"
+    visit "/users/sign_in"
 
     click_on "Log in"
     fill_in "Email", with: student.email
@@ -14,7 +14,7 @@ feature "Student logs in" do
   end
 
   scenario "unsuccessfully" do
-    visit "/"
+    visit "/users/sign_in"
 
     click_on "Log in"
     fill_in "Email", with: "email"

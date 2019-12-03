@@ -1,6 +1,6 @@
 module ApplicationHelper
   def dollar_format(value)
-    unless value.blank?
+    if value.present?
       return "$%.2f" % value
     end
     "$%.2f" % 0.0
