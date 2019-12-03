@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "User signs up" do
   scenario "and is redirected to add a school" do
-    visit "/"
+    visit "/users/sign_in"
 
     click_on "Sign up"
     fill_in "First name", with: "User"

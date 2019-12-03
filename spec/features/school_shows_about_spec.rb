@@ -4,7 +4,7 @@ feature "School shows" do
   scenario "about section when present" do
     admin = FactoryBot.create(:admin)
     school = FactoryBot.create(:school, about: "We want desks!")
-    visit "/"
+    visit "/users/sign_in"
 
     fill_in "Email", with: admin.email
     fill_in "Password", with: admin.password
@@ -18,7 +18,7 @@ feature "School shows" do
   scenario "no about section when absent" do
     admin = FactoryBot.create(:admin)
     school = FactoryBot.create(:school)
-    visit "/"
+    visit "/users/sign_in"
 
     fill_in "Email", with: admin.email
     fill_in "Password", with: admin.password

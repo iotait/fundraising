@@ -3,7 +3,7 @@ require "rails_helper"
 feature "Admin logs in" do
   scenario "successfully" do
     admin = FactoryBot.create(:admin)
-    visit "/"
+    visit "/users/sign_in"
 
     click_on "Log in"
     fill_in "Email", with: admin.email
@@ -14,7 +14,7 @@ feature "Admin logs in" do
   end
 
   scenario "unsuccessfully" do
-    visit "/"
+    visit "/users/sign_in"
 
     click_on "Log in"
     fill_in "Email", with: "email"

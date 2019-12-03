@@ -16,7 +16,7 @@ class SchoolsController < ApplicationController
 
   # POST /schools
   def create
-    School.create(school_params)
+    School.create(school_params.merge(admin: current_user))
     redirect_to "/"
   end
 
