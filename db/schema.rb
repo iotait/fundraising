@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_155913) do
+ActiveRecord::Schema.define(version: 2019_12_04_184808) do
 
   create_table "donations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -24,9 +24,6 @@ ActiveRecord::Schema.define(version: 2019_11_27_155913) do
 
   create_table "schools", force: :cascade do |t|
     t.string "name"
-    t.string "email"
-    t.string "phone"
-    t.string "address"
     t.string "about"
     t.float "goal"
     t.datetime "created_at", precision: 6, null: false
@@ -40,18 +37,15 @@ ActiveRecord::Schema.define(version: 2019_11_27_155913) do
     t.string "first_name"
     t.string "last_name"
     t.string "phone"
-    t.string "goal"
     t.string "about"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "school_id"
-    t.integer "teacher_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "admin_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
