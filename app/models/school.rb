@@ -9,7 +9,7 @@ class School < ApplicationRecord
 
   def sum
     sum = 0.0
-    Student.where(school_id: id).each do |student|
+    students.each do |student|
       sum += student.sum
     end
     sum
