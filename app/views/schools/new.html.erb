@@ -2,7 +2,9 @@
 <%= form_for @school do |form| %>
     <%= form.label :name %>
     <%= form.text_field :name %>
-    <%= form.label :email%>
-    <%= form.text_field :email%>
+    <%= form.label :about%>
+    <%= form.text_field :about%>
+    <%= form.label :goal %>
+    <%= form.text_field :goal %>
     <%= form.submit "Submit" %>
 <% end %>

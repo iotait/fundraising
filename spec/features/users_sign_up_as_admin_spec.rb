@@ -12,7 +12,6 @@ feature "User signs up" do
     click_on "Sign up"
 
     fill_in "Name", with: "xyz"
-    fill_in "Email", with: "xyz@example.com"
     click_on "Submit"
 
     visit "/dashboard/user"

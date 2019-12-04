@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :school do
     sequence(:name) { |n| "school #{n}" }
-    sequence(:email) { |n| "school#{n}@test.com" }
 
     association :admin
 
