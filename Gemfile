@@ -22,6 +22,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "guard-rspec", require: false
   gem "standard"
+  gem "simplecov", require: false
 end
 
 group :test do
