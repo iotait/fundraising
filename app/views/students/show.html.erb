@@ -8,7 +8,7 @@
 
 <h3>Donations made to <%= @student.name%>:</h3>
 <ul class="donations">
-  <% @donations.each do |donation| %>
+  <% @student.donations.each do |donation| %>
     <li>From <%= donation.donor %>: <%= dollar_format(donation.amount) %></li>
     <ul><li><%= donation.donor %> says: <%= donation.message %></li></ul>
   <% end %>
