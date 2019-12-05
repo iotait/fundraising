@@ -4,7 +4,6 @@ describe School do
   describe "associations" do
     it { should belong_to(:admin).class_name("Admin") }
     it { should have_many(:students).class_name("Student") }
-    # it { should have_many(:teachers).class_name("Teacher") }
   end
 
   describe "validations" do
