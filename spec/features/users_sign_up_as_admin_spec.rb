@@ -14,7 +14,7 @@ feature "User signs up" do
     fill_in "Name", with: "xyz"
     click_on "Submit"
 
-    visit "/dashboard/user"
+    visit "/admins/dashboard"
 
     expect(page).to have_css "h2", text: "Admin"
   end

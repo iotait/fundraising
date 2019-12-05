@@ -20,7 +20,7 @@
     <a href="/">Home</a>
     <a href="/dashboard/about">About</a>
     <% if user_signed_in? %>
-      <%= link_to "Dashboard", "/dashboard/user" %>
+      <%= link_to "Dashboard", "/" + current_user.type.downcase.pluralize + "/dashboard" %>
     <% end %>
   </div>
 

@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    "/dashboard/user"
+    "/"
+  end
+
+  def authenticate_admin!
+    unless current_user.is_a?(Admin)
+      redirect_to "/"
+    end
   end
 end

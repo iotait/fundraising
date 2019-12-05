@@ -1,0 +1,16 @@
+<% provide(:h1, "Dashboard") %>
+
+<h2> Hello, Admin: <%= current_user.name %></h2>
+
+<% if current_user.school.nil? %>
+  <p>You first need to add a school! <a href = "/schools/new">Add a school</a></p>
+<% else %>
+  <p><a href = "/users/edit">Edit my account</a></p>
+  <p><a href = "/schools/<%= current_user.school.id %>/edit">Edit my school</a></p>
+  <p><a href = "/students/new">Add a student</a></p>
+  <p>Add all students through csv:</p>
+  <%= form_tag import_students_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+<% end %>

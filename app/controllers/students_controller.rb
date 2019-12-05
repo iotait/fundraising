@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:new, :create, :import]
 
   # GET /students/1
   def show
@@ -16,7 +17,7 @@ class StudentsController < ApplicationController
 
   # POST /students
   def create
-    Student.create(student_params)
+    Student.create(student_params.merge(school: current_user.school))
     redirect_to "/"
   end
 
@@ -32,6 +33,11 @@ class StudentsController < ApplicationController
   # DELETE /students/1
   def destroy
     @student.destroy
+    redirect_to "/"
+  end
+
+  def import
+    Student.import(params[:file], current_user.school.id)
     redirect_to "/"
   end
 
