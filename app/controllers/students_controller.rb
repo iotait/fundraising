@@ -41,6 +41,9 @@ class StudentsController < ApplicationController
     redirect_to "/"
   end
 
+  def dashboard
+  end
+
   private
 
   def set_student
