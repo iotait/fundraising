@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "User signs up" do
+feature "Admin signs up" do
   scenario "and is redirected to add a school" do
     visit "/users/sign_in"
 
