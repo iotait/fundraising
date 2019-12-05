@@ -3,12 +3,4 @@ class AdminsController < ApplicationController
 
   def dashboard
   end
-
-  protected
-
-  def authenticate_admin!
-    unless current_user.is_a?(Admin)
-      redirect_to "/"
-    end
-  end
 end

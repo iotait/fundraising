@@ -8,4 +8,9 @@
   <p><a href = "/users/edit">Edit my account</a></p>
   <p><a href = "/schools/<%= current_user.school.id %>/edit">Edit my school</a></p>
   <p><a href = "/students/new">Add a student</a></p>
+  <p>Add all students through csv:</p>
+  <%= form_tag import_students_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
 <% end %>

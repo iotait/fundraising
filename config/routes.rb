@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "dashboard/about"
   get "admins/dashboard"
   resources :donations, only: [:new, :create]
-  resources :students, only: [:show, :new, :create, :destroy]
+  resources :students, only: [:show, :new, :create, :destroy] do
+    collection { post :import }
+  end
   resources :schools, only: [:show, :new, :edit, :create, :update, :destroy]
 end
