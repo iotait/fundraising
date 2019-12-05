@@ -1,9 +1,0 @@
-<% provide(:h1, "Teachers") %>
-<p>This is the teachers page for public school's walk-a-thon fundraiser</p>
-<%= link_to "Add a new teacher", new_teacher_path %>
-
-<ul class="teachers">
-  <% @teachers.each do |teacher| %>
-    <a href ="/teachers/<%= teacher.id %>"><li>Teacher with ID: <%= teacher.id %> -- <%= teacher.name %></li></a>
-  <% end %>
-</ul>
