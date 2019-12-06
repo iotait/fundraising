@@ -27,7 +27,7 @@ describe Student do
 
   describe "minutes read" do
     it "equals zero when a student starts" do
-      student = FactoryBot.create(:student)
+      student = FactoryBot.build_stubbed(:student)
 
       expect(student.mins_read).to eq 0
     end

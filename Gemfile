@@ -10,6 +10,7 @@ gem "turbolinks"
 gem "bootsnap", require: false
 gem "webpacker"
 gem "devise"
+gem "bootstrap"
 
 group :development do
   gem "listen"
@@ -18,6 +19,7 @@ end
 
 group :development, :test do
   gem "pry"
+  gem "pry-byebug"
   gem "launchy"
   gem "rspec-rails"
   gem "guard-rspec", require: false

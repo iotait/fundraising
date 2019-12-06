@@ -37,7 +37,12 @@ class StudentsController < ApplicationController
   end
 
   def import
-    Student.import(params[:file])
+    begin
+      Student.import(params[:file])
+      flash[:success] = "Students imported!"
+    rescue
+      flash[:error] = "Sorry we failed to import all the students!"
+    end
     redirect_to "/"
   end
 
