@@ -23,7 +23,7 @@ FactoryBot.define do
           create(:student, teacher: teacher)
         end
       end
- 
+
       factory :teacher_with_student_and_donation do
         after(:create) do |teacher|
           create(:student_with_donation, teacher: teacher)

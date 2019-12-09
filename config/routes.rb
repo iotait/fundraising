@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   resources :students, only: [:show, :new, :create, :destroy] do
     collection { post :import }
   end
-  resources :teachers, only: [:new, :edit, :create, :update, :destroy]
+  resources :teachers, only: [:new, :edit, :create, :update, :destroy] do
+    collection { post :import }
+  end
 end

@@ -1,6 +1,5 @@
 class RemoveColumnsFromUsers < ActiveRecord::Migration[6.0]
   def change
-
     remove_column :users, :invitation_token, :string
 
     remove_column :users, :invitation_created_at, :datetime

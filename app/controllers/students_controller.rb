@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
 
   # POST /students
   def create
-    Student.create(student_params) #.merge(school: current_user.school)
+    Student.create(student_params) # .merge(school: current_user.school)
     redirect_to "/"
   end
 

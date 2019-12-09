@@ -31,6 +31,11 @@ class TeachersController < ApplicationController
     redirect_to "/"
   end
 
+  def import
+    Teacher.import(params[:file], current_user.school.id)
+    redirect_to "/"
+  end
+
   private
 
   def set_teacher
