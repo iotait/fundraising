@@ -13,13 +13,6 @@
     <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
   </div>
 
-  <% if current_user.type == "Admin"%>
-    <div class="field">
-      <%= f.label :phone %><br />
-      <%= f.phone_field :phone, autofocus: true, autocomplete: "phone" %>
-    </div>
-  <% end %>
-
   <% if current_user.type == "Student"%>
     <div class="field">
       <%= f.label :about %><br />
