@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
 
   # POST /students
   def create
-    Student.create(student_params.merge(school: current_user.school))
+    Student.create(student_params) # .merge(school: current_user.school)
     redirect_to "/"
   end
 
@@ -37,7 +37,7 @@ class StudentsController < ApplicationController
   end
 
   def import
-    Student.import(params[:file], current_user.school.id)
+    Student.import(params[:file])
     redirect_to "/"
   end
 
@@ -48,6 +48,6 @@ class StudentsController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:school_id, :first_name, :last_name, :email, :about, :password)
+    params.require(:student).permit(:teacher_id, :first_name, :last_name, :email, :about, :password)
   end
 end

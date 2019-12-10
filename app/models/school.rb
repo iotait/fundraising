@@ -1,14 +1,15 @@
 class School < ApplicationRecord
-  has_many :students
   belongs_to :admin
+  has_many :teachers
+  has_many :students, through: :teachers
 
   validates :admin_id, presence: true
   validates :name, presence: true
 
   def sum
     sum = 0.0
-    students.each do |student|
-      sum += student.sum
+    teachers.each do |teacher|
+      sum += teacher.sum
     end
     sum
   end

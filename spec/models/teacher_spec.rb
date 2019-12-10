@@ -1,9 +1,9 @@
 require "rails_helper"
 
-describe Student do
+describe Teacher do
   describe "associations" do
-    it { should belong_to(:teacher).class_name("Teacher") }
-    it { should have_many(:donations).class_name("Donation") }
+    it { should belong_to(:school).class_name("School") }
+    it { should have_many(:students).class_name("Student") }
   end
 
   describe "validations" do
@@ -14,14 +14,13 @@ describe Student do
 
   describe "calculating sum" do
     it "adds donations to get the sum" do
-      student = FactoryBot.create(:student_with_donation)
-
-      expect(student.sum).to eq 100
+      teacher = FactoryBot.create(:teacher_with_student_and_donation)
+      expect(teacher.sum).to eq 100
     end
 
     it "sums zero when no donations have been made" do
-      student = FactoryBot.create(:student)
-      expect(student.sum).to eq 0.0
+      teacher = FactoryBot.create(:teacher_with_student)
+      expect(teacher.sum).to eq 0.0
     end
   end
 end

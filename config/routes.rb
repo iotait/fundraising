@@ -3,9 +3,13 @@ Rails.application.routes.draw do
   root "dashboard#index"
   get "dashboard/about"
   get "admins/dashboard"
+  get "teachers/dashboard"
   resources :donations, only: [:new, :create]
+  resources :schools, only: [:show, :new, :edit, :create, :update, :destroy]
   resources :students, only: [:show, :new, :create, :destroy] do
     collection { post :import }
   end
-  resources :schools, only: [:show, :new, :edit, :create, :update, :destroy]
+  resources :teachers, only: [:new, :edit, :create, :update, :destroy] do
+    collection { post :import }
+  end
 end
