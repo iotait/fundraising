@@ -19,4 +19,10 @@ class Teacher < User
       Teacher.create! row.to_hash
     end
   end
+
+  def increase_mins_read(minutes)
+    students.each do |student|
+      student.increase_mins_read(minutes)
+    end
+  end
 end
