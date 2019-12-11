@@ -1,4 +1,6 @@
 class Student < User
+  after_initialize :init
+
   require "csv"
   has_many :donations
   belongs_to :teacher
@@ -17,6 +19,15 @@ class Student < User
     CSV.foreach(file.path, headers: true) do |row|
       Student.create! row.to_hash
     end
+  end
+
+  def increase_mins_read(minutes)
+    self.mins_read += minutes
+    save
+  end
+
+  def init
+    self.mins_read ||= 0
   end
 
   # def self.import(file, school_id)
