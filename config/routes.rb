@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :teachers, only: [:new, :edit, :create, :update, :destroy] do
     collection { post :import }
   end
+  resources :reading_sessions, only: [:new, :edit, :create, :update, :destroy]
 end

@@ -3,6 +3,7 @@ class Student < User
 
   require "csv"
   has_many :donations
+  has_many :reading_sessions
   belongs_to :teacher
 
   validates :teacher_id, presence: true
@@ -21,9 +22,12 @@ class Student < User
     end
   end
 
-  def increase_mins_read(minutes)
-    self.mins_read += minutes
-    save
+  def mins_read
+    time = 0
+    reading_sessions.each do |session|
+      time += session.time
+    end
+    time
   end
 
   def init
