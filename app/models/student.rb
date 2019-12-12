@@ -3,6 +3,7 @@ class Student < User
 
   require "csv"
   has_many :donations
+  has_many :reading_sessions
   belongs_to :teacher
 
   validates :teacher_id, presence: true
