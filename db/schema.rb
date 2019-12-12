@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_130658) do
+ActiveRecord::Schema.define(version: 2019_12_12_181611) do
 
   create_table "donations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 2019_12_11_130658) do
     t.integer "student_id"
     t.string "message"
     t.index ["student_id"], name: "index_student_id"
+  end
+
+  create_table "reading_sessions", force: :cascade do |t|
+    t.integer "time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "student_id"
+    t.index ["student_id"], name: "index_reading_sessions_on_student_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -36,17 +44,15 @@ ActiveRecord::Schema.define(version: 2019_12_11_130658) do
     t.string "type"
     t.string "first_name"
     t.string "last_name"
-    t.string "about"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "school_id"
+    t.integer "teacher_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "teacher_id"
-    t.integer "mins_read"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

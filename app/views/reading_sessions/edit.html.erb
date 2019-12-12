@@ -1,0 +1,8 @@
+<% provide(:title, "Reading Session") %>
+<h1>Editing Reading Session</h1>
+
+<%= form_for @reading_session do |form| %>
+    <%= form.label :time%>
+    <%= form.time_field :time%>
+    <%= form.submit "Submit" %>
+<% end %>
