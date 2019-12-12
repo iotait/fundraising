@@ -13,6 +13,12 @@ FactoryBot.define do
           create(:donation, student: student)
         end
       end
+
+      factory :student_with_reading_session do
+        after(:create) do |student|
+          create(:reading_session, student: student)
+        end
+      end
     end
 
     factory :teacher, class: Teacher, parent: :user do

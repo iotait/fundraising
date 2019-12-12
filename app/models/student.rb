@@ -22,9 +22,12 @@ class Student < User
     end
   end
 
-  def increase_mins_read(minutes)
-    self.mins_read += minutes
-    save
+  def mins_read
+    time = 0
+    reading_sessions.each do |session|
+      time += session.time
+    end
+    time
   end
 
   def init

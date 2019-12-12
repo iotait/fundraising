@@ -33,13 +33,13 @@ describe Student do
     end
 
     it "equals ten when the student adds ten" do
-      student = FactoryBot.create(:student)
-      student.increase_mins_read(10)
+      student = FactoryBot.create(:student_with_reading_session)
+      student.reload
 
       expect(student.mins_read).to eq 10
     end
 
-    it "equals ten when the teacher adds ten" do
+    xit "equals ten when the teacher adds ten" do
       teacher = FactoryBot.create(:teacher)
       student = FactoryBot.create(:student, teacher_id: teacher.id)
       teacher.increase_mins_read(10)
