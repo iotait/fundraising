@@ -1,13 +1,12 @@
 class ReadingSessionsController < ApplicationController
   before_action :set_reading_session, only: [:edit, :update, :destroy]
-  
   def new
     @reading_session = ReadingSession.new
   end
 
   def edit
   end
-  
+
   def create
     ReadingSession.create(reading_session_params)
   end
