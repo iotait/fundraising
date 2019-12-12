@@ -20,9 +20,13 @@ class Teacher < User
     end
   end
 
-  def increase_mins_read(minutes)
-    students.each do |student|
-      student.increase_mins_read(minutes)
+  def add_reading_session(time, student_id)
+    ReadingSession.create!(student_id: student_id, time: time)
+  end
+
+  def add_reading_session_for_class(time, student_ids)
+    student_ids.each do |student_id|
+      add_reading_session(time, student_id)
     end
   end
 end

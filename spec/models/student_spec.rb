@@ -39,10 +39,21 @@ describe Student do
       expect(student.mins_read).to eq 10
     end
 
-    xit "equals ten when the teacher adds ten" do
+    it "equals ten when the teacher adds ten for just the student" do
       teacher = FactoryBot.create(:teacher)
       student = FactoryBot.create(:student, teacher_id: teacher.id)
-      teacher.increase_mins_read(10)
+      teacher.add_reading_session(10, student.id)
+      student.reload
+
+      expect(student.mins_read).to eq 10
+    end
+
+    it "equals ten when the teacher adds ten for the whole class" do
+      teacher = FactoryBot.create(:teacher)
+      student = FactoryBot.create(:student, teacher_id: teacher.id)
+      student_ids = []
+      student_ids << student.id
+      teacher.add_reading_session_for_class(10, student_ids)
       student.reload
 
       expect(student.mins_read).to eq 10
