@@ -1,6 +1,17 @@
 <% provide(:h1, "Dashboard") %>
 
-<h2> Hello, Teacher: <%= current_user.name %></h2>
+<div class="d-flex py-1">
+  <h2> Welcome back <%= @teacher.first_name %></h2>
+  <a class="ml-auto" href="/users/edit">Edit my account</a>
+</div>
 
-<p><a href = "/users/edit">Edit my account</a></p>
-<p><a href = "/students/new">Add a student</a></p>
+<ul>
+  <% @teacher.students.each do |student| %>
+  <li>
+    <%= student.name %> -
+    <a href="/students/<%= student.id %>/dashboard"> Dash</a> |
+    <a href="/students<%= student.id %>/edit"> Edit</a> |
+    <a href="/reading_sessions/new/<%= student.id %>"> Add reading session</a>
+  </li>
+  <% end %>
+</ul>

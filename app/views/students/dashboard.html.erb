@@ -1,6 +1,6 @@
 <% provide(:h1, "Dashboard") %>
-<div class="d-flex">
-  <h2>Hello <%= current_user.name %>!</h2>
+<div class="d-flex py-3">
+  <h2>Hello <%= @student.name %>!</h2>
   <a class="ml-auto" href="/users/edit">Edit my account</a>
 </div>
 
@@ -11,7 +11,7 @@
         <img src="http://www.fancyhands.com/images/default-avatar-250x250.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
       </div>
       <div class="d-flex align-items-center mx-auto flex-column">
-        <div class="p-2" style="font-size: 1.4rem;font-weight: bold;"><%= current_user.name %>'s Sum: <%= dollar_format(current_user.sum) %></div>
+        <div class="p-2" style="font-size: 1.4rem;font-weight: bold;"><%= @student.name %>'s Sum: <%= dollar_format(@student.sum) %></div>
         <div class="p-2"><a href="/donations/new"><button type="button" class="btn btn-light btn-lg">Donate Now</button></a></div>
       </div>
     </div>
@@ -26,7 +26,7 @@
 <div class="row">
   <div class="col-md-6 col-sm-12">
     <h3 class="pb-1 pt-4">Donations:</h3>
-    <% current_user.donations.each do |donation| %>
+    <% @student.donations.each do |donation| %>
       <div class="media">
         <img src= <%= "https://dummyimage.com/60x60/000/ffffff&text=" + dollar_format(donation.amount) %> class="align-self-start mr-3" alt="img">
         <div class="media-body">
@@ -42,13 +42,13 @@
     <h3 class="pt-4">Reading Sessions:</h3>
     <a href="/reading_sessions/new">Add Reading Session</a>
     <ul>
-      <% current_user.reading_sessions.each do |session| %>
+      <% @student.reading_sessions.each do |session| %>
         <li>
-          <%= current_user.name + " read " + session.time.to_s + " minutes on " + session.created_at.to_s(:long_ordinal) %>
+          <%= @student.name + " read " + session.time.to_s + " minutes on " + session.created_at.to_s(:long_ordinal) %>
           <a href="/reading_sessions/<%= session.id %>/edit"> - Edit</a>
         </li>
       <% end %>
     </ul>
-    <div class="p-2 mb-2 bg-info text-white"><%= "Total minutes: " + current_user.mins_read.to_s %></div>
+    <div class="p-2 mb-2 bg-info text-white"><%= "Total time reading: " + to_hours_and_mins_s(@student.mins_read) %></div>
   </div>
 </div>

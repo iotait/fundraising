@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_student, only: [:show, :edit, :update, :destroy, :dashboard]
   before_action :authenticate_admin!, only: [:new, :create, :import]
 
   # GET /students/1

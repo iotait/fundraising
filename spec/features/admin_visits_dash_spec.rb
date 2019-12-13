@@ -9,7 +9,7 @@ feature "Admin visits dash and sees" do
     fill_in "Password", with: admin.password
     click_on "Log in"
 
-    visit "/admins/dashboard"
+    visit "/admins/" + admin.id.to_s + "/dashboard"
 
     expect(page).to have_css "p", text: "Add a school"
   end
@@ -23,8 +23,8 @@ feature "Admin visits dash and sees" do
     fill_in "Password", with: admin.password
     click_on "Log in"
 
-    visit "/admins/dashboard"
+    visit "/admins/" + admin.id.to_s + "/dashboard"
 
-    expect(page).to have_css "p", text: "Edit"
+    expect(page).not_to have_css "p", text: "Add a school"
   end
 end

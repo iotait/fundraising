@@ -1,24 +1,43 @@
 <% provide(:h1, "Dashboard") %>
 
-<h2> Hello, Admin: <%= current_user.name %></h2>
-
-<% if current_user.school.nil? %>
+<% if @admin.school.nil? %>
   <p>You first need to add a school! <a href = "/schools/new">Add a school</a></p>
-<% else %>
-  <p><a href = "/users/edit">Edit my account</a></p>
-  <p><a href = "/schools/<%= current_user.school.id %>/edit">Edit my school</a></p>
-  
-  <p><a href = "/teachers/new">Add a teacher</a></p>
-  <p>Add all teachers through csv:</p>
-  <%= form_tag import_teachers_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
-  <% end %>
+<% else %>  
+  <div class="d-flex py-1">
+    <h2> Welcome back <%= @admin.first_name %></h2>
+    <a class="ml-auto" href="/users/edit">Edit my account</a>
+  </div>
 
-  <p><a href = "/students/new">Add a student</a></p>
-  <p>Add all students through csv:</p>
-  <%= form_tag import_students_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
-  <% end %>
+  <div class="row bg-primary text-white pb-3 mb-3">
+    Today's Snapshot:
+  </div>
+
+  <div class="row bg-secondary text-white pb-3 mb-3">
+    What you need to do:
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 bg-light py-2 mb-2">
+      <h3>School</h3>
+      <a href = "/schools/<%= @admin.school.id %>/edit">Edit my school</a>
+    </div>
+    <div class="col-md-4 py-2 mb-2">
+      <h3>Teacher</h3>
+      <a href = "/teachers/new">Add a teacher</a>
+      <p>Add all teachers through csv:</p>
+      <%= form_tag import_teachers_path, multipart: true do %>
+        <input type="file" name="file" id="file" style="width:250px"></input>
+        <%= submit_tag "Import" %>
+      <% end %>
+    </div>
+    <div class="col-md-4 bg-light py-2 mb-2">
+      <h3>Student</h3>
+      <a href = "/students/new">Add a student</a>
+      <p>Add all students through csv:</p>
+      <%= form_tag import_students_path, multipart: true do %>
+        <input type="file" name="file" id="file" style="width:250px"></input>
+        <%= submit_tag "Import" %>
+      <% end %>
+    </div>
+  </div>
 <% end %>

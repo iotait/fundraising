@@ -1,7 +1,9 @@
 class ReadingSessionsController < ApplicationController
   before_action :set_reading_session, only: [:edit, :update, :destroy]
+
   def new
     @reading_session = ReadingSession.new
+    @reading_session.student_id = params[:id]
   end
 
   def edit
