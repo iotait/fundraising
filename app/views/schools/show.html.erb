@@ -9,10 +9,7 @@
       <span>Our goal is <%= dollar_format(@school.goal) %></span>
       <a href="/donations/new/School/<%= @school.id %>"><button type="button" class="btn btn-light btn-lg mt-4">Donate Now</button></a>
     </div>
-    <% if @school.about.present?%>
-      <p class="pt-5" style="font-weight: bold; text-decoration: underline;">How your support will help us:</p>
-      <p><%= @school.about %></p>
-    <% end %>
+    <p>School About</p>
   </div>
 </div>
 
