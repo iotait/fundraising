@@ -10,7 +10,7 @@ FactoryBot.define do
 
       factory :student_with_donation do
         after(:create) do |student|
-          create(:donation, student: student)
+          create(:donation, donatable: student)
         end
       end
 
@@ -35,9 +35,26 @@ FactoryBot.define do
           create(:student_with_donation, teacher: teacher)
         end
       end
+
+      factory :teacher_with_student_and_reading_session do
+        after(:create) do |teacher|
+          create(:student_with_reading_session, teacher: teacher)
+        end
+      end
     end
 
     factory :admin, class: Admin, parent: :user do
+      factory :admin_with_school_teacher_student_donation do
+        after(:create) do |admin|
+          create(:school_with_teacher_student_and_donation, admin: admin)
+        end
+      end
+
+      factory :admin_with_school_teacher_student_reading_session do
+        after(:create) do |admin|
+          create(:school_with_teacher_student_and_reading_session, admin: admin)
+        end
+      end
     end
   end
 end

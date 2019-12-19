@@ -1,11 +1,10 @@
-<% provide(:title, "Schools") %>
 <h1>Editing School</h1>
 
 <%= form_for @school do |form| %>
     <%= form.label :name %>
     <%= form.text_field :name %>
     <%= form.label :about %>
-    <%= form.text_field :about %>
+    <%= form.rich_text_area :about %>
     <%= form.label :goal %>
     <%= form.text_field :goal %>
     <%= form.submit "Submit" %>

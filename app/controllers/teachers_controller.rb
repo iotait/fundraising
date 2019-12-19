@@ -1,5 +1,5 @@
 class TeachersController < ApplicationController
-  before_action :set_teacher, only: [:edit, :update, :destroy]
+  before_action :set_teacher, only: [:edit, :update, :destroy, :dashboard]
 
   # GET /teachers/new
   def new
@@ -34,6 +34,9 @@ class TeachersController < ApplicationController
   def import
     Teacher.import(params[:file], current_user.school.id)
     redirect_to "/"
+  end
+
+  def dashboard
   end
 
   private

@@ -4,6 +4,6 @@ FactoryBot.define do
     donor { "Grandpa" }
     message { "I hope you meet your goal!" }
 
-    association :student
+    association :donatable
   end
 end

@@ -6,11 +6,7 @@ class Teacher < User
   validates :school_id, presence: true
 
   def sum
-    sum = 0.0
-    students.each do |student|
-      sum += student.sum
-    end
-    sum
+    students.to_a.inject(0) { |sum, student| sum + student.sum }
   end
 
   def self.import(file, school_id)

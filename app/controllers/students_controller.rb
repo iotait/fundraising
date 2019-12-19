@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_student, only: [:show, :edit, :update, :destroy, :dashboard]
   before_action :authenticate_admin!, only: [:new, :create, :import]
 
   # GET /students/1
@@ -37,8 +37,16 @@ class StudentsController < ApplicationController
   end
 
   def import
-    Student.import(params[:file])
+    begin
+      Student.import(params[:file])
+      flash[:success] = "Students imported!"
+    rescue
+      flash[:error] = "Sorry we failed to import all the students!"
+    end
     redirect_to "/"
+  end
+
+  def dashboard
   end
 
   private
@@ -48,6 +56,6 @@ class StudentsController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:teacher_id, :first_name, :last_name, :email, :about, :password, :mins_read)
+    params.require(:student).permit(:teacher_id, :first_name, :last_name, :email, :about, :password)
   end
 end

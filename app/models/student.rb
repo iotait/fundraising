@@ -1,20 +1,10 @@
 class Student < User
-  after_initialize :init
-
   require "csv"
-  has_many :donations
+  has_many :donations, as: :donatable
   has_many :reading_sessions
   belongs_to :teacher
 
   validates :teacher_id, presence: true
-
-  def sum
-    sum = 0.0
-    donations.each do |donation|
-      sum += donation.amount
-    end
-    sum
-  end
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
@@ -22,22 +12,19 @@ class Student < User
     end
   end
 
+  def sum
+    donations.to_a.inject(0) { |sum, donation| sum + donation.amount }
+  end
+
   def mins_read
+    reading_sessions.to_a.inject(0) { |time, session| time + session.time }
+  end
+
+  def mins_read_today
     time = 0
-    reading_sessions.each do |session|
+    reading_sessions.where(created_at: Date.today.all_day).each do |session|
       time += session.time
     end
     time
   end
-
-  def init
-    self.mins_read ||= 0
-  end
-
-  # def self.import(file, school_id)
-  #   CSV.foreach(file.path, headers: true) do |row|
-  #     row << {school_id: school_id}
-  #     Student.create! row.to_hash
-  #   end
-  # end
 end

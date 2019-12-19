@@ -1,41 +1,42 @@
-<% provide(:h1, "About") %>
-<h2>How much could you raise?</h2>
+<div class="container-fluid">
+  <h2>How much could you raise?</h2>
 
-Number of students:<br>
-<input id="numStudents"><br>
-Percent of participation:<br>
-<input id="participation" type="range" min="50" max="100" value="75"><p id="participation-amount"></p><br>
-Number of donors per student:<br>
-<input id="donors" type="range" min="1" max="25" value="5"><p id="donor-amount"></p>
-<button onclick="calculate()">Calculate</button>
-<h3 id="answer"></h3>
+  Number of students:<br>
+  <input id="numStudents"><br>
+  Percent of participation:<br>
+  <input id="participation" type="range" min="50" max="100" value="75"><p id="participation-amount"></p><br>
+  Number of donors per student:<br>
+  <input id="donors" type="range" min="1" max="25" value="5"><p id="donor-amount"></p>
+  <button onclick="calculate()">Calculate</button>
+  <h3 id="answer"></h3>
 
-<script>
-  //Update slider for participation
-  var participationSlider = document.getElementById("participation");
-  document.getElementById("participation-amount").innerHTML = participationSlider.value;
+  <script>
+    //Update slider for participation
+    var participationSlider = document.getElementById("participation");
+    document.getElementById("participation-amount").innerHTML = participationSlider.value;
 
-  participationSlider.oninput = function() {
-    document.getElementById("participation-amount").innerHTML = this.value;
-  }
-
-  //Update slider for donors per student
-  var donorSlider = document.getElementById("donors");
-  document.getElementById("donor-amount").innerHTML = donorSlider.value;
-
-  donorSlider.oninput = function() {
-    document.getElementById("donor-amount").innerHTML = this.value;
-  }
-
-  //Calculate the amount that could be raised
-  function calculate() {
-    var students = document.getElementById("numStudents").value;
-    var participants = document.getElementById("participation").value;
-    var donors = document.getElementById("donors").value;
-
-    var result = parseFloat(students) * (parseFloat(participants) / 100.0) * parseFloat(donors) * 25.70;
-    if (!isNaN(result)) {
-      document.getElementById("answer").innerHTML="You could raise $" + result.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    participationSlider.oninput = function() {
+      document.getElementById("participation-amount").innerHTML = this.value;
     }
-  }
-</script>
+
+    //Update slider for donors per student
+    var donorSlider = document.getElementById("donors");
+    document.getElementById("donor-amount").innerHTML = donorSlider.value;
+
+    donorSlider.oninput = function() {
+      document.getElementById("donor-amount").innerHTML = this.value;
+    }
+
+    //Calculate the amount that could be raised
+    function calculate() {
+      var students = document.getElementById("numStudents").value;
+      var participants = document.getElementById("participation").value;
+      var donors = document.getElementById("donors").value;
+
+      var result = parseFloat(students) * (parseFloat(participants) / 100.0) * parseFloat(donors) * 25.70;
+      if (!isNaN(result)) {
+        document.getElementById("answer").innerHTML="You could raise $" + result.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+      }
+    }
+  </script>
+</div>
