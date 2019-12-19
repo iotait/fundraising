@@ -1,7 +1,9 @@
 class ReadingSessionsController < ApplicationController
   before_action :set_reading_session, only: [:edit, :update, :destroy]
+
   def new
     @reading_session = ReadingSession.new
+    @reading_session.student_id = params[:id]
   end
 
   def edit
@@ -9,10 +11,12 @@ class ReadingSessionsController < ApplicationController
 
   def create
     ReadingSession.create(reading_session_params)
+    redirect_to "/"
   end
 
   def update
     if @reading_session.update(reading_session_params)
+      redirect_to "/"
     else
       render :edit
     end
@@ -20,6 +24,7 @@ class ReadingSessionsController < ApplicationController
 
   def destroy
     @reading_session.destroy
+    redirect_to "/"
   end
 
   private

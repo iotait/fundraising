@@ -1,7 +1,6 @@
 class Donation < ApplicationRecord
-  belongs_to :student
+  belongs_to :donatable, polymorphic: true
 
   validates :amount, presence: true
   validates :donor, presence: true
-  validates :student_id, presence: true
 end

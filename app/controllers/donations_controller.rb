@@ -2,6 +2,8 @@ class DonationsController < ApplicationController
   # GET /donations/new
   def new
     @donation = Donation.new
+    @donation.donatable_id = params[:id]
+    @donation.donatable_type = params[:type]
   end
 
   # POST /donations
@@ -13,6 +15,6 @@ class DonationsController < ApplicationController
   private
 
   def donation_params
-    params.require(:donation).permit(:student_id, :amount, :donor, :message)
+    params.require(:donation).permit(:donatable_type, :donatable_id, :amount, :donor, :message)
   end
 end
