@@ -22,7 +22,7 @@ class SchoolsController < ApplicationController
 
   # PATCH/PUT /schools/1
   def update
-    if @school.update(schools_path)
+    if @school.update(school_params)
       redirect_to "/"
     else
       render :edit
@@ -42,6 +42,6 @@ class SchoolsController < ApplicationController
   end
 
   def school_params
-    params.require(:school).permit(:admin_id, :name, :about, :goal)
+    params.require(:school).permit(:admin_id, :name, :goal, :about)
   end
 end

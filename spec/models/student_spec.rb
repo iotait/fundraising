@@ -4,6 +4,7 @@ describe Student do
   describe "associations" do
     it { should belong_to(:teacher).class_name("Teacher") }
     it { should have_many(:donations).class_name("Donation") }
+    it { should have_many(:reading_sessions).class_name("ReadingSession") }
   end
 
   describe "validations" do
@@ -13,14 +14,14 @@ describe Student do
   end
 
   describe "calculating sum" do
-    it "adds donations to get the sum" do
+    it "sums one hundred when a $100 donation has been made" do
       student = FactoryBot.create(:student_with_donation)
 
       expect(student.sum).to eq 100
     end
 
     it "sums zero when no donations have been made" do
-      student = FactoryBot.create(:student)
+      student = FactoryBot.build_stubbed(:student)
       expect(student.sum).to eq 0.0
     end
   end
@@ -34,29 +35,31 @@ describe Student do
 
     it "equals ten when the student adds ten" do
       student = FactoryBot.create(:student_with_reading_session)
-      student.reload
 
       expect(student.mins_read).to eq 10
     end
+  end
 
-    it "equals ten when the teacher adds ten for just the student" do
-      teacher = FactoryBot.create(:teacher)
-      student = FactoryBot.create(:student, teacher_id: teacher.id)
-      teacher.add_reading_session(10, student.id)
-      student.reload
+  describe "minutes read today" do
+    it "equals zero when a student hasn't read today" do
+      student = FactoryBot.build_stubbed(:student)
 
-      expect(student.mins_read).to eq 10
+      expect(student.mins_read_today).to eq 0
     end
 
-    it "equals ten when the teacher adds ten for the whole class" do
-      teacher = FactoryBot.create(:teacher)
-      student = FactoryBot.create(:student, teacher_id: teacher.id)
-      student_ids = []
-      student_ids << student.id
-      teacher.add_reading_session_for_class(10, student_ids)
-      student.reload
+    it "equals zero when a student only read yesterday" do
+      student = FactoryBot.create(:student_with_reading_session)
+      session = student.reading_sessions.first
+      session.created_at = DateTime.now - 1.day
+      session.save
 
-      expect(student.mins_read).to eq 10
+      expect(student.mins_read_today).to eq 0
+    end
+
+    it "equals ten when a student read ten minutes today" do
+      student = FactoryBot.create(:student_with_reading_session)
+
+      expect(student.mins_read_today).to eq 10
     end
   end
 end

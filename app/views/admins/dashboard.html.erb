@@ -1,25 +1,23 @@
-<% provide(:h1, "Dashboard") %>
-
 <% if @admin.school.nil? %>
   <p>You first need to add a school! <a href = "/schools/new">Add a school</a></p>
 <% else %>  
-  <div class="d-flex py-1">
-    <h2> Welcome back <%= @admin.first_name %></h2>
-    <a class="ml-auto" href="/users/edit">Edit my account</a>
+  <div class="d-flex flex-row bg-primary text-white pb-3 mb-3">
+    <span class="p-2 flex-fill">Today's Snapshot</span>
+    <% todays_tallies = @admin.todays_tallies %>
+    <span class="p-2 flex-fill">Donations today: <%= dollar_format(todays_tallies.sum) %></span>
+    <span class="p-2 flex-fill">Minutes read today: <%= todays_tallies.minutes %></span>
+    <span class="p-2 flex-fill">Supporters today: <%= todays_tallies.count %></span>
   </div>
 
-  <div class="row bg-primary text-white pb-3 mb-3">
-    Today's Snapshot:
-  </div>
-
-  <div class="row bg-secondary text-white pb-3 mb-3">
-    What you need to do:
+  <div class="d-flex flex-row bg-secondary text-white pb-3 mb-3">
+    <span class="p-2 flex-fill">What you need to do:</span>
   </div>
 
   <div class="row">
     <div class="col-md-4 bg-light py-2 mb-2">
       <h3>School</h3>
-      <a href = "/schools/<%= @admin.school.id %>/edit">Edit my school</a>
+      <div><a href="/schools/<%= @admin.school.id %>/edit">Edit my school</a></div>
+      <div><a href="/schools/<%= @admin.school.id %>">View my school</a></div>
     </div>
     <div class="col-md-4 py-2 mb-2">
       <h3>Teacher</h3>
@@ -29,6 +27,15 @@
         <input type="file" name="file" id="file" style="width:250px"></input>
         <%= submit_tag "Import" %>
       <% end %>
+      <ul>
+        <% @admin.teachers.each do |teacher| %>
+        <li>
+          <%= teacher.name %> -
+          <a href="/teachers/<%= teacher.id %>/dashboard"> Dash</a> |
+          <a href="/teachers/<%= teacher.id %>/edit"> Edit</a>
+        </li>
+        <% end %>
+      </ul>
     </div>
     <div class="col-md-4 bg-light py-2 mb-2">
       <h3>Student</h3>
@@ -38,6 +45,16 @@
         <input type="file" name="file" id="file" style="width:250px"></input>
         <%= submit_tag "Import" %>
       <% end %>
+      <ul>
+        <% @admin.students.each do |student| %>
+        <li>
+          <%= student.name %> -
+          <a href="/students/<%= student.id %>/dashboard"> Dash</a> |
+          <a href="/students/<%= student.id %>/edit"> Edit</a> |
+          <a href="/students/<%= student.id %>">View Student</a>
+        </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 <% end %>

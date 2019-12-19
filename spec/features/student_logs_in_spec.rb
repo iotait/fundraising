@@ -13,6 +13,6 @@ feature "Student logs in" do
     fill_in "Password", with: "guess"
     click_on "Log in"
 
-    expect(page).to have_css "h1", text: "Log in"
+    expect(page).to have_css "a", text: "Log In"
   end
 end

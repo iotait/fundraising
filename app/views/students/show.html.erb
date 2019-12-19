@@ -1,15 +1,36 @@
-<% provide(:h1, @student.name) %>
+<div class="row py-3">
+  <div class="col-md-6 order-md-1 col-sm-12 order-2">
+    <img src="https://i.ytimg.com/vi/RYeKBOMr5Mo/maxresdefault.jpg" class="rounded float-left" alt="School" width=100% height=auto>
+  </div>
+  <div class="col-md-6 order-md-2 col-sm-12 order-1 bg-primary text-white pb-3">
+    <div class="d-flex align-items-center mx-auto flex-column">
+      <div class="pb-5 pt-3" style="font-size: 1.4rem;font-weight: bold;"><%= @student.name %></div>
+      <p>I am so excited about the Read-a-thon we are holding.</p>
+      <p>Please help me raise money while I read as much as possible. </p>
+      <p>I'm counting on your help.</p>
+      <a href="/donations/new/User/<%= @student.id %>"><button type="button" class="btn btn-light btn-lg mt-3">Donate Now</button></a>
+    </div>
+  </div>
+</div>
 
-<% if @student.about.present?%>
-  <p><%= @student.about %></p>
-<% end %>
+<div class="d-flex justify-content-center mt-3">
+    <div class="p-2"><h3>Help me by sharing:</h3></div>
+    <div class="p-2 sharethis-inline-share-buttons"></div>
+</div>
 
-<p> <strong><%= @student.name %>'s Sum:</strong> <%= dollar_format(@student.sum) %> </p>
-
-<h3>Donations made to <%= @student.name%>:</h3>
-<ul class="donations">
-  <% @student.donations.each do |donation| %>
-    <li>From <%= donation.donor %>: <%= dollar_format(donation.amount) %></li>
-    <ul><li><%= donation.donor %> says: <%= donation.message %></li></ul>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <h3 class="pb-1 pt-3">Donations:</h3>
+    <% @student.donations.each do |donation| %>
+      <div class="media">
+        <img src= <%= "https://dummyimage.com/60x60/000/ffffff&text=" + dollar_format(donation.amount) %> class="align-self-start mr-3" alt="img">
+        <div class="media-body">
+          <blockquote class="blockquote">
+            <p><%= donation.message %></p>
+            <footer class="blockquote-footer"><%= donation.donor %></footer>
+          </blockquote>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

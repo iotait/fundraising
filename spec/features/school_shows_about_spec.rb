@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "School shows" do
+xfeature "School shows" do
   scenario "about section when present" do
     school = FactoryBot.create(:school, about: "We want desks!")
     sign_in FactoryBot.create(:admin)

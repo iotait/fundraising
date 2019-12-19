@@ -1,10 +1,39 @@
-<% provide(:h1, @school.name) %>
+<div class="row py-3">
+  <div class="col-md-6 order-md-1 col-sm-12 order-2">
+    <img src="https://i.ytimg.com/vi/RYeKBOMr5Mo/maxresdefault.jpg" class="rounded float-left" alt="School" width=100% height=auto>
+  </div>
+  <div class="col-md-6 order-md-2 col-sm-12 order-1 bg-primary text-white pb-3">
+    <div class="d-flex align-items-center mx-auto flex-column">
+      <div class="pb-3 pt-3" style="font-size: 1.4rem;font-weight: bold;"><%= @school.name %></div>
+      <span>We have received <%= dollar_format(@school.sum) %> in donations!</span>
+      <span>Our goal is <%= dollar_format(@school.goal) %></span>
+      <a href="/donations/new/School/<%= @school.id %>"><button type="button" class="btn btn-light btn-lg mt-4">Donate Now</button></a>
+    </div>
+    <% if @school.about.present?%>
+      <p class="pt-5" style="font-weight: bold; text-decoration: underline;">How your support will help us:</p>
+      <p><%= @school.about %></p>
+    <% end %>
+  </div>
+</div>
 
-<% if @school.about.present?%>
-  <p><%= @school.about %></p>
-<% end %>
+<div class="d-flex justify-content-center mt-3">
+    <div class="p-2"><h3>Help us by sharing:</h3></div>
+    <div class="p-2 sharethis-inline-share-buttons"></div>
+</div>
 
-<p> <strong><%= @school.name %>'s Goal:</strong> <%= dollar_format(@school.goal) %>  </p>
-
-<p> <strong><%= @school.name %>'s Sum:</strong> <%= dollar_format(@school.sum) %> </p>
-
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <h3 class="pb-1 pt-3">Latest Donations to the School:</h3>
+    <% @school.combined_donations.each do |donation| %>
+      <div class="media">
+        <img src= <%= "https://dummyimage.com/60x60/000/ffffff&text=" + dollar_format(donation.amount) %> class="align-self-start mr-3" alt="img">
+        <div class="media-body">
+          <blockquote class="blockquote">
+            <p><%= donation.message %></p>
+            <footer class="blockquote-footer"><%= donation.donor %></footer>
+          </blockquote>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
