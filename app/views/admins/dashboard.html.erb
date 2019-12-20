@@ -1,7 +1,7 @@
 <% if @admin.school.nil? %>
   <p>You first need to add a school! <a href = "/schools/new">Add a school</a></p>
 <% else %>  
-  <div class="d-flex flex-row bg-primary text-white pb-3 mb-3">
+  <div class="d-flex flex-row bg-primary text-white pb-3 mb-3 mt-2">
     <span class="p-2 flex-fill">Today's Snapshot</span>
     <% todays_tallies = @admin.todays_tallies %>
     <span class="p-2 flex-fill">Donations today: <%= dollar_format(todays_tallies.sum) %></span>

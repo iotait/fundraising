@@ -14,8 +14,20 @@
 </div>
 
 <div class="d-flex justify-content-center mt-3">
-    <div class="p-2"><h3>Help me by sharing:</h3></div>
-    <div class="p-2 sharethis-inline-share-buttons"></div>
+  <div class="p-2"><h3>Help us by sharing:</h3></div>
+   <div class="social-share p-2">
+    <ul>
+      <li>
+        <a href="https://twitter.com/intent/tweet?text=" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+      </li>
+      <li>
+        <a href="mailto:?subject=<%= @student.name %> Read-a-Thon Fundraiser&body=Would you consider supporting me?" class="email" title="Send an Email"><i class="fa fa-envelope"></i></a>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="row">

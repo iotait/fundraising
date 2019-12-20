@@ -3,7 +3,7 @@
     <li>
       <%= student.name %> -
       <a href="/students/<%= student.id %>/dashboard"> Dash</a> |
-      <a href="/students<%= student.id %>/edit"> Edit</a> |
+      <a href="/students/<%= student.id %>/edit"> Edit</a> |
       <a href="/reading_sessions/new/<%= student.id %>"> Add reading session</a>
     </li>
   <% end %>

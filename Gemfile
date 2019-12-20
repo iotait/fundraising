@@ -10,6 +10,7 @@ gem "bootsnap", require: false
 gem "webpacker"
 gem "devise"
 gem "bootstrap"
+gem "font-awesome-rails"
 
 group :development do
   gem "listen"
