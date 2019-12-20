@@ -30,7 +30,14 @@ h2 {font-size:1.5rem;}
   h2 {font-size:2rem;}
 }
 
- .slider {
+//Keeps expanded navbar open when screen is smaller
+@media (max-width: 768px) {
+  .navbar-collapse.collapse.in { 
+      display: block!important;
+  }
+}
+
+.slider {
   -webkit-appearance: none;
   width: 100%;
   height: 25px;
