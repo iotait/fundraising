@@ -10,6 +10,7 @@ gem "bootsnap", require: false
 gem "webpacker"
 gem "devise"
 gem "bootstrap"
+gem "aws-sdk-s3", require: false
 
 group :development do
   gem "listen"

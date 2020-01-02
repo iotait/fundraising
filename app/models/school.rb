@@ -5,6 +5,7 @@ class School < ApplicationRecord
   has_many :donations, as: :donatable
 
   has_rich_text :about
+  has_one_attached :avatar
 
   validates :admin_id, presence: true
   validates :name, presence: true
