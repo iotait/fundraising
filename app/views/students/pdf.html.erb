@@ -1,0 +1,26 @@
+<h1 class="d-flex justify-content-center my-3">Printable report for <%= @student.name %></h1>
+
+<h2><%= @student.name %>'s login information:</h2>
+<ul>
+  <li>Code: </li>
+  <li>Email: <%= @student.email %></li>
+</ul>
+
+<h2><%= @student.name %>'s donation snapshot:</h2>
+<p><%= @student.name %> has received: <%= dollar_format(@student.sum) %> from <%= @student.donations.count %> donors</p>
+<% @student.donations.each do |donation| %>
+  <ul>
+    <li>Donor: <%= donation.donor %></li>
+    <li>Message: <%= donation.message %></li>
+    <li>Amount: <%= donation.amount %></li>
+  </ul>
+<% end %>
+
+<h2><%= @student.name %>'s reading snapshot:</h2>
+<p><%= @student.name %> has read: <%= to_hours_and_mins_s(@student.mins_read) %>
+<% @student.reading_sessions.each do |session| %>
+  <ul>
+    <li>Date: <%= session.created_at.to_s(:long_ordinal)%></li>
+    <li>Time Read: <%= to_hours_and_mins_s(session.time) %></li>
+  </ul>
+<% end %>

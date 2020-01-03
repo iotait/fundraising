@@ -41,7 +41,7 @@ class TeachersController < ApplicationController
   end
 
   def add_reading_session_for_class
-    Teacher.add_reading_session_for_class(params[:time], params[:student_ids].split(','))
+    Teacher.add_reading_session_for_class(params[:time], params[:student_ids].split(","))
   end
 
   private

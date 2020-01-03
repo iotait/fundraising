@@ -4,6 +4,14 @@ class StudentsController < ApplicationController
 
   # GET /students/1
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "student",
+               template: "students/pdf.html.erb",
+               layout: "pdf.html"
+      end
+    end
   end
 
   # GET /students/new

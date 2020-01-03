@@ -11,6 +11,8 @@ gem "webpacker"
 gem "devise"
 gem "bootstrap"
 gem "font-awesome-rails"
+gem "wicked_pdf", "~> 1.1"
+gem "wkhtmltopdf-binary"
 
 group :development do
   gem "listen"
