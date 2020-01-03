@@ -16,13 +16,13 @@ class Teacher < User
     end
   end
 
-  def add_reading_session(time, student_id)
+  def self.add_reading_session(time, student_id)
     ReadingSession.create!(student_id: student_id, time: time)
   end
 
-  def add_reading_session_for_class(time, student_ids)
+  def self.add_reading_session_for_class(time, student_ids)
     student_ids.each do |student_id|
-      add_reading_session(time, student_id)
+      Teacher.add_reading_session(time, student_id)
     end
   end
 end

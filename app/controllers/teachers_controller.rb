@@ -1,5 +1,6 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:edit, :update, :destroy, :dashboard]
+  protect_from_forgery with: :null_session
 
   # GET /teachers/new
   def new
@@ -37,6 +38,10 @@ class TeachersController < ApplicationController
   end
 
   def dashboard
+  end
+
+  def add_reading_session_for_class
+    Teacher.add_reading_session_for_class(params[:time], params[:student_ids].split(','))
   end
 
   private

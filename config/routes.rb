@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "students/:id/dashboard" => "students#dashboard"
   get "reading_sessions/new/:id" => "reading_sessions#new"
   get "donations/new/:type/:id" => "donations#new"
+  post 'teachers/add_reading_session_for_class' => 'teachers/add_reading_session_for_class'
 
   resources :donations, only: [:new, :create]
   resources :schools, only: [:show, :new, :edit, :create, :update, :destroy]
