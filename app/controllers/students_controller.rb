@@ -9,7 +9,8 @@ class StudentsController < ApplicationController
       format.pdf do
         render pdf: "student",
                template: "students/pdf.html.erb",
-               layout: "pdf.html"
+               layout: "pdf.html",
+               page_size: "Letter"
       end
     end
   end
@@ -51,10 +52,22 @@ class StudentsController < ApplicationController
     rescue
       flash[:error] = "Sorry we failed to import all the students!"
     end
-    redirect_to "/"
+    redirect_to admin_dashboard_path(current_user)
   end
 
   def dashboard
+  end
+
+  def printable
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "student_printable.pdf",
+               template: "students/printable.html.erb",
+               layout: "pdf.html",
+               page_size: "Letter"
+      end
+    end
   end
 
   private

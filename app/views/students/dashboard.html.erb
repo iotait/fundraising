@@ -2,7 +2,14 @@
  <div class="col-md-7 order-md-1 col-sm-12 order-2 py-2 bg-primary text-white">
     <div class="row">
       <div class="col-4">
-        <img src="http://www.fancyhands.com/images/default-avatar-250x250.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
+        <div class="avatar-container">
+          <a style="text-decoration: none" href="">
+            <img src="http://www.fancyhands.com/images/default-avatar-250x250.png" alt="Avatar" class="rounded float-left avatar-image" style="width:100%">
+            <div class="edit-middle">
+              <div class="edit-text">Edit</div>
+            </div>
+          </a>
+        </div>
       </div>
       <div class="d-flex align-items-center mx-auto flex-column">
         <div class="p-2" style="font-size: 1.4rem;font-weight: bold;"><%= @student.name %>'s Sum: <%= dollar_format(@student.sum) %></div>
@@ -65,7 +72,8 @@
       <% @student.reading_sessions.each do |session| %>
         <li>
           <%= @student.name + " read " + session.time.to_s + " minutes on " + session.created_at.to_s(:long_ordinal) + " - "%>
-          <a href="/reading_sessions/<%= session.id %>/edit">Edit</a>
+          <a href="/reading_sessions/<%= session.id %>/edit">Edit</a> | 
+          <%= link_to("Delete", reading_session_path(session.id), :method => :delete, :class => "delete") %>
         </li>
       <% end %>
     </ul>

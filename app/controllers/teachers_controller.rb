@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:edit, :update, :destroy, :dashboard]
-  protect_from_forgery with: :null_session
+  protect_from_forgery with: :null_session #CHECK
 
   # GET /teachers/new
   def new

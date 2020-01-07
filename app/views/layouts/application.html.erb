@@ -22,12 +22,14 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" style="font-weight:bold; color: #1c75a8" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="font-weight:bold; color: #1c75a8" href="/dashboard/about">About</a>
-          </li>
+          <% if !user_signed_in? %>
+            <li class="nav-item">
+              <a class="nav-link" style="font-weight:bold; color: #1c75a8" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-weight:bold; color: #1c75a8" href="/dashboard/about">About</a>
+            </li>
+          <% end %>
           <li class="nav-item">
             <% if user_signed_in? %>
               <a class="nav-link" style="font-weight:bold; color: #1c75a8" href="/<%= current_user.type.downcase.pluralize + "/" + current_user.id.to_s%>/dashboard">Dashboard</a>
