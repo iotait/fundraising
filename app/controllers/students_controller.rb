@@ -27,7 +27,7 @@ class StudentsController < ApplicationController
   # POST /students
   def create
     Student.create(student_params) # .merge(school: current_user.school)
-    redirect_to "/"
+    redirect_to admin_dashboard_path(current_user)
   end
 
   # PATCH/PUT /students/1
@@ -42,7 +42,7 @@ class StudentsController < ApplicationController
   # DELETE /students/1
   def destroy
     @student.destroy
-    redirect_to "/"
+    redirect_to admin_dashboard_path(current_user)
   end
 
   def import

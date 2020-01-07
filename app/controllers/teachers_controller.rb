@@ -14,13 +14,13 @@ class TeachersController < ApplicationController
   # POST /teachers
   def create
     Teacher.create(teacher_params.merge(school: current_user.school))
-    redirect_to "/"
+    redirect_to admin_dashboard_path(current_user)
   end
 
   # PATCH/PUT /teachers/1
   def update
     if @teacher.update(teachers_path)
-      redirect_to "/"
+      redirect_to admin_dashboard_path(current_user)
     else
       render :edit
     end
@@ -29,12 +29,12 @@ class TeachersController < ApplicationController
   # DELETE /teachers/1
   def destroy
     @teacher.destroy
-    redirect_to "/"
+    redirect_to admin_dashboard_path(current_user)
   end
 
   def import
     Teacher.import(params[:file], current_user.school.id)
-    redirect_to "/"
+    redirect_to admin_dashboard_path(current_user)
   end
 
   def dashboard
@@ -47,7 +47,7 @@ class TeachersController < ApplicationController
   private
 
   def set_teacher
-    @teacher = Teacher.find(params[:id])
+    @teacher = Teacher.find(params[:teacher_id])
   end
 
   def teacher_params

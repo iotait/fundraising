@@ -17,13 +17,13 @@ class SchoolsController < ApplicationController
   # POST /schools
   def create
     School.create(school_params.merge(admin: current_user))
-    redirect_to "/"
+    redirect_to admin_dashboard_path(current_user)
   end
 
   # PATCH/PUT /schools/1
   def update
     if @school.update(school_params)
-      redirect_to "/"
+      redirect_to school_path
     else
       render :edit
     end
@@ -32,7 +32,7 @@ class SchoolsController < ApplicationController
   # DELETE /schools/1
   def destroy
     @school.destroy
-    redirect_to "/"
+    redirect_to admin_dashboard_path(current_user)
   end
 
   private
