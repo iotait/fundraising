@@ -1,36 +1,37 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "registrations"}
   root "dashboard#index"
-  get "dashboard/about"
-  get "dashboard/calculator"
 
-  post "teachers/add_reading_session_for_class" => "teachers/add_reading_session_for_class"
-  get "students/:id/dashboard" => "students#dashboard"
-  get "reading_sessions/new/:id" => "reading_sessions#new"
-  
-  get "donations/new/:type/:id" => "donations#new"
-
-  resources :admins, only: [] do
-    get "/dashboard" => "admins#dashboard"
-    get "/end_read_a_thon" => "admins#end_read_a_thon"
+  namespace :dashboard do
+    get "about"
+    get "calculator"
   end
 
-  resources :donations, only: [:new, :create] do
+  resources :admins, only: [] do
+    get "dashboard"
+    get "end_read_a_thon"
   end
 
   resources :schools, only: [:show, :new, :edit, :create, :update, :destroy] do
+    resources :donations, only: [:new, :create] do
+    end
   end
 
   resources :students, only: [:show, :new, :edit, :create, :update, :destroy] do
-    get "/printable" => "students#printable"
+    get "dashboard"
+    get "printable"
     collection { post :import }
+
+    resources :reading_sessions, only: [:new, :edit, :create, :update, :destroy] do
+    end
+    
+    resources :donations, only: [:new, :create] do
+    end
   end
 
   resources :teachers, only: [:new, :edit, :create, :update, :destroy] do
-    get "dashboard" => "teachers#dashboard"
+    get "dashboard"
+    post "add_reading_session_for_class"
     collection { post :import }
-  end
-
-  resources :reading_sessions, only: [:new, :edit, :create, :update, :destroy] do
   end
 end

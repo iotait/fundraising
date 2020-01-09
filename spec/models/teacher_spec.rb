@@ -29,7 +29,7 @@ describe Teacher do
       teacher = FactoryBot.create(:teacher)
       student = FactoryBot.create(:student, teacher_id: teacher.id)
 
-      Teacher.add_reading_session(10, student.id)
+      teacher.add_reading_session(10, student.id)
       expect(student.mins_read).to eq 10
     end
   end
@@ -40,7 +40,7 @@ describe Teacher do
       student1 = FactoryBot.create(:student, teacher_id: teacher.id)
       student2 = FactoryBot.create(:student, teacher_id: teacher.id)
 
-      Teacher.add_reading_session_for_class(10, [student1.id, student2.id])
+      teacher.add_reading_session_for_class(10, [student1.id, student2.id])
 
       expect(student1.mins_read).to eq 10
       expect(student2.mins_read).to eq 10

@@ -73,7 +73,11 @@ class StudentsController < ApplicationController
   private
 
   def set_student
-    @student = Student.find(params[:id])
+    if params[:student_id].blank?
+      @student = Student.find(params[:id])
+    else
+      @student = Student.find(params[:student_id])
+    end
   end
 
   def student_params

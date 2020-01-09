@@ -1,7 +1,7 @@
 <h1>Editing Reading Session</h1>
 
-<%= form_for @reading_session do |form| %>
+<%= form_for [:student, @reading_session] do |form| %>
     <%= form.label :time%>
-    <%= form.time_field :time%>
+    <%= form.time_field :time, value: @reading_session.time%>
     <%= form.submit "Submit" %>
 <% end %>

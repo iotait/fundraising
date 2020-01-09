@@ -1,6 +1,5 @@
 class TeachersController < ApplicationController
-  before_action :set_teacher, only: [:edit, :update, :destroy, :dashboard]
-  protect_from_forgery with: :null_session #CHECK
+  before_action :set_teacher, only: [:edit, :update, :destroy, :dashboard, :add_reading_session_for_class]
 
   # GET /teachers/new
   def new
@@ -39,9 +38,11 @@ class TeachersController < ApplicationController
 
   def dashboard
   end
-
+ 
+  #TODO security revisit CSRF protection here
+  skip_before_action :verify_authenticity_token
   def add_reading_session_for_class
-    Teacher.add_reading_session_for_class(params[:time], params[:student_ids].split(","))
+    @teacher.add_reading_session_for_class(params[:time], params[:student_ids])
   end
 
   private

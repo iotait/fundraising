@@ -3,14 +3,13 @@ class ReadingSessionsController < ApplicationController
 
   def new
     @reading_session = ReadingSession.new
-    @reading_session.student_id = params[:id]
   end
 
   def edit
   end
 
   def create
-    ReadingSession.create(reading_session_params)
+    ReadingSession.create(reading_session_params.merge(student_id: params[:student_id]))
     redirect_to "/"
   end
 

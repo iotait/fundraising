@@ -33,7 +33,7 @@
 <div class="row">
   <div class="col-md-6 col-sm-12">
     <h3 class="pb-1 pt-3">Latest Donations to the School:</h3>
-    <% @school.combined_donations.each do |donation| %>
+    <% @school.combined_donations.reverse.each do |donation| %>
       <div class="media">
         <img src= <%= "https://dummyimage.com/60x60/000/ffffff&text=" + dollar_format(donation.amount) %> class="align-self-start mr-3" alt="img">
         <div class="media-body">

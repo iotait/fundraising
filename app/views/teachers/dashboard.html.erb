@@ -61,11 +61,12 @@
       </div>
       <div class="modal-body">
         <form>
-          <p>Time read in minutes:</p>
-          <input type="number" id="time" class="mb-4"></input>
+          <label>Time read in minutes:</label>
+          <input type="number" id="time" name="time" class="mb-4"></input>
           <p>Select participating students:</p>
           <% @teacher.students.each do |student| %>
-            <label><input type="checkbox" value="<%= student.id %>" name="student"> <%= student.name %></label>
+            <input type="checkbox" name="student_ids[]" id="student_ids_" value="<%= student.id %>">
+            <label><%= student.name %></label>
           <% end %>
         </form>
       </div>
@@ -77,23 +78,13 @@
   </div>
 </div>
 
-
 <script>
-//CHECK
-  $(document).ready(function() {
+$(document).ready(function() {
   $("#addButton").click(function() {
-    var minutes = $("#addReadingSessionModal #time").val().trim();
-    var students = [];
-    $.each($("input[name='student']:checked"), function() {
-      students.push($(this).val());
-    });
-
+//TODO security: check for specific teacher id instead of any teacher
     $.post({
-       url:'/teachers/add_reading_session_for_class',
-       data:(
-         'time=' + minutes + '&' +
-         'student_ids=' + students
-       )
+       url:'/teachers/<%=@teacher.id%>/add_reading_session_for_class',
+       data: $('form').serialize()
     })
   });
 });
