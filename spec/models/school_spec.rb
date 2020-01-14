@@ -32,8 +32,8 @@ describe School do
       teacher = FactoryBot.create(:teacher, school_id: school.id)
       student = FactoryBot.create(:student, teacher_id: teacher.id)
 
-      Donation.create(donatable_type: "School", donatable_id: school.id, donor: "test", amount: 100)
-      Donation.create(donatable_type: "User", donatable_id: student.id, donor: "test", amount: 100)
+      Donation.create(donatable_type: "School", donatable_id: school.id, donor: "test", amount: 100, status: "completed")
+      Donation.create(donatable_type: "User", donatable_id: student.id, donor: "test", amount: 100, status: "completed")
 
       expect(school.combined_donations.count).to eq 2
     end
