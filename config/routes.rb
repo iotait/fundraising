@@ -7,13 +7,15 @@ Rails.application.routes.draw do
     get "calculator"
   end
 
+  mount StripeEvent::Engine, at: "/successful_charge"
+
   resources :admins, only: [] do
     get "dashboard"
     get "end_read_a_thon"
   end
 
   resources :schools, only: [:show, :new, :edit, :create, :update, :destroy] do
-    resources :donations, only: [:new, :create] do
+    resources :donations, only: [:create] do
     end
   end
 
@@ -24,8 +26,8 @@ Rails.application.routes.draw do
 
     resources :reading_sessions, only: [:new, :edit, :create, :update, :destroy] do
     end
-    
-    resources :donations, only: [:new, :create] do
+
+    resources :donations, only: [:create] do
     end
   end
 

@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1
   def update
     if @student.update(student_params)
-      redirect_to "/"
+      redirect_to "/" + current_user.type.downcase.pluralize + "/" + current_user.id.to_s + "/dashboard"
     else
       render :edit
     end
@@ -73,10 +73,10 @@ class StudentsController < ApplicationController
   private
 
   def set_student
-    if params[:student_id].blank?
-      @student = Student.find(params[:id])
+    @student = if params[:student_id].blank?
+      Student.find(params[:id])
     else
-      @student = Student.find(params[:student_id])
+      Student.find(params[:student_id])
     end
   end
 

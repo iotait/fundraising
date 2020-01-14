@@ -7,11 +7,13 @@
       <div class="pb-3 pt-3" style="font-size: 1.4rem;font-weight: bold;"><%= @school.name %></div>
       <span>We have received <%= dollar_format(@school.sum) %> in donations!</span>
       <span>Our goal is <%= dollar_format(@school.goal) %></span>
-      <a href="/donations/new/School/<%= @school.id %>"><button type="button" class="btn btn-light btn-lg mt-4">Donate Now</button></a>
+        <a href="#donate_modal" data-toggle="modal"><button type="button" id="begin_donate_button" class="btn btn-light btn-lg mt-3">Donate Now</button></a>
     </div>
     <p><%= @school.about %></p>
   </div>
 </div>
+
+<%= render "donations/modal" %>
 
 <div class="d-flex justify-content-center mt-3">
   <div class="p-2"><h3>Help us by sharing:</h3></div>
@@ -33,9 +35,9 @@
 <div class="row">
   <div class="col-md-6 col-sm-12">
     <h3 class="pb-1 pt-3">Latest Donations to the School:</h3>
-    <% @school.combined_donations.reverse.each do |donation| %>
+    <% @school.combined_donations.each do |donation| %>
       <div class="media">
-        <img src= <%= "https://dummyimage.com/60x60/000/ffffff&text=" + dollar_format(donation.amount) %> class="align-self-start mr-3" alt="img">
+        <span style="background-color:black;color:white;"><%= dollar_format(donation.amount) %></span>
         <div class="media-body">
           <blockquote class="blockquote">
             <p><%= donation.message %></p>
@@ -46,3 +48,23 @@
     <% end %>
   </div>
 </div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+$(document).ready(function() {
+  $("#donate_button").click(function() {
+    $.post({
+      url:'/schools/<%= @school.id %>/donations',
+      data: $('form').serialize(),
+      success: function(response){
+        var stripe = Stripe("<%= Rails.application.credentials[:stripe][Rails.env.to_sym][:publishable_key] %>");
+        stripe.redirectToCheckout({
+          sessionId: response.session_id
+        }).then(function (result) {
+          result.error.message
+        });
+      }
+    })
+  });
+});
+</script>

@@ -13,6 +13,8 @@ gem "bootstrap"
 gem "font-awesome-rails"
 gem "wicked_pdf", "~> 1.1"
 gem "wkhtmltopdf-binary"
+gem "stripe"
+gem "stripe_event"
 
 group :development do
   gem "listen"

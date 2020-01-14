@@ -27,4 +27,8 @@ class Student < User
     end
     time
   end
+
+  def donations
+    Donation.where(donatable_type: "User", donatable_id: id, status: "completed")
+  end
 end

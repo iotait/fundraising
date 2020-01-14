@@ -10,12 +10,12 @@ class ReadingSessionsController < ApplicationController
 
   def create
     ReadingSession.create(reading_session_params.merge(student_id: params[:student_id]))
-    redirect_to "/"
+    redirect_to "/" + current_user.type.downcase.pluralize + "/" + current_user.id.to_s + "/dashboard"
   end
 
   def update
     if @reading_session.update(reading_session_params)
-      redirect_to "/"
+      redirect_to "/" + current_user.type.downcase.pluralize + "/" + current_user.id.to_s + "/dashboard"
     else
       render :edit
     end
@@ -23,7 +23,7 @@ class ReadingSessionsController < ApplicationController
 
   def destroy
     @reading_session.destroy
-    redirect_to "/"
+    redirect_to "/" + current_user.type.downcase.pluralize + "/" + current_user.id.to_s + "/dashboard"
   end
 
   private
