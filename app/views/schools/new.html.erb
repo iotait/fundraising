@@ -1,10 +1,12 @@
 <h1>Register your school</h1>
 <%= form_for @school do |form| %>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-    <%= form.label :about %>
-    <%= form.rich_text_area :about %>
-    <%= form.label :goal %>
-    <%= form.text_field :goal %>
-    <%= form.submit "Submit" %>
+  <%= form.label :avatar %>
+  <%= form.file_field :avatar %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :about %>
+  <%= form.rich_text_area :about %>
+  <%= form.label :goal %>
+  <%= form.text_field :goal %>
+  <%= form.submit "Submit" %>
 <% end %>

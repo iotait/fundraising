@@ -2,7 +2,11 @@
  <div class="col-md-8 order-md-1 col-sm-12 order-2 py-2 bg-primary text-white">
     <div class="row">
       <div class="col-4">
-        <img src="http://www.fancyhands.com/images/default-avatar-250x250.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
+        <% if @student.avatar.attached? %>
+          <img src="<%= url_for(@student.avatar) %>" class="rounded float-left" alt="student" width=100% height=auto>
+        <% else %>
+          <img src="http://www.fancyhands.com/images/default-avatar-250x250.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
+        <% end %>
       </div>
       <div class="d-flex align-items-center mx-auto flex-column">
         <div class="p-2" style="font-size: 1.4rem;font-weight: bold;"><%= @student.name %>'s Sum: <%= dollar_format(@student.sum) %></div>
