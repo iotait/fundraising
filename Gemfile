@@ -15,6 +15,7 @@ gem "wicked_pdf", "~> 1.1"
 gem "wkhtmltopdf-binary"
 gem "stripe"
 gem "stripe_event"
+gem "aws-sdk-s3", require: false
 
 group :development do
   gem "listen"

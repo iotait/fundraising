@@ -4,7 +4,11 @@
       <div class="col-4">
         <div class="avatar-container">
           <a style="text-decoration: none" href="">
-            <img src="http://www.fancyhands.com/images/default-avatar-250x250.png" alt="Avatar" class="rounded float-left avatar-image" style="width:100%">
+            <% if @student.avatar.attached? %>
+              <img src="<%= url_for(@student.avatar) %>" class="rounded float-left avatar-image" alt="student" width=100% height=auto>
+            <% else %>
+              <img src="http://www.fancyhands.com/images/default-avatar-250x250.png" class="rounded float-left avatar-image" alt="Avatar" width=100% height=auto>
+            <% end %>
             <div class="edit-middle">
               <div class="edit-text">Edit</div>
             </div>

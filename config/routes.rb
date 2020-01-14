@@ -36,4 +36,5 @@ Rails.application.routes.draw do
     post "add_reading_session_for_class"
     collection { post :import }
   end
+  resources :reading_sessions, only: [:new, :edit, :create, :update, :destroy]
 end

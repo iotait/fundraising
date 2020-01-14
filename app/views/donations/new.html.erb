@@ -1,0 +1,13 @@
+<%= form_for @donation do |form| %>
+    <%= form.hidden_field :donatable_type %>
+    <%= form.hidden_field :donatable_type %>
+    <%= form.label :donatable_id %>
+    <%= form.text_field :donatable_id %>
+    <%= form.label :donor %>
+    <%= form.text_field :donor %>
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+    <%= form.label :message %>
+    <%= form.text_field :message %>
+    <%= form.submit "Submit" %>
+<% end %>

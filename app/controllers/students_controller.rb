@@ -70,6 +70,9 @@ class StudentsController < ApplicationController
     end
   end
 
+  def dashboard
+  end
+
   private
 
   def set_student
@@ -81,6 +84,6 @@ class StudentsController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:teacher_id, :first_name, :last_name, :email, :about, :password)
+    params.require(:student).permit(:teacher_id, :first_name, :last_name, :email, :about, :password, :avatar)
   end
 end

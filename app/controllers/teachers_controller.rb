@@ -45,6 +45,9 @@ class TeachersController < ApplicationController
     @teacher.add_reading_session_for_class(params[:time], params[:student_ids])
   end
 
+  def dashboard
+  end
+
   private
 
   def set_teacher

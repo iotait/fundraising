@@ -2,6 +2,8 @@ class Student < User
   require "csv"
   has_many :donations, as: :donatable
   has_many :reading_sessions
+  has_one_attached :avatar
+
   belongs_to :teacher
 
   validates :teacher_id, presence: true
