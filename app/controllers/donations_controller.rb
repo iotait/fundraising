@@ -1,4 +1,6 @@
 class DonationsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create]
+
   # TODO security revisit CSRF protection here
   skip_before_action :verify_authenticity_token, only: [:create]
   def create

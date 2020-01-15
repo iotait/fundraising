@@ -1,5 +1,7 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:edit, :update, :destroy, :dashboard, :add_reading_session_for_class]
+  before_action :authenticate_admin!, only: [:new, :create, :import, :destroy]
+  before_action :authenticate_teacher_or_admin!, only: [:edit, :update, :dashboard, :add_reading_session_for_class]
 
   # GET /teachers/new
   def new
@@ -45,13 +47,14 @@ class TeachersController < ApplicationController
     @teacher.add_reading_session_for_class(params[:time], params[:student_ids])
   end
 
-  def dashboard
-  end
-
   private
 
   def set_teacher
-    @teacher = Teacher.find(params[:teacher_id])
+    @teacher = if params[:teacher_id].blank?
+      Teacher.find(params[:id])
+    else
+      Teacher.find(params[:teacher_id])
+    end
   end
 
   def teacher_params

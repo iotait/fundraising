@@ -9,34 +9,143 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- */
+  *
+  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
+ @import "font-awesome";
  @import "bootstrap";
  @import "./actiontext.scss";
 
-p {
-  margin: 0;
-  padding: 0;
-}
+ trix-toolbar {
+   .trix-button-row {
+     .trix-button-group--file-tools {
+       display:none;
+     }
+   }
+ }
+  // Custom bootstrap variables must be set or imported *before* bootstrap.
+  @import "bootstrap";
+  @import "./actiontext.scss";
 
+ p {
+   margin: 0;
+   padding: 0;
+}
 h2 {font-size:1.5rem;}
  
 @media (min-width: 544px) {  
   h2 {font-size:1.8rem;}
 }
-
-@media (min-width: 768px) {  
+@media (min-width: 768px) {
   h2 {font-size:2rem;}
-}
+ }
+
+ //Keeps expanded navbar open when screen is smaller
+ @media (max-width: 768px) {
+   .navbar-collapse.collapse.in { 
+       display: block!important;
+   }
+ }
 
  .slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
+  .slider {
+   -webkit-appearance: none;
+   width: 100%;
+   height: 25px;
+   background: #d3d3d3;
+   outline: none;
+   opacity: 0.7;
+   -webkit-transition: .2s;
+   transition: opacity .2s;
+  }
+ }
+
+ .social-share {
+   margin-bottom: 26px;
+   margin-bottom:1.625rem
+ }
+
+ .social-share ul, .social-share li {
+   margin: 0;
+   padding: 0;
+   list-style:none
+ }
+
+ .social-share li {
+   display:inline-block
+ }
+
+ .social-share .facebook {
+   background:#3b5998
+ }
+
+ .social-share .twitter {
+   background: #55acee;
+ }
+
+ .social-share .email {
+   background: grey
+ }
+
+ .social-share a {
+   display: block;
+   padding: 8px 20px;
+   text-decoration: none !important;
+   text-transform: uppercase;
+   font-size: 14px;
+   font-size: .875rem;
+   font-family: pt sans narrow, sans-serif;
+   font-weight: 700;
+   color: #fff;
+   opacity:.8
+ }
+
+ .social-share a:hover {
+   color: #fff;
+   opacity:1
+ }
+
+ .social-share span {
+   display:none
+ }
+
+ .avatar-container {
+   position: relative;
+ }
+
+ .avatar-image {
+   opacity: 1;
+   display: block;
+   width: 100%;
+   height: auto;
+   transition: .5s ease;
+   backface-visibility: hidden;
+ }
+
+ .edit-middle {
+   transition: .5s ease;
+   opacity: 0;
+   position: relative;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   text-align: center;
+ }
+
+ .avatar-container:hover .avatar-image {
+   opacity: 0.6;
+ }
+
+ .avatar-container:hover .edit-middle {
+   opacity: 1;
+ }
+
+ .edit-text {
+   color: white;
+   font-size: 16px;
+ }
+
+ .hp-headline { font-size:48px; color:#fff; text-shadow: 2px 2px 2px #393939; font-weight:lighter; text-align:center; padding-bottom:500px;}
+ .hp-kids { background:url("https://i.ytimg.com/vi/RYeKBOMr5Mo/maxresdefault.jpg") no-repeat; background-size:cover; background-position:center; height:800px;}
+ .hp-fade{ background:url("/hp-fade.png") repeat-x; background-size:contain; height:100%; max-height:295px;}

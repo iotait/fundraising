@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "registrations"}
   root "dashboard#index"
 
+  mount StripeEvent::Engine, at: "/successful_charge"
+
   namespace :dashboard do
     get "about"
     get "calculator"
   end
-
-  mount StripeEvent::Engine, at: "/successful_charge"
 
   resources :admins, only: [] do
     get "dashboard"
@@ -20,21 +20,20 @@ Rails.application.routes.draw do
   end
 
   resources :students, only: [:show, :new, :edit, :create, :update, :destroy] do
+    collection { post :import }
     get "dashboard"
     get "printable"
-    collection { post :import }
-
-    resources :reading_sessions, only: [:new, :edit, :create, :update, :destroy] do
-    end
 
     resources :donations, only: [:create] do
+    end
+
+    resources :reading_sessions, only: [:new, :edit, :create, :update, :destroy] do
     end
   end
 
   resources :teachers, only: [:new, :edit, :create, :update, :destroy] do
+    collection { post :import }
     get "dashboard"
     post "add_reading_session_for_class"
-    collection { post :import }
   end
-  resources :reading_sessions, only: [:new, :edit, :create, :update, :destroy]
 end

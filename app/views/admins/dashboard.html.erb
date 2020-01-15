@@ -1,56 +1,60 @@
-<div class="d-flex flex-row bg-primary text-white pb-3 mb-3 mt-2">
-  <span class="p-2 flex-fill">Today's Snapshot</span>
-  <% todays_tallies = @admin.todays_tallies %>
-  <span class="p-2 flex-fill">Donations today: <%= dollar_format(todays_tallies.sum) %></span>
-  <span class="p-2 flex-fill">Minutes read today: <%= todays_tallies.minutes %></span>
-  <span class="p-2 flex-fill">Supporters today: <%= todays_tallies.count %></span>
-</div>
+<% if @admin.school.blank? %>
+  <p>Add a school</p>
+<% else %>
+  <div class="d-flex flex-row bg-primary text-white pb-3 mb-3 mt-2">
+    <span class="p-2 flex-fill">Today's Snapshot</span>
+    <% todays_tallies = @admin.todays_tallies %>
+    <span class="p-2 flex-fill">Donations today: <%= dollar_format(todays_tallies.sum) %></span>
+    <span class="p-2 flex-fill">Minutes read today: <%= todays_tallies.minutes %></span>
+    <span class="p-2 flex-fill">Supporters today: <%= todays_tallies.count %></span>
+  </div>
 
-<div class="row">
-  <div class="col-md-4 bg-light py-2 mb-2">
-    <h3>School</h3>
-    <div><a href="/schools/<%= @admin.school.id %>/edit">Edit my school</a></div>
-    <div><a href="/schools/<%= @admin.school.id %>">View my school</a></div>
-  </div>
-  <div class="col-md-4 py-2 mb-2">
-    <h3>Teacher</h3>
-    <a href = "/teachers/new">Add a teacher</a>
-    <p>Add all teachers through csv:</p>
-    <%= form_tag import_teachers_path, multipart: true do %>
-      <input type="file" name="file" id="file" style="width:250px"></input>
-      <%= submit_tag "Import" %>
-    <% end %>
-    <ul>
-      <% @admin.teachers.each do |teacher| %>
-      <li>
-        <%= teacher.name %> -
-        <a href="/teachers/<%= teacher.id %>/dashboard"> Dash</a> |
-        <a href="/teachers/<%= teacher.id %>/edit"> Edit</a>
-      </li>
+  <div class="row">
+    <div class="col-md-4 bg-light py-2 mb-2">
+      <h3>School</h3>
+      <div><a href="/schools/<%= @admin.school.id %>/edit">Edit my school</a></div>
+      <div><a href="/schools/<%= @admin.school.id %>">View my school</a></div>
+    </div>
+    <div class="col-md-4 py-2 mb-2">
+      <h3>Teacher</h3>
+      <a href = "/teachers/new">Add a teacher</a>
+      <p>Add all teachers through csv:</p>
+      <%= form_tag import_teachers_path, multipart: true do %>
+        <input type="file" name="file" id="file" style="width:250px"></input>
+        <%= submit_tag "Import" %>
       <% end %>
-    </ul>
-  </div>
-  <div class="col-md-4 bg-light py-2 mb-2">
-    <h3>Student</h3>
-    <a href = "/students/new">Add a student</a>
-    <p>Add all students through csv:</p>
-    <%= form_tag import_students_path, multipart: true do %>
-      <input type="file" name="file" id="file" style="width:250px"></input>
-      <%= submit_tag "Import" %>
-    <% end %>
-    <ul>
-      <% @admin.students.each do |student| %>
-      <li>
-        <%= student.name %> -
-        <a href="/students/<%= student.id %>/dashboard"> Dash</a> |
-        <a href="/students/<%= student.id %>/edit"> Edit</a> |
-        <a href="/students/<%= student.id %>">View Student</a>
-        <ul>
-          PDF - <%= link_to 'Report', student_path(student, format: :pdf) %> | <%= link_to 'Printable', student_printable_path(student, format: :pdf) %>
-        </ul>
-      </li>
+      <ul>
+        <% @admin.teachers.each do |teacher| %>
+        <li>
+          <%= teacher.name %> -
+          <a href="/teachers/<%= teacher.id %>/dashboard"> Dash</a> |
+          <a href="/teachers/<%= teacher.id %>/edit"> Edit</a>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-4 bg-light py-2 mb-2">
+      <h3>Student</h3>
+      <a href = "/students/new">Add a student</a>
+      <p>Add all students through csv:</p>
+      <%= form_tag import_students_path, multipart: true do %>
+        <input type="file" name="file" id="file" style="width:250px"></input>
+        <%= submit_tag "Import" %>
       <% end %>
-    </ul>
+      <ul>
+        <% @admin.students.each do |student| %>
+        <li>
+          <%= student.name %> -
+          <a href="/students/<%= student.id %>/dashboard"> Dash</a> |
+          <a href="/students/<%= student.id %>/edit"> Edit</a> |
+          <a href="/students/<%= student.id %>">View Student</a>
+          <ul>
+            PDF - <%= link_to 'Report', student_path(student, format: :pdf) %> | <%= link_to 'Printable', student_printable_path(student, format: :pdf) %>
+          </ul>
+        </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-</div>
-<a href="/admins/<%= @admin.id %>/end_read_a_thon"><button>End your read-a-thon</button></a>
+  <a href="/admins/<%= @admin.id %>/end_read_a_thon"><button>End your read-a-thon</button></a>
+<% end %>

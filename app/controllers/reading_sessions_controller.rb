@@ -1,5 +1,6 @@
 class ReadingSessionsController < ApplicationController
   before_action :set_reading_session, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def new
     @reading_session = ReadingSession.new

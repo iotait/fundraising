@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy, :dashboard]
-  before_action :authenticate_admin!, only: [:new, :create, :import]
+  before_action :authenticate_teacher_or_admin!, only: [:new, :create, :import, :destroy, :printable]
+  before_action :authenticate_user!, only: [:edit, :update, :dashboard]
 
   # GET /students/1
   def show
@@ -68,9 +69,6 @@ class StudentsController < ApplicationController
                page_size: "Letter"
       end
     end
-  end
-
-  def dashboard
   end
 
   private
