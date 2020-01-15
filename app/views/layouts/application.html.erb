@@ -49,9 +49,13 @@
 
     <div class="container-fluid">
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+        <%= render partial: "layouts/flash_modal", locals: {key: key, value: value} %>
       <% end %>
       <%= yield %>
     </div>
   </body>
 </html>
+
+<script>
+  $('#flash_modal').modal('show')
+</script>
