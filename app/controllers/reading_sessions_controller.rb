@@ -4,9 +4,13 @@ class ReadingSessionsController < ApplicationController
 
   def new
     @reading_session = ReadingSession.new
+    @student = Student.where(id: params[:student_id]).first
+    render "new", locals: {student: @student, session: @reading_session}
   end
 
   def edit
+    @student = Student.where(id: params[:student_id]).first
+    render "edit", locals: {student: @student, session: @reading_session}
   end
 
   def create

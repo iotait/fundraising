@@ -1,7 +1,2 @@
-<h1>Editing Reading Session</h1>
-
-<%= form_for [:student, @reading_session] do |form| %>
-    <%= form.label :time%>
-    <%= form.time_field :time, value: @reading_session.time%>
-    <%= form.submit "Submit" %>
-<% end %>
+<h1>Edit Reading Session</h1>
+<%= render partial: "reading_sessions/form", locals: {student: student, session: session} %>

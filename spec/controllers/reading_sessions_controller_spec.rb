@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "Reading Sessions" do
   it "can be created by anyone signed in" do
-    student = FactoryBot.build_stubbed(:student)
+    student = FactoryBot.create(:student)
     sign_in student.teacher.school.admin
 
     visit "/students/" + student.id.to_s + "/reading_sessions/new"

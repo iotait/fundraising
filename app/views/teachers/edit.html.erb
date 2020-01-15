@@ -1,9 +1,2 @@
-<%= form_for @teacher do |form| %>
-     <%= form.label :first_name %>
-     <%= form.text_field :first_name %>
-     <%= form.label :last_name %>
-     <%= form.text_field :last_name %>
-     <%= form.label :email%>
-     <%= form.text_field :email%>
-     <%= form.submit "Submit" %>
- <% end %>
+<h1>Edit Teacher</h1>
+<%= render partial: "teachers/form", locals: {teacher: teacher} %>

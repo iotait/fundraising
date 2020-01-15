@@ -6,10 +6,12 @@ class TeachersController < ApplicationController
   # GET /teachers/new
   def new
     @teacher = Teacher.new
+    render "new", locals: {teacher: @teacher}
   end
 
   # GET /teachers/1/edit
   def edit
+    render "edit", locals: {teacher: @teacher}
   end
 
   # POST /teachers

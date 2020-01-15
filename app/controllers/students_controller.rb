@@ -19,10 +19,12 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
+    render "new", locals: {student: @student}
   end
 
   # GET /students/1/edit
   def edit
+    render "edit", locals: {student: @student}
   end
 
   # POST /students

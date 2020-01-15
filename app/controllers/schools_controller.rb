@@ -9,10 +9,12 @@ class SchoolsController < ApplicationController
   # GET /schools/new
   def new
     @school = School.new
+    render "new", locals: {school: @school}
   end
 
   # GET /schools/1/edit
   def edit
+    render "edit", locals: {school: @school}
   end
 
   # POST /schools

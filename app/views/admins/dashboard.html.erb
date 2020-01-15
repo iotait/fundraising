@@ -12,12 +12,14 @@
   <div class="row">
     <div class="col-md-4 bg-light py-2 mb-2">
       <h3>School</h3>
-      <div><a href="/schools/<%= @admin.school.id %>/edit">Edit my school</a></div>
+      <%= render partial: "schools/edit", locals: {school: @admin.school} %>
+      <div><a href="#edit_school_modal" data-toggle="modal">Edit my school</a></div>
       <div><a href="/schools/<%= @admin.school.id %>">View my school</a></div>
     </div>
     <div class="col-md-4 py-2 mb-2">
       <h3>Teacher</h3>
-      <a href = "/teachers/new">Add a teacher</a>
+      <%= render partial: "teachers/new", locals: {teacher: Teacher.new} %>
+      <a href="#new_teacher_modal" data-toggle="modal">Add a teacher</a>
       <p>Add all teachers through csv:</p>
       <%= form_tag import_teachers_path, multipart: true do %>
         <input type="file" name="file" id="file" style="width:250px"></input>
@@ -28,14 +30,16 @@
         <li>
           <%= teacher.name %> -
           <a href="/teachers/<%= teacher.id %>/dashboard"> Dash</a> |
-          <a href="/teachers/<%= teacher.id %>/edit"> Edit</a>
+          <%= render partial: "teachers/edit", locals: {teacher: teacher} %>
+          <a href="#edit_teacher_modal" data-toggle="modal">Edit</a>
         </li>
         <% end %>
       </ul>
     </div>
     <div class="col-md-4 bg-light py-2 mb-2">
       <h3>Student</h3>
-      <a href = "/students/new">Add a student</a>
+      <%= render partial: "students/new", locals: {student: Student.new} %>
+      <a href="#new_student_modal" data-toggle="modal">Add a student</a>
       <p>Add all students through csv:</p>
       <%= form_tag import_students_path, multipart: true do %>
         <input type="file" name="file" id="file" style="width:250px"></input>
@@ -46,7 +50,8 @@
         <li>
           <%= student.name %> -
           <a href="/students/<%= student.id %>/dashboard"> Dash</a> |
-          <a href="/students/<%= student.id %>/edit"> Edit</a> |
+          <%= render partial: "students/edit", locals: {student: student} %>
+          <a href="#edit_student_modal" data-toggle="modal">Edit</a> |
           <a href="/students/<%= student.id %>">View Student</a>
           <ul>
             PDF - <%= link_to 'Report', student_path(student, format: :pdf) %> | <%= link_to 'Printable', student_printable_path(student, format: :pdf) %>

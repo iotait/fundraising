@@ -73,12 +73,14 @@
   </div>
   <div class="col-md-6 col-sm-12">
     <h3 class="pt-3">Reading Sessions:</h3>
-    <%= link_to("Add Reading Session", new_student_reading_session_path(@student)) %>
+    <%= render partial: "reading_sessions/new", locals: {student: @student, session: ReadingSession.new} %>
+    <a href="#new_reading_session_modal" data-toggle="modal">Add Reading Session</a>
     <ul>
       <% @student.reading_sessions.reverse.each do |session| %>
+        <%= render partial: "reading_sessions/edit", locals: {student: @student, session: session} %>
         <li>
           <%= session.time.to_s + " minutes on " + session.created_at.to_s(:long_ordinal) + " - "%>
-          <%= link_to("Edit", edit_student_reading_session_path(@student, session)) %> | 
+          <a href="#edit_reading_session_modal" data-toggle="modal">Edit</a> | 
           <%= link_to("Delete", student_reading_session_path(@student, session), :method => :delete, :class => "delete") %>
         </li>
       <% end %>
