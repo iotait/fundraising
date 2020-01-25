@@ -47,6 +47,6 @@ feature "Teachers" do
     teacher = FactoryBot.create(:teacher)
 
     visit edit_teacher_path(teacher)
-    expect(page).to have_current_path("/users/sign_in")
+    expect(page).to have_current_path("/")
   end
 end

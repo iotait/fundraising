@@ -24,13 +24,16 @@
    <div class="social-share p-2">
     <ul>
       <li>
-        <a href="https://twitter.com/intent/tweet?text=" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://twitter.com/intent/tweet?text=" class="twitter" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
       </li>
       <li>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=" class="facebook" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
       </li>
       <li>
-        <a href="mailto:?subject=<%= @school.name %> Read-a-Thon Fundraiser&body=Would you consider supporting me?" class="email" title="Send an Email"><i class="fa fa-envelope"></i></a>
+        <a href="mailto:?subject=<%= @school.name %> Read-a-Thon Fundraiser&body=Would you consider supporting me?" class="email" title="Send an Email"><i class="fas fa-envelope"></i></a>
+      </li>
+      <li>
+        <a href="http://www.linkedin.com/shareArticle?mini=true&url=" class="linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
       </li>
     </ul>
   </div>
@@ -38,16 +41,12 @@
 
 <div class="row">
   <div class="col-md-6 col-sm-12">
-    <h3 class="pb-1 pt-3">Latest Donations to the School:</h3>
+    <h3 class="pb-5 pt-3">Latest Donations to the School:</h3>
     <% @school.combined_donations.each do |donation| %>
-      <div class="media">
-        <span style="background-color:black;color:white;"><%= dollar_format(donation.amount) %></span>
-        <div class="media-body">
-          <blockquote class="blockquote">
-            <p><%= donation.message %></p>
-            <footer class="blockquote-footer"><%= donation.donor %></footer>
-          </blockquote>
-        </div>
+      <div class="donation">
+        <span class="amount"><%= dollar_format(donation.amount) %></span>
+        "<%= donation.message %>"
+        -<%= donation.donor %>
       </div>
     <% end %>
   </div>

@@ -10,7 +10,7 @@ gem "bootsnap", require: false
 gem "webpacker"
 gem "devise"
 gem "bootstrap"
-gem "font-awesome-rails"
+gem "font-awesome-sass"
 gem "wicked_pdf", "~> 1.1"
 gem "wkhtmltopdf-binary"
 gem "stripe"

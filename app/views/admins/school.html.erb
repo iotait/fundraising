@@ -1,0 +1,37 @@
+<h1>School</h1>
+<div class="row">
+  <div class="col-lg-5 col-12 mb-9">
+    <% if @admin.school.avatar.attached? %>
+      <img src="<%= url_for(@admin.school.avatar) %>" class="rounded float-left" alt="school" width=100% height=auto>
+    <% else %>
+      <img src="https://i.ytimg.com/vi/RYeKBOMr5Mo/maxresdefault.jpg" class="rounded float-left" alt="Avatar" width=100% height=auto>
+    <% end %>
+  </div>
+  <div class="col-lg-7 col-12">
+    <%= render partial: "schools/edit", locals: {school: @admin.school} %>
+    <div class="mx-6">
+      <div class="row">
+        <div class="col-6">
+          <div class="card border-dark mx-6">
+            <div class="card-img-top">
+              <a href="#edit_school_modal" data-toggle="modal"><i class="fas fa-edit"></i></a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Edit school</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card border-dark mx-6">
+            <div class="card-img-top">
+              <a href="/schools/<%=@admin.school.id%>"><i class="fas fa-school"></i></a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">View school</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<h1>Students</h1>
+<div class="row">
+  <div class="col-md-5 col-sm-12">
+    <%= form_tag(teacher_students_path(@teacher), method: :get) do %>
+      <%= text_field_tag(:search, params[:search]) %>
+      <%= submit_tag ("Search") %>
+    <% end %>
+
+    <div class="row mt-7">
+      <% if @students.nil? %>
+        <div class="col-12">
+          <span style="font-size:1.5rem">Enter a student's first and last name</span>
+        </div>
+      <% else %>
+        <% @students.each do |student| %>
+          <div class="col-4">
+            <% if student.avatar.attached? %>
+              <img src="<%= url_for(student.avatar) %>" class="rounded float-left" alt="student" width=100% height=auto>
+            <% else %>
+              <img src="http://www.fancyhands.com/images/default-avatar-250x250.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
+            <% end %>
+          </div>
+          <div class="col-8">
+            <div style="font-size:2rem;"><%= student.name %></div>
+            <div class="mb-3">Student ID: <%= student.id %></div>
+            <%= render partial: "students/edit", locals: {student: student} %>
+            <%= render partial: "reading_sessions/new", locals: {student: student, session: ReadingSession.new} %>
+            <div class="mb-3"><i class="fas fa-user-edit"><a href="#edit_student_modal" data-toggle="modal"></i> Edit</a></div>
+            <div class="mb-3"><i class="fas fa-user"></i><a href="/students/<%= student.id %>"> View Student</a></div>
+            <div class="mb-3"><i class="fas fa-columns"></i><a href="/students/<%= student.id %>/dashboard"> Student Dash</a></div>
+            <div class="mb-3"><i class="fas fa-chart-line"></i><%= link_to ' Report', student_path(student, format: :pdf) %></div>
+            <div class="mb-3"><i class="fas fa-file-pdf"></i><%= link_to ' Printable', student_printable_path(student, format: :pdf) %></div>
+            <div class="mb-3"><i class="fas fa-book-reader"></i><a href="#new_reading_session_modal" data-toggle="modal"> Add Reading Session</a></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-7 col-sm-12">
+    <div class="card border-dark mx-9">
+      <%= render partial: "reading_session", locals: {teacher: @teacher} %>
+      <div class="card-img-top">
+        <a href="#addReadingSessionModal" data-toggle="modal"><i class="fas fa-book-reader"></i></a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Add Class Reading Session</h5>
+        <p class="card-text">Add a reading session for your class.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#addButton").click(function() {
+      //TODO security: check for specific teacher id instead of any teacher
+      $.post({
+         url:'/teachers/<%=@teacher.id%>/add_reading_session_for_class',
+         data: $('form').serialize()
+      })
+    });
+  });
+</script>

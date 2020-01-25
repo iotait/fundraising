@@ -25,4 +25,11 @@ class Teacher < User
       add_reading_session(time, student_id)
     end
   end
+
+  def search_students(search)
+    first_name = search[0, search.index(" ")]
+    last_name = search[search.index(" ") + 1, search.size]
+
+    students.where(first_name: first_name, last_name: last_name)
+  end
 end

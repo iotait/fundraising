@@ -1,0 +1,26 @@
+.snapshot {
+  background-color: $primary;
+  border-radius: 6.25rem;
+}
+
+.snapshot-figure {
+  color: $light;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: bold;
+}
+
+.snapshot-caption, .snapshot-embellishment {
+  font-size: 1.25rem;
+  color: $light;
+}
+
+ @media (max-width: 768px) {
+  .snapshot { 
+    .row {
+      .space-between {
+        margin: 1.5rem;
+      }
+    }
+  }
+}

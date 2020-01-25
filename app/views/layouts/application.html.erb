@@ -7,55 +7,95 @@
     
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-light mb-2" style="background-color: #e3f2fd; align-items: flex-end">
-      <a class="navbar-brand" href="/"><img src="/logo.png" width="200" height=auto alt="Bookworm Logo"></a>
+    <nav class="navbar navbar-expand-md navbar-light mb-2" style="align-items: flex-end">
+      <a class="navbar-brand" href="/"><img src="/logo2.png" width="350" height=auto alt="Bookworm Logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <% if !user_signed_in? %>
-            <li class="nav-item">
-              <a class="nav-link" style="font-weight:bold; color: #1c75a8" href="/">Home</a>
+        <ul class="navbar-nav ml-auto">
+          <% if current_user.is_a?(Admin) %>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/admins/<%=current_user.id.to_s%>/dashboard">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" style="font-weight:bold; color: #1c75a8" href="/dashboard/about">About</a>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/admins/<%=current_user.id.to_s%>/school">School</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/admins/<%=current_user.id.to_s%>/teachers">Teachers</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/admins/<%=current_user.id.to_s%>/students">Students</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/edit">Edit Account</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/sign_out" data-method="delete"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+          <% elsif current_user.is_a?(Teacher) %>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/teachers/<%=current_user.id.to_s%>/dashboard">Home</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/teachers/<%=current_user.id.to_s%>/students">Students</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/edit">Edit Account</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/sign_out" data-method="delete"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+          <% elsif current_user.is_a?(Student) %>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/students/<%=current_user.id.to_s%>/dashboard">Home</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/edit">Edit Account</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/sign_out" data-method="delete"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+          <% else %>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/dashboard/about">About</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/dashboard/calculator">Estimate Calculator</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/sign_in">Log In</a>
             </li>
           <% end %>
-          <li class="nav-item">
-            <% if user_signed_in? %>
-              <a class="nav-link" style="font-weight:bold; color: #1c75a8" href="/<%= current_user.type.downcase.pluralize + "/" + current_user.id.to_s%>/dashboard">Dashboard</a>
-            <% end %> 
-          </li>
         </ul>
-        <span class="nav-link">
-            <% if user_signed_in? %>
-              <a style="font-weight:bold; color: #1c75a8" href="/users/edit">Edit my account</a> | 
-              <a style="font-weight:bold; color: #1c75a8" href="/users/sign_out" data-method="delete">Log out</a>
-            <% else %>
-              <a style="font-weight:bold; color: #1c75a8" href="/users/sign_in">Log In</a>
-            <% end %>
-        </span>
       </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container">
       <% flash.each do |key, value| %>
         <%= render partial: "layouts/flash_modal", locals: {key: key, value: value} %>
       <% end %>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js">//TODO REVISIT HERE AS THIS SHOULDN'T BE HERE, BUT NEEDS TO BE ABOVE JQUERY CALLS IN OTHER FILES</script>
       <%= yield %>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+        $('a[href$="' + location.pathname + '"]').addClass('active');
+      });
+    </script>
+    <script>
+      $('#flash_modal').modal('show')
+    </script>
   </body>
 </html>
-
-<script>
-  $('#flash_modal').modal('show')
-</script>

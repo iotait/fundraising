@@ -1,5 +1,5 @@
 <div class="row py-3">
-  <div class="col-md-6 order-md-1 col-sm-12 order-2" style="background-color: gray">
+  <div class="col-md-6 order-md-1 col-sm-12 order-2 bg-light">
     <div class="col-8">
       <% if @student.avatar.attached? %>
         <img src="<%= url_for(@student.avatar) %>" class="rounded float-left" alt="student" width=100% height=auto>
@@ -8,13 +8,13 @@
       <% end %>
     </div>
   </div>
-  <div class="col-md-6 order-md-2 col-sm-12 order-1 bg-primary text-white pb-3">
+  <div class="col-md-6 order-md-2 col-sm-12 order-1 bg-primary text-light pb-3">
     <div class="d-flex align-items-center mx-auto flex-column">
-      <div class="pb-5 pt-3" style="font-size: 1.4rem;font-weight: bold;"><%= @student.name %></div>
-      <p>I am so excited about the Read-a-thon we are holding.</p>
-      <p>Please help me raise money while I read as much as possible. </p>
-      <p>I'm counting on your help.</p>
-      <a href="#donate_modal" data-toggle="modal"><button type="button" id="begin_donate_button" class="btn btn-light btn-lg mt-3">Donate Now</button></a>
+      <div class="pb-7 pt-7" style="font-size: 2.5rem;font-weight: bold;"><%= @student.name %></div>
+      <div>I am so excited about the Read-a-thon we are holding.</div>
+      <div>Please help me raise money while I read as much as possible. </div>
+      <div>I'm counting on your help.</div>
+      <a href="#donate_modal" data-toggle="modal"><button type="button" id="begin_donate_button" class="btn btn-light btn-lg mt-8">Donate Now</button></a>
     </div>
   </div>
 </div>
@@ -26,13 +26,16 @@
    <div class="social-share p-2">
     <ul>
       <li>
-        <a href="https://twitter.com/intent/tweet?text=" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://twitter.com/intent/tweet?text=" class="twitter" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
       </li>
       <li>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=" class="facebook" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
       </li>
       <li>
-        <a href="mailto:?subject=<%= @student.name %> Read-a-Thon Fundraiser&body=Would you consider supporting me?" class="email" title="Send an Email"><i class="fa fa-envelope"></i></a>
+        <a href="mailto:?subject=<%= @student.name %> Read-a-Thon Fundraiser&body=Would you consider supporting me?" class="email" title="Send an Email"><i class="fas fa-envelope"></i></a>
+      </li>
+      <li>
+        <a href="http://www.linkedin.com/shareArticle?mini=true&url=" class="linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
       </li>
     </ul>
   </div>
@@ -40,16 +43,12 @@
 
 <div class="row">
   <div class="col-md-6 col-sm-12">
-    <h3 class="pb-1 pt-1">Donations:</h3>
+    <h3 class="pb-5 pt-1">Donations:</h3>
     <% @student.donations.reverse.each do |donation| %>
-      <div class="media">
-        <span style="background-color:black;color:white;"><%= dollar_format(donation.amount) %></span>
-        <div class="media-body">
-          <blockquote class="blockquote">
-            <p><%= donation.message %></p>
-            <footer class="blockquote-footer"><%= donation.donor %></footer>
-          </blockquote>
-        </div>
+      <div class="donation">
+        <span class="amount"><%= dollar_format(donation.amount) %></span>
+        "<%= donation.message %>"
+        -<%= donation.donor %>
       </div>
     <% end %>
   </div>
@@ -60,7 +59,7 @@
         <li><%= @student.name + " read " + session.time.to_s + " minutes on " + session.created_at.to_s(:long_ordinal) %></li>
       <% end %>
     </ul>
-    <div class="p-2 mb-2 bg-info text-white"><%= "Total time reading: " + to_hours_and_mins_s(@student.mins_read) %></div>
+    <div class="p-2 mb-2 bg-dark text-light"><%= "Total time reading: " + to_hours_and_mins_s(@student.mins_read) %></div>
   </div>
 </div>
 
@@ -72,7 +71,7 @@ $(document).ready(function() {
       url:'/students/<%= @student.id %>/donations',
       data: $('form').serialize(),
       success: function(response){
-        var stripe = Stripe("<%= Rails.application.credentials[:stripe][Rails.env.to_sym][:publishable_key] %>"]);
+        var stripe = Stripe("<%= Rails.application.credentials[:stripe][Rails.env.to_sym][:publishable_key] %>");
         stripe.redirectToCheckout({
           sessionId: response.session_id
         }).then(function (result) {

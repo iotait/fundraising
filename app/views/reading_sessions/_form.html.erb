@@ -1,5 +1,7 @@
 <%= form_for([student, session]) do |form| %>
-  <%= form.label :time%>
-  <%= form.number_field :time, value: session.time%>
+  <div class="mb-7">
+    <%= form.label :time%>
+    <%= form.number_field :time, value: session.time%>
+  </div>
   <%= form.submit "Submit" %>
 <% end %>

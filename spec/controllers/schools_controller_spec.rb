@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "Schools" do
   it "can be viewed by anyone" do
-    school = FactoryBot.build_stubbed(:school)
+    school = FactoryBot.create(:school)
 
     visit school_path(school)
     expect(page).to have_http_status(200)
