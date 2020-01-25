@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+ruby "2.6.3"
 
 gem "rails", ">= 6.0.1"
 gem "sass-rails"
@@ -8,6 +9,7 @@ gem "jquery-rails"
 gem "turbolinks"
 gem "bootsnap", require: false
 gem "webpacker"
+gem "puma"
 gem "devise"
 gem "bootstrap"
 gem "font-awesome-sass"

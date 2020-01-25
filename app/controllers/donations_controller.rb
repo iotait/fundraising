@@ -1,8 +1,8 @@
 class DonationsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create]
+  skip_before_action :authenticate_user!, only: [:create], raise: false
 
   # TODO security revisit CSRF protection here
-  skip_before_action :verify_authenticity_token, only: [:create]
+  skip_before_action :verify_authenticity_token, only: [:create], raise: false
   def create
     Stripe.api_key = Rails.application.credentials[:stripe][Rails.env.to_sym][:secret_key]
 

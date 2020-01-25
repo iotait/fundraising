@@ -65,7 +65,7 @@ class TeachersController < ApplicationController
   end
 
   # TODO security revisit CSRF protection here
-  skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token, raise: false
   def add_reading_session_for_class
     @teacher.add_reading_session_for_class(params[:time], params[:student_ids])
   end
