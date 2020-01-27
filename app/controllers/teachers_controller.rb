@@ -52,15 +52,16 @@ class TeachersController < ApplicationController
   end
 
   def students
-    # TODO BUG: flash messages no longer show
-    begin
-      @students = @teacher.search_students(params[:search])
-    rescue
-      # flash[:error] = "It appears there was an error in the name you were searching"
-    end
-
-    if @students.nil?
-      # flash[:error] = "No students match that name"
+    if params[:search] != nil
+      begin
+        @students = @teacher.search_students(params[:search])
+      rescue
+        flash.now[:error] = "It appears there was an error in the name you were searching"
+      end
+  
+      if @students.nil?
+        flash.now[:error] = "No students match that name"
+      end
     end
   end
 

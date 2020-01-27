@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-lg-5 col-sm-12 mb-9">
     <%= form_tag(admin_teachers_path(@admin), method: :get) do %>
-      <%= text_field_tag(:search, params[:search]) %>
+      <%= text_field_tag(:teachers_search, params[:teachers_search]) %>
       <%= submit_tag ("Search") %>
     <% end %>
 
@@ -30,7 +30,8 @@
               <a href="#new_teacher_modal" data-toggle="modal"><i class="fas fa-user-plus"></i></a>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Add a single teacher</h5>
+              <h5 class="card-title">Add teacher</h5>
+              <p class="card-text">Should contain some text</p>
             </div>
           </div>
         </div>
@@ -40,7 +41,8 @@
               <a href="/admins/<%=@admin.id%>/teachers_csv"><i class="fas fa-file-csv"></i></a>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Add all through .csv file</h5>
+              <h5 class="card-title">Add all </h5>
+              <p class="card-text">Should contain some text</p>
             </div>
           </div>
           </div>
