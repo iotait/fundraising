@@ -1,7 +1,7 @@
 <% if @admin.school.blank? %>
   <p>Add a school</p>
 <% else %>
-  <div class="py-9 mt-7 mb-9 snapshot">
+  <div class="py-9 my-10 snapshot">
     <div class="row">
       <% todays_tallies = @admin.todays_tallies %>
       <div class="col-md-4 col-12 d-flex justify-content-center">
@@ -27,7 +27,7 @@
   <div class="pb-9">
     <div class="row">
       <div class="col-md-4 col-12">
-        <div class="card border-dark mx-4">
+        <div class="dash-card card border-dark mx-4">
           <div class="dash-card-img-top">
             <a href="/admins/<%=@admin.id%>/school"><i class="fas fa-school"></i></a>
           </div>
@@ -39,7 +39,7 @@
       </div>
       <div class="space-between"></div>
       <div class="col-md-4 col-12">
-        <div class="card border-dark mx-4">
+        <div class="dash-card card border-dark mx-4">
           <div class="dash-card-img-top">
             <a href="/admins/<%=@admin.id%>/teachers"><i class="fas fa-chalkboard-teacher"></i></a>
           </div>
@@ -51,7 +51,7 @@
       </div>
       <div class="space-between"></div>
       <div class="col-md-4 col-12">
-        <div class="card border-dark mx-4">
+        <div class="dash-card card border-dark mx-4">
           <div class="dash-card-img-top">
             <a href="/admins/<%=@admin.id%>/students"><i class="fas fa-user-friends"></i></a>
           </div>
@@ -66,7 +66,7 @@
   <div class="pb-9">
     <div class="row">
       <div class="col-md-4 col-12">
-        <div class="card border-dark mx-4">
+        <div class="dash-card card border-dark mx-4">
           <div class="dash-card-img-top">
             <a href="/admins/<%=@admin.id%>/reports"><i class="fas fa-chart-line"></i></a>
           </div>
@@ -78,7 +78,7 @@
       </div>
       <div class="space-between"></div>
       <div class="col-md-4 col-12">
-        <div class="card border-dark mx-4">
+        <div class="dash-card card border-dark mx-4">
           <div class="dash-card-img-top">
             <a href="/admins/<%=@admin.id%>/promote"><i class="fas fa-share-square"></i></a>
           </div>
@@ -90,7 +90,7 @@
       </div>
       <div class="space-between"></div>
       <div class="col-md-4 col-12">
-        <div class="card border-dark mx-4">
+        <div class="dash-card card border-dark mx-4">
           <div class="dash-card-img-top">
             <a href="/admins/<%=@admin.id%>/end_read_a_thon"><i class="fas fa-hourglass-end"></i></a>
           </div>
