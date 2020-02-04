@@ -1,5 +1,12 @@
 // Bootstrap customizations for bookworm
 
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1280px
+) !default;
+
 $spacer: 1rem !default;  //16px
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
