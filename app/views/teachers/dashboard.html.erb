@@ -1,7 +1,7 @@
 <div class="mt-9">
   <div class="row">
     <div class="col-md-4 col-12">
-      <div class="card border-dark mx-6">
+      <div class="card mx-6">
         <div class="card-img-top">
           <a href="/teachers/<%=@teacher.id%>/students"><i class="fas fa-user-friends"></i></a>
         </div>
@@ -13,7 +13,7 @@
     </div>
     <div class="space-between"></div>
     <div class="col-md-4 col-12">
-      <div class="card border-dark mx-6">
+      <div class="card mx-6">
         <%= render partial: "reading_session", locals: {teacher: @teacher} %>
         <div class="card-img-top">
           <a href="#addReadingSessionModal" data-toggle="modal"><i class="fas fa-book-reader"></i></a>
@@ -26,7 +26,7 @@
     </div>
     <div class="space-between"></div>
     <div class="col-md-4 col-12 mb-9">
-      <div class="card border-dark mx-6">
+      <div class="card mx-6">
         <div class="card-img-top">
           <a href="/teachers/<%=@teacher.id%>/promote"><i class="fas fa-share-square"></i></a>
         </div>
