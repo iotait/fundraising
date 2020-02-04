@@ -1,5 +1,8 @@
 @import "bootstrap-custom";
 
+.navbar{
+  background-color: $special-bg;
+}
 .navbar-light .navbar-nav .nav-item a {
   color: $dark;
   border-bottom: 3px solid white;

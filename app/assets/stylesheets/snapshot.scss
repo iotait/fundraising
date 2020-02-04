@@ -1,31 +1,46 @@
 @import "bootstrap-custom";
 
 .snapshot {
-  // box-shadow: 8px 12px 24px 10px #CBD2D9;
-  // box-shadow: 0 0 24px 10px #CBD2D9;
-  border: 3px solid $dark;
-  background-image: radial-gradient(#55AAD4, #3994C1);
-  // background-color: $primary;
-  border-radius: 6.25rem;
+  background-color: $special-bg;
+  border-bottom: 4px solid #fff;
+
+  .highlight {
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2);
+    border: 3px solid #f5f7fa;
+    background-image: radial-gradient(#55AAD4, #3994C1);
+    border-radius: 6rem;
+    margin-bottom: -200px;
+  }
 }
 
-.snapshot-figure {
+.snapshot {
   color: $light;
-  font-size: 5rem;
-  line-height: 4rem;
-}
+  .snapshot-caption, .snapshot-embellishment {
+    font-size: 1rem;
+    color: $light;
+  }
 
-.snapshot-caption, .snapshot-embellishment {
-  font-size: 1.25rem;
-  color: $light;
-}
+  .snapshot-item{
+    position: relative;
+  }
 
- @media (max-width: 768px) {
-  .snapshot { 
-    .row {
-      .space-between {
-        margin: 1.5rem;
-      }
+  .snap-value{
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .snapshot-embellishment{
+    vertical-align: top;
+    &.icon {
+    }
+  }
+  .hero{
+    .snap-value{
+      font-size: 8rem;
+      line-height: 6rem;
+    }
+    .snapshot-embellishment{
+      font-size: 1.25rem;
     }
   }
 }
