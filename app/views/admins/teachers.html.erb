@@ -10,6 +10,16 @@
       <div class="mt-7">
         <% if @teachers.nil? %>
             <span style="margin-top: 2rem;font-size:1.5rem">Enter a teachers's first and last name</span>
+        <% elsif @teachers.length > 3 %>
+          <ul>
+            <% @teachers.each do |teacher| %>
+                <li>
+                  <a href="/admins/1/teachers?teachers_search=<%= teacher.first_name + "+" + teacher.last_name %>&commit=Search">
+                    <div style="font-size:1rem;"><%= teacher.name %></div>
+                  </a>
+                </li>
+            <% end %>
+          </ul>
         <% else %>
           <% @teachers.each do |teacher| %>
             <div style="margin-top: 2rem;font-size:2rem;"><%= teacher.name %></div>

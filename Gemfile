@@ -18,6 +18,7 @@ gem "wkhtmltopdf-binary"
 gem "stripe"
 gem "stripe_event"
 gem "aws-sdk-s3", require: false
+gem "fuzzy_match", require: false
 
 group :development do
   gem "listen"

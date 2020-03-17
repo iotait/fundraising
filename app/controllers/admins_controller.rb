@@ -21,7 +21,9 @@ class AdminsController < ApplicationController
   end
 
   def students
-    if params[:students_search] != nil
+    if params[:students_search].blank?
+      @students = @admin.students
+    elsif params[:students_search] != nil
       begin
         @students = @admin.search_students(params[:students_search])
       rescue
@@ -45,7 +47,9 @@ class AdminsController < ApplicationController
   end
 
   def teachers
-    if params[:teachers_search] != nil
+    if params[:teachers_search].blank?
+      @teachers = @admin.teachers
+    elsif params[:teachers_search] != nil
       begin
         @teachers = @admin.search_teachers(params[:teachers_search])
       rescue

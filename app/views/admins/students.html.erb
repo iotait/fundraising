@@ -12,6 +12,16 @@
           <div class="col-12 mb-9">
             <span style="font-size:1.5rem">Enter a student's first and last name</span>
           </div>
+        <% elsif @students.length > 3 %>
+          <ul>
+            <% @students.each do |student| %>
+                <li>
+                  <a href="/admins/1/students?students_search=<%= student.first_name + "+" + student.last_name %>&commit=Search">
+                    <div style="font-size:1rem;"><%= student.name %></div>
+                  </a>
+                </li>
+            <% end %>
+          </ul>
         <% else %>
           <% @students.each do |student| %>
             <div class="col-4">

@@ -122,6 +122,7 @@ GEM
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
     formatador (0.2.5)
+    fuzzy_match (2.1.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     guard (2.16.1)
@@ -326,6 +327,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   font-awesome-sass
+  fuzzy_match
   guard-rspec
   jquery-rails
   launchy
