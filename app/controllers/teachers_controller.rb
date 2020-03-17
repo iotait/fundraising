@@ -52,7 +52,9 @@ class TeachersController < ApplicationController
   end
 
   def students
-    if params[:search] != nil
+    if params[:search].blank?
+      @students = @teacher.students
+    elsif params[:search] != nil
       begin
         @students = @teacher.search_students(params[:search])
       rescue

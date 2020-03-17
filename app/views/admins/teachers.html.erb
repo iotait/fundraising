@@ -14,7 +14,7 @@
           <ul>
             <% @teachers.each do |teacher| %>
                 <li>
-                  <a href="/admins/1/teachers?teachers_search=<%= teacher.first_name + "+" + teacher.last_name %>&commit=Search">
+                  <a href="/admins/<%= @admin.id %>/teachers?teachers_search=<%= teacher.first_name + "+" + teacher.last_name %>&commit=Search">
                     <div style="font-size:1rem;"><%= teacher.name %></div>
                   </a>
                 </li>

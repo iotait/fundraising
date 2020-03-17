@@ -27,9 +27,22 @@ class Teacher < User
   end
 
   def search_students(search)
-    first_name = search[0, search.index(" ")]
-    last_name = search[search.index(" ") + 1, search.size]
+    middle = search.index(" ")
+    student = nil
 
-    students.where(first_name: first_name, last_name: last_name)
+    #If there's a space, we know it's a well-formed name and will search
+    if (middle.present?)
+      first_name = search[0, middle]
+      last_name = search[middle + 1, search.size]
+      student = students.where(first_name: first_name, last_name: last_name)
+    end
+
+    #If we don't have a student by now, we will fuzzy search it
+    if (student.blank?)
+      fz = FuzzyMatch.new(students.all, :read => :first_name)
+      student = students.where(first_name: fz.find(search).first_name)
+    end
+
+    return student
   end
 end
