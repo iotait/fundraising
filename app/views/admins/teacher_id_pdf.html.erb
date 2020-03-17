@@ -1,0 +1,5 @@
+<ul>
+  <% @admin.teachers.each do |teacher| %>
+    <li class="mb-5"><strong>Name: </strong><%= teacher.name %>       <strong>ID: </strong><%= teacher.id %></li>
+  <% end %>
+</ul>

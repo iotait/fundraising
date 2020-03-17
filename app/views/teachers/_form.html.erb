@@ -1,0 +1,15 @@
+<%= form_for teacher do |form| %>
+  <div class="mb-7">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+  <div class="mb-7">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+  <div class="mb-7">
+    <%= form.label :email%>
+    <%= form.text_field :email%>
+  </div>
+  <%= form.submit "Submit" %>
+<% end %>

@@ -23,4 +23,8 @@ class School < ApplicationRecord
     end
     all_donations
   end
+
+  def donations
+    Donation.where(donatable_type: "School", donatable_id: id, status: "completed")
+  end
 end

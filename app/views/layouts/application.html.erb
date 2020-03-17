@@ -4,46 +4,98 @@
     <title>Fundraising App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <% #This should be removed when we update the share links %>
-    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5df7e5a482eea90019eed4bf&product=inline-share-buttons" async="async"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; align-items: flex-end">
-      <a class="navbar-brand" href="/"><img src="/logo.png" width="200" height=auto alt="Bookworm Logo"></a>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" style="font-weight:bold; color: #3581AE" href="/">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="font-weight:bold; color: #3581AE" href="/dashboard/about">About</a>
-          </li>
-          <li class="nav-item">
-            <% if user_signed_in? %>
-              <a class="nav-link" style="font-weight:bold; color: #3581AE" href="/<%= current_user.type.downcase.pluralize + "/" + current_user.id.to_s%>/dashboard">Dashboard</a>
-            <% end %> 
-          </li>
+    <nav class="navbar navbar-expand-md navbar-light pt-4 pb-6" style="align-items: flex-end">
+      <a class="navbar-brand" href="/"><img src="/logo2.png" width="350" height=auto alt="Bookworm Logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <% if current_user.is_a?(Admin) %>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/admins/<%=current_user.id.to_s%>/dashboard">Home</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/admins/<%=current_user.id.to_s%>/school">School</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/admins/<%=current_user.id.to_s%>/teachers">Teachers</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/admins/<%=current_user.id.to_s%>/students">Students</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/edit">Edit Account</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/sign_out" data-method="delete"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+          <% elsif current_user.is_a?(Teacher) %>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/teachers/<%=current_user.id.to_s%>/dashboard">Home</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/teachers/<%=current_user.id.to_s%>/students">Students</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/edit">Edit Account</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/sign_out" data-method="delete"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+          <% elsif current_user.is_a?(Student) %>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/students/<%=current_user.id.to_s%>/dashboard">Home</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/edit">Edit Account</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/sign_out" data-method="delete"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+          <% else %>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/dashboard/about">About</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/dashboard/calculator">Estimate Calculator</a>
+            </li>
+            <li class="nav-item ml-7">
+              <a class="nav-link" href="/users/sign_in">Log In</a>
+            </li>
+          <% end %>
         </ul>
-        <span class="nav-link">
-            <% if user_signed_in? %>
-              <a style="font-weight:bold; color: #3581AE" href="/users/edit">Edit my account</a> | 
-              <a style="font-weight:bold; color: #3581AE" href="/users/sign_out" data-method="delete">Log out</a>
-            <% else %>
-              <a style="font-weight:bold; color: #3581AE" href="/users/sign_in">Log In</a>
-            <% end %>
-        </span>
       </div>
     </nav>
 
-    <div class="container-fluid">
+    <div>
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+        <%= render partial: "layouts/flash_modal", locals: {key: key, value: value} %>
       <% end %>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js">//TODO REVISIT HERE AS THIS SHOULDN'T BE HERE, BUT NEEDS TO BE ABOVE JQUERY CALLS IN OTHER FILES</script>
       <%= yield %>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+        $('a[href$="' + location.pathname + '"]').addClass('active');
+      });
+    </script>
+    <script>
+      $('#flash_modal').modal('show')
+    </script>
   </body>
 </html>

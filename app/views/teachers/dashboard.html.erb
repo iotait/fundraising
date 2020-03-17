@@ -1,10 +1,52 @@
-<ul>
-  <% @teacher.students.each do |student| %>
-    <li>
-      <%= student.name %> -
-      <a href="/students/<%= student.id %>/dashboard"> Dash</a> |
-      <a href="/students<%= student.id %>/edit"> Edit</a> |
-      <a href="/reading_sessions/new/<%= student.id %>"> Add reading session</a>
-    </li>
-  <% end %>
-</ul>
+<div class="mt-9">
+  <div class="row">
+    <div class="col-md-4 col-12">
+      <div class="card mx-6">
+        <div class="card-img-top">
+          <a href="/teachers/<%=@teacher.id%>/students"><i class="fas fa-user-friends"></i></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Students</h5>
+          <p class="card-text">Manage those little rascals running around</p>
+        </div>
+      </div>
+    </div>
+    <div class="space-between"></div>
+    <div class="col-md-4 col-12">
+      <div class="card mx-6">
+        <%= render partial: "reading_session", locals: {teacher: @teacher} %>
+        <div class="card-img-top">
+          <a href="#addReadingSessionModal" data-toggle="modal"><i class="fas fa-book-reader"></i></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Add Session</h5>
+          <p class="card-text">Add a reading session for all or part of your class</p>
+        </div>
+      </div>
+    </div>
+    <div class="space-between"></div>
+    <div class="col-md-4 col-12 mb-9">
+      <div class="card mx-6">
+        <div class="card-img-top">
+          <a href="/teachers/<%=@teacher.id%>/promote"><i class="fas fa-share-square"></i></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Share-a-thon</h5>
+          <p class="card-text">Promote your read-a-thon to receive mo' money</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#addButton").click(function() {
+      //TODO security: check for specific teacher id instead of any teacher
+      $.post({
+         url:'/teachers/<%=@teacher.id%>/add_reading_session_for_class',
+         data: $('form').serialize()
+      })
+    });
+  });
+</script>

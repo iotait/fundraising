@@ -1,56 +1,68 @@
-<div class="row">
- <div class="col-md-8 order-md-1 col-sm-12 order-2 py-2 bg-primary text-white">
-    <div class="row">
-      <div class="col-4">
-        <% if @student.avatar.attached? %>
-          <img src="<%= url_for(@student.avatar) %>" class="rounded float-left" alt="student" width=100% height=auto>
-        <% else %>
-          <img src="http://www.fancyhands.com/images/default-avatar-250x250.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
-        <% end %>
-      </div>
-      <div class="d-flex align-items-center mx-auto flex-column">
-        <div class="p-2" style="font-size: 1.4rem;font-weight: bold;"><%= @student.name %>'s Sum: <%= dollar_format(@student.sum) %></div>
-        <div class="p-2"><a href="/donations/new/User/<%= @student.id %>"><button type="button" class="btn btn-light btn-lg">Donate Now</button></a></div>
-      </div>
+<div class="row py-3">
+  <div class="col-md-6 order-md-1 col-sm-12 order-2 bg-light">
+    <div class="col-8">
+      <% if @student.avatar.attached? %>
+        <img src="<%= url_for(@student.avatar) %>" class="rounded float-left" alt="student" width=100% height=auto>
+      <% else %>
+        <img src="http://www.fancyhands.com/images/default-avatar-250x250.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
+      <% end %>
     </div>
-  </div> 
-  <div class="col-md-4 order-md-2 col-sm-12 order-1 pb-2 bg-secondary text-white">
-    <h3>Share:</h3>
-    <div class="sharethis-inline-share-buttons"></div>
+  </div>
+  <div class="col-md-6 order-md-2 col-sm-12 order-1 bg-primary text-light pb-3">
+    <div class="d-flex align-items-center mx-auto flex-column">
+      <div class="pb-7 pt-7" style="font-size: 2.5rem;font-weight: bold;"><%= @student.name %></div>
+      <a href="#donate_modal" data-toggle="modal"><button type="button" id="begin_donate_button" class="btn btn-light btn-lg mt-8">Donate Now</button></a>
+    </div>
   </div>
 </div>
 
-<div class="d-flex justify-content-center mt-3">
-    <div class="p-2"><h3>Share:</h3></div>
-    <div class="p-2 sharethis-inline-share-buttons"></div>
-</div>
+<%= render "donations/modal" %>
 
 <div class="row">
   <div class="col-md-6 col-sm-12">
-    <h3 class="pb-1 pt-3">Donations:</h3>
-    <% @student.donations.each do |donation| %>
-      <div class="media">
-        <img src= <%= "https://dummyimage.com/60x60/000/ffffff&text=" + dollar_format(donation.amount) %> class="align-self-start mr-3" alt="img">
-        <div class="media-body">
-          <blockquote class="blockquote">
-            <p><%= donation.message %></p>
-            <footer class="blockquote-footer"><%= donation.donor %></footer>
-          </blockquote>
-        </div>
+    <h3 class="pb-5 pt-1">Donations:</h3>
+    <% @student.donations.reverse.each do |donation| %>
+      <div class="donation">
+        <span class="amount"><%= dollar_format(donation.amount) %></span>
+        "<%= donation.message %>"
+        -<%= donation.donor %>
       </div>
     <% end %>
   </div>
   <div class="col-md-6 col-sm-12">
     <h3 class="pt-3">Reading Sessions:</h3>
-    <a href="/reading_sessions/new/<%= @student.id %>">Add Reading Session</a>
+    <%= render partial: "reading_sessions/new", locals: {student: @student, session: ReadingSession.new} %>
+    <a href="#new_reading_session_modal" data-toggle="modal">Add Reading Session</a>
     <ul>
-      <% @student.reading_sessions.each do |session| %>
+      <% @student.reading_sessions.reverse.each do |session| %>
+        <%= render partial: "reading_sessions/edit", locals: {student: @student, session: session} %>
         <li>
-          <%= @student.name + " read " + session.time.to_s + " minutes on " + session.created_at.to_s(:long_ordinal) + " - "%>
-          <a href="/reading_sessions/<%= session.id %>/edit">Edit</a>
+          <%= session.time.to_s + " minutes on " + session.created_at.to_s(:long_ordinal) + " - "%>
+          <a href="#edit_reading_session_modal" data-toggle="modal">Edit</a> | 
+          <%= link_to("Delete", student_reading_session_path(@student, session), :method => :delete, :class => "delete") %>
         </li>
       <% end %>
     </ul>
-    <div class="p-2 mb-2 bg-info text-white"><%= "Total time reading: " + to_hours_and_mins_s(@student.mins_read) %></div>
+    <div class="p-2 mb-2 bg-dark text-light"><%= "Total time reading: " + to_hours_and_mins_s(@student.mins_read) %></div>
   </div>
 </div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+$(document).ready(function() {
+  $("#donate_button").click(function() {
+    $.post({
+      url:'/students/<%= @student.id %>/donations',
+      data: $('form').serialize(),
+      success: function(response){
+        var stripe = Stripe("<%= Rails.application.credentials[:stripe][Rails.env.to_sym][:publishable_key] %>");
+        stripe.redirectToCheckout({
+          sessionId: response.session_id
+        }).then(function (result) {
+          result.error.message
+        });
+      }
+    })
+  });
+});
+</script>

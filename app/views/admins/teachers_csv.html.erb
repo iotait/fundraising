@@ -1,0 +1,19 @@
+<h1 class="mb-7">Add all teachers through a .csv file</h1>
+
+<div class="container mx-6">
+  <h2 class="mb-5">Step 1) Generate a spreadsheet</h2>
+  <p>Generate a spreadsheet with the following structure.</p>
+  <img src="/teacher_csv_format.png" alt="Image showing desired csv format.">
+
+  <h2 class="mb-5 mt-9">Step 2) Save the spreadsheet as a .csv file</h2>
+  <p>In order to save the spreadsheet as a .csv style, select <strong>File > Save As</strong>. In the "Save as Type" 
+  drop-down menu, scroll down to locate and select <strong>CSV (comma delimited)</strong>. Click <strong>Save</strong>.
+
+  <h2 class="mb-5 mt-9">Step 3) Upload your file</h2>
+  <div class="mb-9">
+    <%= form_tag import_teachers_path, multipart: true do %>
+      <input type="file" name="file" id="file"></input>
+      <%= submit_tag "Import" %>
+    <% end %>
+  </div>
+</div>

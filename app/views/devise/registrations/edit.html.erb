@@ -8,19 +8,12 @@
 
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+    <%= f.text_field :last_name, autocomplete: "last_name" %>
   </div>
-
-  <% if current_user.type == "Student"%>
-    <div class="field">
-      <%= f.label :about %><br />
-      <%= f.text_field :about, autofocus: true, autocomplete: "about" %>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

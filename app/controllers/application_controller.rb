@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -11,11 +10,26 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    "/"
+    "/" + current_user.type.downcase.pluralize + "/" + current_user.id.to_s + "/dashboard"
   end
 
   def authenticate_admin!
     unless current_user.is_a?(Admin)
+      flash[:error] = "Sorry, you must be signed in as an admin to view that."
+      redirect_to "/"
+    end
+  end
+
+  def authenticate_teacher!
+    unless current_user.is_a?(Teacher)
+      flash[:error] = "Sorry, you must be signed in as a teacher to view that."
+      redirect_to "/"
+    end
+  end
+
+  def authenticate_teacher_or_admin!
+    unless current_user.is_a?(Teacher) || current_user.is_a?(Admin)
+      flash[:error] = "Sorry, you must be signed is as an admin or teacher to view that"
       redirect_to "/"
     end
   end

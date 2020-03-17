@@ -1,0 +1,118 @@
+// Bootstrap customizations for bookworm
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1280px
+) !default;
+
+$spacer: 1rem !default;  //16px
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: $spacer * .125,
+    2: $spacer * .25,
+    3: $spacer * .5,
+    4: $spacer * .75,
+    5: $spacer,
+    6: $spacer * 1.5,
+    7: $spacer * 2,
+    8: $spacer * 3,
+    9: $spacer * 4,
+    10: $spacer * 5,
+    11: $spacer * 7,
+    12: $spacer * 10,
+  ),
+  $spacers
+);
+
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-alternative: 'Nunito', sans-serif;
+$headings-font-family:  $font-family-alternative;
+
+$special-bg: #C1EAC5;
+$primary: #2D83AE;
+$secondary: #3F9142;
+$headings-color: #3F9142;
+$dark: #0B4F71;
+$light: #F5F7FA;
+
+//Color palette 20
+
+//Primary colors:
+//Light Blue:
+  //#0B4F71
+  //#166086
+  //#1D6F98
+  //#2D83AE
+  //#3994C1
+  //#55AAD4
+  //#7CC1E4
+  //#A7D8F0
+  //#D1EEFC
+  //#EBF8FF
+
+//Secondary colors:
+//Green:
+  //#05400A
+  //#0E5814
+  //#207227
+  //#2F8132
+  //#3F9142
+  //#57AE5B
+  //#7BC47F
+  //#A3D9A5
+  //#C1EAC5
+  //#E3F9E5
+
+//Neutral:
+  //#1F2933
+  //#323F4B
+  //#3E4C59
+  //#52606D
+  //#616E7C
+  //#7B8794
+  //#9AA5B1
+  //#CBD2D9
+  //#E4E7EB
+  //#F5F7FA
+
+//Supporting:
+  //Purple:
+    //#240754
+    //#34126F
+    //#421987
+    //#51279B
+    //#653CAD
+    //#724BB7
+    //#8662C7
+    //#A081D9
+    //#CFBCF2
+    //#EAE2F8
+
+  //Red:
+    //#610404
+    //#780A0A
+    //#911111
+    //#A61B1B
+    //#BA2525
+    //#D64545
+    //#E66A6A
+    //#F29B9B
+    //#FACDCD
+    //#FFEEEE
+
+  //Yellow:
+    //#513C06
+    //#7C5E10
+    //#A27C1A
+    //#C99A2E
+    //#E9B949
+    //#F7D070
+    //#F9DA8B
+    //#F8E3A3
+    //#FCEFC7
+    //#FFFAEB

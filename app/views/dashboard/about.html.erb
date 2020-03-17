@@ -1,42 +1,17 @@
-<div class="container-fluid">
-  <h2>How much could you raise?</h2>
+<div class="d-flex">
+  <h1 class="mx-auto">What is Bookworm?</h1>
+</div>
 
-  Number of students:<br>
-  <input id="numStudents"><br>
-  Percent of participation:<br>
-  <input id="participation" type="range" min="50" max="100" value="75"><p id="participation-amount"></p><br>
-  Number of donors per student:<br>
-  <input id="donors" type="range" min="1" max="25" value="5"><p id="donor-amount"></p>
-  <button onclick="calculate()">Calculate</button>
-  <h3 id="answer"></h3>
+<div style="background-color:#3b5998; color:white">
+  <p class="mx-2">Bookworm is a low cost platform used to host your school's read-a-thon. While other companies take 
+  20%-25% of the total funds you receive, we take a low 3% that is used only to cover credit card fees.</p>
 
-  <script>
-    //Update slider for participation
-    var participationSlider = document.getElementById("participation");
-    document.getElementById("participation-amount").innerHTML = participationSlider.value;
+  <p class="mx-2">Your students commit to reading during the read-a-thon and ask for donations from the community to support 
+  them through it. Readers can build their personal pages and share it with family and friends who can donate directly to their page.</p>
+</div>
 
-    participationSlider.oninput = function() {
-      document.getElementById("participation-amount").innerHTML = this.value;
-    }
+<hr />
 
-    //Update slider for donors per student
-    var donorSlider = document.getElementById("donors");
-    document.getElementById("donor-amount").innerHTML = donorSlider.value;
-
-    donorSlider.oninput = function() {
-      document.getElementById("donor-amount").innerHTML = this.value;
-    }
-
-    //Calculate the amount that could be raised
-    function calculate() {
-      var students = document.getElementById("numStudents").value;
-      var participants = document.getElementById("participation").value;
-      var donors = document.getElementById("donors").value;
-
-      var result = parseFloat(students) * (parseFloat(participants) / 100.0) * parseFloat(donors) * 25.70;
-      if (!isNaN(result)) {
-        document.getElementById("answer").innerHTML="You could raise $" + result.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-      }
-    }
-  </script>
+<div class="d-flex">
+  <h1 class="mx-auto">How Bookworm Works</h1>
 </div>

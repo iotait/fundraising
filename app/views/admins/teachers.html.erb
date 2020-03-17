@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <h1>Teachers</h1>
+  <div class="row">
+    <div class="col-lg-5 col-sm-12 mb-9">
+      <%= form_tag(admin_teachers_path(@admin), method: :get) do %>
+        <%= text_field_tag(:teachers_search, params[:teachers_search]) %>
+        <%= submit_tag ("Search") %>
+      <% end %>
+
+      <div class="mt-7">
+        <% if @teachers.nil? %>
+            <span style="margin-top: 2rem;font-size:1.5rem">Enter a teachers's first and last name</span>
+        <% else %>
+          <% @teachers.each do |teacher| %>
+            <div style="margin-top: 2rem;font-size:2rem;"><%= teacher.name %></div>
+            <span class="mb-3 mr-7">Teacher ID: <%= teacher.id %></span>
+            <%= render partial: "teachers/edit", locals: {teacher: teacher} %>
+            <span><i class="fas fa-user-edit"><a href="#edit_teacher_modal" data-toggle="modal"></i> Edit</a></span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-lg-7 col-sm-12">
+      <%= render partial: "teachers/new", locals: {teacher: Teacher.new} %>
+      <div class="mx-6">
+        <div class="row">
+          <div class="col-6">
+            <div class="card mx-6">
+              <div class="card-img-top">
+                <a href="#new_teacher_modal" data-toggle="modal"><i class="fas fa-user-plus"></i></a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Add teacher</h5>
+                <p class="card-text">Should contain some text</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card mx-6">
+              <div class="card-img-top">
+                <a href="/admins/<%=@admin.id%>/teachers_csv"><i class="fas fa-file-csv"></i></a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Add all </h5>
+                <p class="card-text">Should contain some text</p>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

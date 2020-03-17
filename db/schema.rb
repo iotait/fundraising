@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_31_164143) do
+ActiveRecord::Schema.define(version: 2020_01_13_162041) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2019_12_31_164143) do
     t.integer "donatable_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
+    t.string "session_id"
     t.index ["donatable_type", "donatable_id"], name: "index_donations_on_donatable_type_and_donatable_id"
   end
 
