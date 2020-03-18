@@ -28,8 +28,9 @@ class StudentsController < ApplicationController
   end
 
   # POST /students
+  #TODO don't create with "password"
   def create
-    Student.create(student_params) # .merge(school: current_user.school)
+    Student.create(student_params.merge(password: "password")) # .merge(school: current_user.school)
     redirect_to admin_dashboard_path(current_user)
   end
 
