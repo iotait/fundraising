@@ -6,6 +6,7 @@ class DonationsController < ApplicationController
   def create
     Stripe.api_key = Rails.application.credentials[:stripe][Rails.env.to_sym][:secret_key]
 
+    #TODO change to actual urls
     #Set success and cancel url
     success_url = params[:student_id] ? ("http://localhost:3000/students/" + params[:student_id] + "/donations/success")
                                       : ("http://localhost:3000/schools/" + params[:school_id] + "/donations/success")
