@@ -1,5 +1,5 @@
 <div class="row py-3">
-  <div class="col-md-6 order-md-1 col-sm-12 order-2 bg-light">
+  <div class="col-md-6 order-md-1 col-sm-12 order-2">
     <div class="col-8">
       <% if @student.avatar.attached? %>
         <img src="<%= url_for(@student.avatar) %>" class="rounded float-left" alt="student" width=100% height=auto>
@@ -18,7 +18,7 @@
 
 <%= render "donations/modal" %>
 
-<div class="row">
+<div class="row ml-4 mb-7">
   <div class="col-md-6 col-sm-12">
     <h3 class="pb-5 pt-1">Donations:</h3>
     <% @student.donations.reverse.each do |donation| %>
