@@ -1,0 +1,3 @@
+<% school = School.where(id: params[:school_id]).first %>
+<div>We are sorry to see you cancel your donation. If this was done in accident, please return to <%= school.name %>'s page and try again</div>
+<a href="/schools/<%=school.id%>%">Link</a>
