@@ -1,10 +1,10 @@
 <div class="row py-3">
   <div class="col-md-6 order-md-1 col-sm-12 order-2">
-    <div class="col-8">
+    <div class="col-8 ml-8">
       <% if @student.avatar.attached? %>
         <img src="<%= url_for(@student.avatar) %>" class="rounded float-left" alt="student" width=100% height=auto>
       <% else %>
-        <img src="http://www.fancyhands.com/images/default-avatar-250x250.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
+        <img src="/user-circle-solid.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
       <% end %>
     </div>
   </div>
