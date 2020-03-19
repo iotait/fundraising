@@ -6,6 +6,12 @@ class DonationsController < ApplicationController
   def create
     Stripe.api_key = Rails.application.credentials[:stripe][Rails.env.to_sym][:secret_key]
 
+    #Set success and cancel url
+    success_url = params[:student_id] ? ("http://localhost:3000/students/" + params[:student_id] + "/donations/success")
+                                      : ("http://localhost:3000/schools/" + params[:school_id] + "/donations/success")
+    cancel_url = params[:student_id] ? ("http://localhost:3000/students/" + params[:student_id] + "/donations/cancel")
+                                     : ("http://localhost:3000/schools/" + params[:school_id] + "/donations/cancel")
+
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ["card"],
       line_items: [{
@@ -15,8 +21,8 @@ class DonationsController < ApplicationController
         currency: "usd",
         quantity: 1,
       }],
-      success_url: "https://bookworm.com/donations/success?session_id={CHECKOUT_SESSION_ID}",
-      cancel_url: "https://example.com/cancel",
+      success_url: success_url,
+      cancel_url: cancel_url,
     )
 
     donor = params[:donor]

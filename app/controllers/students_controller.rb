@@ -74,6 +74,12 @@ class StudentsController < ApplicationController
     end
   end
 
+  def cancel
+  end
+
+  def success
+  end
+
   private
 
   def set_student

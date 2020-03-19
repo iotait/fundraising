@@ -38,6 +38,12 @@ class SchoolsController < ApplicationController
     redirect_to admin_dashboard_path(current_user)
   end
 
+  def cancel
+  end
+
+  def success
+  end
+
   private
 
   def set_school
