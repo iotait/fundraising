@@ -1,3 +1,5 @@
+require 'fuzzy_match'
+
 class Admin < User
   has_one :school
   has_many :teachers, through: :school
@@ -9,9 +11,6 @@ class Admin < User
 
     todays_tallies
   end
-
-  #TODO Where does this go?
-  require 'fuzzy_match'
 
   def search_students(search)
     middle = search.index(" ")

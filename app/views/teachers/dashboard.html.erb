@@ -42,7 +42,6 @@
 <script>
   $(document).ready(function() {
     $("#addButton").click(function() {
-      //TODO security: check for specific teacher id instead of any teacher
       $.post({
          url:'/teachers/<%=@teacher.id%>/add_reading_session_for_class',
          data: $('form').serialize()
