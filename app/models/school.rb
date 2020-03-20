@@ -24,6 +24,14 @@ class School < ApplicationRecord
     all_donations
   end
 
+  def combined_minutes_read
+    minutes = 0
+    students.each do |student|
+      minutes += student.mins_read
+    end
+    minutes
+  end
+
   def donations
     Donation.where(donatable_type: "School", donatable_id: id, status: "completed")
   end

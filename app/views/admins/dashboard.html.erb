@@ -8,13 +8,13 @@
         <div class='d-flex justify-content-around align-items-center px-10'>
           <% todays_tallies = @admin.todays_tallies %>
           <div class="col-md-4 col-12  text-center d-none d-md-block">
-            <div class="snap-cont"><span class="snapshot-embellishment mr-1">#</span><span class="snap-value"><%= dollars(todays_tallies.sum) %></span><span class="snapshot-caption"> donations<span></div>
+            <div class="snap-cont"><span class="snapshot-embellishment mr-1">#</span><span class="snap-value"><%= @admin.school.combined_donations.count() %></span><span class="snapshot-caption"> donations<span></div>
           </div>
           <div class="col-md-4 col-12 hero text-center">
-            <div class="snap-cont"><span class="snapshot-embellishment">$</span><span class="snap-value"><%= dollars(@admin.school.sum) %></span><span class="snapshot-caption"> today</span></div>
+            <div class="snap-cont"><span class="snapshot-embellishment">$</span><span class="snap-value"><%= dollars(todays_tallies.sum) %></span><span class="snapshot-caption"> today</span></div>
           </div>
           <div class="col-md-4 col-12 text-center d-none d-md-block">
-            <div class="snap-cont"><span class="snapshot-embellishment icon mr-1"><i class="far fa-clock"></i></span><span class="snap-value"><%= todays_tallies.minutes %></span><span class="snapshot-caption"> read</span></div>
+            <div class="snap-cont"><span class="snapshot-embellishment icon mr-1"><i class="far fa-clock" style="vertical-align: top;"></i></span><span class="snap-value"><%= @admin.school.combined_minutes_read %></span><span class="snapshot-caption"> read</span></div>
           </div>
         </div>
       </div>
