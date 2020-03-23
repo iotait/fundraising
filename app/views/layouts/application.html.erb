@@ -16,6 +16,17 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <% if !Rails.env.production? %>
+        <span class="bootstrap-info">
+          bootstrap size:
+          <span class="d-inline d-sm-none">x-small</span>
+          <span class="d-none d-sm-inline d-md-none">small</span>
+          <span class="d-none d-md-inline d-lg-none">medium</span>
+          <span class="d-none d-lg-inline d-xl-none">large</span>
+          <span class="d-none d-xl-inline">xlarge</span>
+        </span>
+      <% end %>
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <% if current_user.is_a?(Admin) %>
