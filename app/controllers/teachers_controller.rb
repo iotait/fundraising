@@ -18,12 +18,12 @@ class TeachersController < ApplicationController
   #TODO don't create with "password"
   def create
     Teacher.create(teacher_params.merge(school: current_user.school, password: "password"))
-    redirect_to admin_dashboard_path(current_user)
+    redirect_to admin_teachers_path(current_user)
   end
 
   # PATCH/PUT /teachers/1
   def update
-    if @teacher.update(teachers_path)
+    if @teacher.update(teacher_params)
       redirect_to admin_dashboard_path(current_user)
     else
       render :edit
