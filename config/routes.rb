@@ -24,7 +24,6 @@ Rails.application.routes.draw do
 
   resources :schools, only: [:show, :new, :edit, :create, :update, :destroy] do
     get "cancel"
-    get "success"
 
     resources :donations, only: [:create] do
     end
@@ -35,7 +34,6 @@ Rails.application.routes.draw do
     get "cancel"
     get "dashboard"
     get "printable"
-    get "success"
 
     resources :donations, only: [:create] do
     end

@@ -1,3 +1,0 @@
-<% school = School.where(id: params[:school_id]).first %>
-<div>Thank you for donating to <%= school.name %>. We have begun to process your payment and will complete it soon. Follow this link to return to <%= school.name %>'s page.</div>
-<a href="/schools/<%=school.id%>%">Link</a>
