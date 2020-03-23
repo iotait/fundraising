@@ -8,19 +8,18 @@
         <a href="/admins/<%= @admin.id %>/students" class="ml-3"><button>See all students</button></a>
       <% end %>
 
-      <div class="row mt-7">
+      <div class="mt-7">
         <% if @students.nil? %>
           <div class="col-12 mb-9">
             <span style="font-size:1.5rem">Enter a student's first and last name</span>
           </div>
         <% elsif @students.length > 3 %>
-          <ul>
+          <ul class="list-group">
             <% @students.each do |student| %>
-                <li>
-                  <a href="/admins/<%= @admin.id %>/students?students_search=<%= student.first_name + "+" + student.last_name %>&commit=Search">
-                    <div style="font-size:1rem;"><%= student.name %></div>
-                  </a>
-                </li>
+              <a class="list-group-item list-group-item-action"
+                 href="/admins/<%= @admin.id %>/students?students_search=<%= student.id %>&commit=Search">
+                <%= student.name %>
+              </a>
             <% end %>
           </ul>
         <% else %>
