@@ -5,7 +5,7 @@
       <%= form_tag(admin_students_path(@admin), method: :get) do %>
         <%= text_field_tag(:students_search, params[:students_search]) %>
         <%= submit_tag ("Search") %>
-        <a href="/admins/<%= @admin.id %>/students" class="ml-3"><button>See all students</button></a>
+        <a href="/admins/<%= @admin.id %>/students" class=" btn btn-link ml-3">Show all students</a>
       <% end %>
 
       <div class="mt-7">
