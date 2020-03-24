@@ -1,5 +1,5 @@
 class TeachersController < ApplicationController
-  before_action :set_teacher, only: [:edit, :update, :destroy, :dashboard, :add_reading_session_for_class, :students, :promote]
+  before_action :set_teacher, only: [:edit, :update, :destroy, :dashboard, :add_reading_session_for_class, :students, :promote, :class_printable]
   before_action :authenticate_admin!, only: [:new, :create, :import, :destroy]
   before_action :authenticate_teacher_or_admin!, only: [:edit, :update, :dashboard, :add_reading_session_for_class, :students, :dashboard, :promote]
 
@@ -72,6 +72,18 @@ class TeachersController < ApplicationController
   skip_before_action :verify_authenticity_token, raise: false
   def add_reading_session_for_class
     @teacher.add_reading_session_for_class(params[:time], params[:student_ids])
+  end
+
+  def class_printable
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "class_printable.pdf",
+               template: "teachers/class_printable.html.erb",
+               layout: "pdf.html",
+               page_size: "Letter"
+      end
+    end
   end
 
   private

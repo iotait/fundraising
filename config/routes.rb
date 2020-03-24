@@ -48,5 +48,6 @@ Rails.application.routes.draw do
     get "dashboard"
     get "promote"
     get "students"
+    get "class_printable"
   end
 end

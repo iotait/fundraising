@@ -49,14 +49,25 @@
       </div>
     </div>
     <div class="col-md-7 col-sm-12">
-      <div class="card border-dark mx-9">
-        <%= render partial: "reading_session", locals: {teacher: @teacher} %>
-        <div class="card-img-top">
-          <a href="#addReadingSessionModal" data-toggle="modal"><i class="fas fa-book-reader"></i></a>
+      <div class="row">
+        <div class="card border-dark col-lg-5 col-12 mx-6">
+          <%= render partial: "reading_session", locals: {teacher: @teacher} %>
+          <div class="card-img-top">
+            <a href="#addReadingSessionModal" data-toggle="modal"><i class="fas fa-book-reader"></i></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Add Class Reading Session</h5>
+            <p class="card-text">Add a reading session for your class.</p>
+          </div>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Add Class Reading Session</h5>
-          <p class="card-text">Add a reading session for your class.</p>
+        <div class="card border-dark col-lg-5 col-12 mx-6">
+          <div class="card-img-top">
+            <a href="/teachers/<%= @teacher.id %>/class_printable.pdf"><i class="fas fa-file-pdf"></i></a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Print Class Login Instructions</h5>
+            <p class="card-text">Print out the necessary info for your class to login.</p>
+          </div>
         </div>
       </div>
     </div>
