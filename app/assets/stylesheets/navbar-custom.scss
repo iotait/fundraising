@@ -3,19 +3,21 @@
 .navbar{
   background-color: $special-bg;
 }
+.navbar-brand img{
+  max-width: 150px;
+  max-height: 40px;
+}
 .navbar-light .navbar-nav .nav-item a {
   color: $dark;
-  border-bottom: 3px solid white;
+  border-bottom: 2px solid white;
 }
 
 .navbar-light .navbar-nav .nav-item .active {
-  border-bottom: 3px solid $primary;
-  bottom: -5px;
+  border-bottom: 2px solid $primary;
 }
 
 .navbar-light .navbar-nav .nav-item a:hover {
   text-decoration:none;
-  border-bottom: 3px solid $primary;
-  bottom: -5px;
-  transition: .2s ease-in;
+  border-bottom: 2px solid $primary;
+  transition: .3s ease-in;
 }
