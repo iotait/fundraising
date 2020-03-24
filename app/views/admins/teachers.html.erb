@@ -12,14 +12,14 @@
         <% if @teachers.nil? %>
             <span style="margin-top: 2rem;font-size:1.5rem">Enter a teachers's first and last name</span>
         <% elsif @teachers.length > 3 %>
-          <ul class="list-group">
+          <div class="list-group">
             <% @teachers.each do |teacher| %>
               <a class="list-group-item list-group-item-action"
                  href="/admins/<%= @admin.id %>/teachers?teachers_search=<%= teacher.id %>&commit=Search">
                 <%= teacher.name %>
               </a>
             <% end %>
-          </ul>
+          </div>
         <% else %>
           <% @teachers.each do |teacher| %>
             <div style="margin-top: 2rem;font-size:2rem;"><%= teacher.name %></div>
