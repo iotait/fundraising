@@ -25,7 +25,7 @@ class AdminsController < ApplicationController
       @students = @admin.students
     elsif params[:students_search] != nil
       begin
-        @students = Array(Student.find(params[:students_search]))
+        @students = Array(@admin.students.find(params[:students_search]))
       rescue
         flash.now[:error] = "It appears there was an error in the name you were searching"
       end
@@ -51,7 +51,7 @@ class AdminsController < ApplicationController
       @teachers = @admin.teachers
     elsif params[:teachers_search] != nil
       begin
-        @teachers = Array(Teacher.find(params[:teachers_search]))
+        @teachers = Array(@admin.teachers.find(params[:teachers_search]))
       rescue
         flash.now[:error] = "It appears there was an error in the name you were searching"
       end
