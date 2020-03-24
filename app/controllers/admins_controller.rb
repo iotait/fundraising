@@ -21,11 +21,17 @@ class AdminsController < ApplicationController
   end
 
   def students
-    if params[:students_search].blank?
+    students_search = params[:students_search]
+
+    if students_search.blank?
       @students = @admin.students
-    elsif params[:students_search] != nil
+    elsif students_search != nil
       begin
-        @students = Array(@admin.students.find(params[:students_search]))
+        if students_search.numeric?
+          @students = Array(@admin.students.find(students_search))
+        else
+          @students = @admin.search_students(students_search)
+        end
       rescue
         flash.now[:error] = "It appears there was an error in the name you were searching"
       end
@@ -47,11 +53,17 @@ class AdminsController < ApplicationController
   end
 
   def teachers
-    if params[:teachers_search].blank?
+    teachers_search = params[:teachers_search]
+
+    if teachers_search.blank?
       @teachers = @admin.teachers
-    elsif params[:teachers_search] != nil
+    elsif teachers_search.present?
       begin
-        @teachers = Array(@admin.teachers.find(params[:teachers_search]))
+        if teachers_search.numeric?
+          @teachers = Array(@admin.teachers.find(teachers_search))
+        else
+          @teachers = @admin.search_teachers(teachers_search)
+        end
       rescue
         flash.now[:error] = "It appears there was an error in the name you were searching"
       end
