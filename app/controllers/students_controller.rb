@@ -1,5 +1,7 @@
+require 'securerandom'
+
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy, :dashboard]
+  before_action :set_student, only: [:show, :edit, :update, :destroy, :dashboard, :printable]
   before_action :authenticate_teacher_or_admin!, only: [:new, :create, :import, :destroy, :printable]
   before_action :authenticate_user!, only: [:edit, :update, :dashboard]
 
@@ -28,9 +30,9 @@ class StudentsController < ApplicationController
   end
 
   # POST /students
-  #TODO don't create with "password"
   def create
-    Student.create(student_params.merge(password: "password")) # .merge(school: current_user.school)
+    password = SecureRandom.hex(8)
+    Student.create(student_params.merge(password: password, code: password))
     redirect_to admin_dashboard_path(current_user)
   end
 
