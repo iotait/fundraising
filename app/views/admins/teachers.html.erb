@@ -23,7 +23,7 @@
           </div>
         <% else %>
           <% @teachers.each do |teacher| %>
-            <div style="margin-top: 2rem;font-size:2rem;"><%= teacher.name %></div>
+            <div class="display-4"><%= teacher.name %></div>
             <%= render partial: "teachers/edit", locals: {teacher: teacher} %>
             <span><i class="fas fa-user-edit"><a href="#edit_teacher_modal" data-toggle="modal"></i> Edit</a></span>
           <% end %>

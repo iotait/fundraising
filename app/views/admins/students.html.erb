@@ -34,7 +34,7 @@
                 <% end %>
               </div>
               <div class="col-8 mb-9">
-                <div style="font-size:2rem;"><%= student.name %></div>
+                <div class="display-3"><%= student.name %></div>
                 <%= render partial: "students/edit", locals: {student: student} %>
                 <%= render partial: "reading_sessions/new", locals: {student: student, session: ReadingSession.new} %>
                 <div class="mb-3"><i class="fas fa-user-edit"><a href="#edit_student_modal" data-toggle="modal"></i> Edit</a></div>
