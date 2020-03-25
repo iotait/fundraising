@@ -41,7 +41,7 @@
                 <div class="mb-3"><i class="fas fa-user"></i><a href="/students/<%= student.id %>"> View Student</a></div>
                 <div class="mb-3"><i class="fas fa-columns"></i><a href="/students/<%= student.id %>/dashboard"> Student Dash</a></div>
                 <div class="mb-3"><i class="fas fa-chart-line"></i><%= link_to ' Report', student_path(student, format: :pdf) %></div>
-                <div class="mb-3"><i class="fas fa-file-pdf"></i><%= link_to ' Printable', student_printable_path(student, format: :pdf) %></div>
+                <div class="mb-3"><i class="fas fa-file-pdf"></i><%= link_to ' Student Login Instructions', student_printable_path(student, format: :pdf) %></div>
                 <div class="mb-3"><i class="fas fa-book-reader"></i><a href="#new_reading_session_modal" data-toggle="modal"> Add Reading Session</a></div>
               </div>
             <% end %>
