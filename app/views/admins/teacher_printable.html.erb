@@ -1,0 +1,9 @@
+<h1><%= @admin.name %>'s teacher login information</h1>
+ <ul>
+   <% @admin.teachers.each do |teacher| %>
+     <div class="page-break"></div>
+     <h2><%= teacher.name %>'s login information:</h2>
+     <li>Code: <%= teacher.code %></li>
+     <li>Email: <%= teacher.email %></li>
+   <% end %>
+ </ul> 

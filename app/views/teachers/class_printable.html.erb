@@ -1,0 +1,9 @@
+<h1><%= @teacher.name %>'s class login information</h1>
+<ul>
+  <% @teacher.students.each do |student| %>
+    <div class="page-break"></div>
+    <h2><%= student.name %>'s login information:</h2>
+    <li>Code: <%= student.code %></li>
+    <li>Email: <%= student.email %></li>
+  <% end %>
+</ul>

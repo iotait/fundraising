@@ -49,6 +49,18 @@ class AdminsController < ApplicationController
            page_size: "Letter"
   end
 
+  def teacher_printable
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "teacher_printable.pdf",
+               template: "admins/teacher_printable.html.erb",
+               layout: "pdf.html",
+               page_size: "Letter"
+      end
+    end
+  end
+
   def teachers_csv
   end
 

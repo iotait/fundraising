@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     get "teacher_id_pdf"
     get "teachers_csv"
     get "teachers"
+    get "teacher_printable"
   end
 
   resources :schools, only: [:show, :new, :edit, :create, :update, :destroy] do
@@ -48,5 +49,7 @@ Rails.application.routes.draw do
     get "dashboard"
     get "promote"
     get "students"
+    get "class_printable"
+    get "printable"
   end
 end

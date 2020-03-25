@@ -1,5 +1,7 @@
+require 'securerandom'
+
 class TeachersController < ApplicationController
-  before_action :set_teacher, only: [:edit, :update, :destroy, :dashboard, :add_reading_session_for_class, :students, :promote]
+  before_action :set_teacher, only: [:edit, :update, :destroy, :dashboard, :add_reading_session_for_class, :students, :promote, :class_printable, :printable]
   before_action :authenticate_admin!, only: [:new, :create, :import, :destroy]
   before_action :authenticate_teacher_or_admin!, only: [:edit, :update, :dashboard, :add_reading_session_for_class, :students, :dashboard, :promote]
 
@@ -15,9 +17,9 @@ class TeachersController < ApplicationController
   end
 
   # POST /teachers
-  #TODO don't create with "password"
   def create
-    Teacher.create(teacher_params.merge(school: current_user.school, password: "password"))
+    password = SecureRandom.hex(8)
+    Teacher.create(teacher_params.merge(school: current_user.school, password: password, code: password))
     redirect_to admin_teachers_path(current_user)
   end
 
@@ -53,11 +55,17 @@ class TeachersController < ApplicationController
   end
 
   def students
-    if params[:search].blank?
+    students_search = params[:search]
+
+    if students_search.blank?
       @students = @teacher.students
-    elsif params[:search] != nil
+    elsif students_search != nil
       begin
-        @students = @teacher.search_students(params[:search])
+        if students_search.numeric?
+          @students = Array(@teacher.students.find(students_search))
+        else
+          @students = @teacher.search_students(students_search)
+        end
       rescue
         flash.now[:error] = "It appears there was an error in the name you were searching"
       end
@@ -72,6 +80,30 @@ class TeachersController < ApplicationController
   skip_before_action :verify_authenticity_token, raise: false
   def add_reading_session_for_class
     @teacher.add_reading_session_for_class(params[:time], params[:student_ids])
+  end
+
+  def class_printable
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "class_printable.pdf",
+               template: "teachers/class_printable.html.erb",
+               layout: "pdf.html",
+               page_size: "Letter"
+      end
+    end
+  end
+
+  def printable
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "teacher_printable.pdf",
+               template: "teachers/printable.html.erb",
+               layout: "pdf.html",
+               page_size: "Letter"
+      end
+    end
   end
 
   private
