@@ -51,10 +51,20 @@
                 <a href="/admins/<%=@admin.id%>/teachers_csv"><i class="fas fa-file-csv"></i></a>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Add all </h5>
+                <h5 class="card-title">Add all</h5>
                 <p class="card-text">Add all your subordinates to pass off your work</p>
               </div>
             </div>
+          </div>
+          <div class="col-12">
+            <div class="card mx-6 my-6">
+              <div class="card-img-top">
+                <a href="/admins/<%= @admin.id %>/teacher_printable.pdf"><i class="fas fa-file-pdf"></i></a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Print Teacher Login Instructions</h5>
+                <p class="card-text">Print out the necessary info for your teachers to login</p>
+              </div>
             </div>
           </div>
         </div>
