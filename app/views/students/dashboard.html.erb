@@ -1,22 +1,52 @@
-<div class="row py-3">
-  <div class="col-md-6 order-md-1 col-sm-12 order-2">
-    <div class="col-8 ml-8">
-      <% if @student.avatar.attached? %>
-        <img src="<%= url_for(@student.avatar) %>" class="rounded float-left" alt="student" width=100% height=auto>
-      <% else %>
-        <img src="/user-circle-solid.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
-      <% end %>
-    </div>
-  </div>
-  <div class="col-md-6 order-md-2 col-sm-12 order-1 bg-primary text-light pb-3">
-    <div class="d-flex align-items-center mx-auto flex-column">
-      <div class="pb-7 pt-7" style="font-size: 2.5rem;font-weight: bold;"><%= @student.name %></div>
-      <a href="#donate_modal" data-toggle="modal"><button type="button" id="begin_donate_button" class="btn btn-light btn-lg mt-8">Donate Now</button></a>
+<div class="student pt-9 pb-10 mb-12">
+  <div class="container">
+    <div class="mx-xl-9 py-8 highlight">
+      <div class="d-flex justify-content-around align-items-center px-10 row">
+        <div class="col-md-5 col-sm-12 mb-6 mb-md-0" style="border-right: 3px solid white;">
+          <div class="title mb-7"><%= @student.name %></div>
+          <a href="#donate_modal" data-toggle="modal"><button type="button" id="begin_donate_button" class="btn btn-light btn-lg mt-6">Donate Now</button></a>
+        </div>
+        <div class="col-md-3 col-sm-6" >
+          <div class="d-flex flex-column">
+            <span><span class="student-stats"><%= @student.mins_read %></span> minutes read</span>
+            <span class="my-8"><span class="student-stats"><%= @student.donations.count %></span> sponsors</span>
+            <span><span class="student-stats"><%= dollar_format(@student.sum) %></span> in donations</span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <% if @student.avatar.attached? %>
+            <div class="picture"><img src="<%= url_for(@student.avatar) %>" class="rounded" alt="Student" width=100% height=auto></div>
+          <% else %>
+            <img src="/user-circle-solid-white.png" class="rounded" alt="Student" width=75% height=auto>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <%= render "donations/modal" %>
+
+<%# TODO update urls when in production %>
+<div class="d-flex justify-content-center pt-7">
+  <div class="p-2"><h3>Share your page:</h3></div>
+   <div class="social-share p-2">
+    <ul>
+      <li>
+        <a href="https://twitter.com/intent/tweet?text=" class="twitter" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=" class="facebook" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
+      </li>
+      <li>
+        <a href="mailto:?subject=<%= @student.name %> Read-a-Thon Fundraiser&body=Would you consider supporting me?" class="email" title="Send an Email"><i class="fas fa-envelope"></i></a>
+      </li>
+      <li>
+        <a href="http://www.linkedin.com/shareArticle?mini=true&url=" class="linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <div class="row ml-4 mb-7">
   <div class="col-md-6 col-sm-12">
