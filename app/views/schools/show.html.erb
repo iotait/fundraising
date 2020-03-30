@@ -1,26 +1,40 @@
-<div class="row py-3">
-  <div class="col-md-6 order-md-1 col-sm-12 order-2">
-    <% if @school.avatar.attached? %>
-      <img src="<%= url_for(@school.avatar) %>" class="rounded float-left" alt="School" width=100% height=auto>
-    <% else %>
-      <img src="/students.png" class="rounded float-left" alt="School" width=100% height=auto>
-    <% end %>
-  </div>
-  <div class="col-md-6 order-md-2 col-sm-12 order-1 bg-primary text-white pb-3">
-    <div class="d-flex align-items-center mx-auto flex-column">
-      <div class="pb-3 pt-3" style="font-size: 1.4rem;font-weight: bold;"><%= @school.name %></div>
-      <span>We have received <%= dollar_format(@school.sum) %> in donations!</span>
-      <span>Our goal is <%= dollar_format(@school.goal) %></span>
-        <a href="#donate_modal" data-toggle="modal"><button type="button" id="begin_donate_button" class="btn btn-light btn-lg mt-3">Donate Now</button></a>
+<div class="school pt-9 pb-10 mb-12">
+  <div class="container">
+    <div class="mx-xl-9 py-8 highlight">
+      <div class="d-flex justify-content-around align-items-center px-10 row">
+        <div class="col-md-5 col-sm-12 mb-6 mb-md-0" style="border-right: 3px solid white;">
+          <div class="title"><%= @school.name %></div>
+          <div class="mt-6">We have received <span class="received"><%= dollar_format(@school.sum) %></span> in donations!</div>
+          <% if @school.goal.present? %>
+            <div class="mb-7">Our goal is <span class="font-weight-bold goal"><%= dollar_format(@school.goal) %></span></div>
+          <% end %>
+          <a href="#donate_modal" data-toggle="modal"><button type="button" id="begin_donate_button" class="btn btn-light btn-lg">Donate Now</button></a>
+        </div>
+        <div class="col-md-3 col-sm-6" >
+          <div class="d-flex flex-column">
+            <span><span class="school-stats"><%= @school.students.count %></span> readers</span>
+            <span class="my-8"><span class="school-stats"><%= @school.combined_minutes_read %></span> minutes read</span>
+            <span><span class="school-stats"><%= @school.combined_donations.count %></span> sponsors</span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="picture">
+            <% if @school.avatar.attached? %>
+              <img src="<%= url_for(@school.avatar) %>" class="rounded" alt="School" width=100% height=auto>
+            <% else %>
+              <img src="/students.png" class="rounded" alt="School" width=100% height=auto>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    <p><%= @school.about %></p>
   </div>
 </div>
 
 <%= render "donations/modal" %>
 
 <%# TODO update urls when in production %>
-<div class="d-flex justify-content-center mt-3">
+<div class="d-flex justify-content-center pt-7">
   <div class="p-2"><h3>Help us by sharing:</h3></div>
    <div class="social-share p-2">
     <ul>
@@ -40,16 +54,22 @@
   </div>
 </div>
 
-<div class="row ml-3">
+<div class="row ml-3 pb-9 pt-4">
   <div class="col-md-6 col-sm-12">
     <h3 class="pb-5 pt-3">Latest Donations to the School:</h3>
-    <% @school.combined_donations.each do |donation| %>
+    <% @school.combined_donations.reverse.each do |donation| %>
       <div class="donation">
         <span class="amount"><%= dollar_format(donation.amount) %></span>
-        "<%= donation.message %>"
-        -<%= donation.donor %>
+        <span>"<%= donation.message %>"
+        -<%= donation.donor %></span>
       </div>
     <% end %>
+  </div>
+  <div class="col-md-6 col-sm-12">
+    <div class="fun">
+      <h3 style="text-align:center;">Why we're fundraising</h3>
+      <%= @school.about %>
+    </div>
   </div>
 </div>
 
