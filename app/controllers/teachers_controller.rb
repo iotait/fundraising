@@ -1,4 +1,4 @@
-require 'securerandom'
+require "securerandom"
 
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:edit, :update, :destroy, :dashboard, :add_reading_session_for_class, :students, :promote, :class_printable, :printable]
@@ -59,17 +59,17 @@ class TeachersController < ApplicationController
 
     if students_search.blank?
       @students = @teacher.students
-    elsif students_search != nil
+    elsif !students_search.nil?
       begin
-        if students_search.numeric?
-          @students = Array(@teacher.students.find(students_search))
+        @students = if students_search.numeric?
+          Array(@teacher.students.find(students_search))
         else
-          @students = @teacher.search_students(students_search)
+          @teacher.search_students(students_search)
         end
       rescue
         flash.now[:error] = "It appears there was an error in the name you were searching"
       end
-  
+
       if @students.nil?
         flash.now[:error] = "No students match that name"
       end

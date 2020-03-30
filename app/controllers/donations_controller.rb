@@ -6,8 +6,8 @@ class DonationsController < ApplicationController
   def create
     Stripe.api_key = Rails.application.credentials[:stripe][Rails.env.to_sym][:secret_key]
 
-    #TODO change to actual urls
-    #Set success and cancel url
+    # TODO change to actual urls
+    # Set success and cancel url
     success_url = params[:student_id] ? ("https://young-castle-99344.herokuapp.com/students/" + params[:student_id])
                                       : ("https://young-castle-99344.herokuapp.com/schools/" + params[:school_id])
     cancel_url = params[:student_id] ? ("https://young-castle-99344.herokuapp.com/students/" + params[:student_id] + "/donations/cancel")
@@ -20,10 +20,10 @@ class DonationsController < ApplicationController
         description: "One time donation to Bookworm.",
         amount: params[:amount].to_i * 100,
         currency: "usd",
-        quantity: 1,
+        quantity: 1
       }],
       success_url: success_url,
-      cancel_url: cancel_url,
+      cancel_url: cancel_url
     )
 
     donor = params[:donor]
