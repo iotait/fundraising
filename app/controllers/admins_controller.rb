@@ -25,12 +25,12 @@ class AdminsController < ApplicationController
 
     if students_search.blank?
       @students = @admin.students
-    elsif students_search != nil
+    elsif !students_search.nil?
       begin
-        if students_search.numeric?
-          @students = Array(@admin.students.find(students_search))
+        @students = if students_search.numeric?
+          Array(@admin.students.find(students_search))
         else
-          @students = @admin.search_students(students_search)
+          @admin.search_students(students_search)
         end
       rescue
         flash.now[:error] = "It appears there was an error in the name you were searching"
@@ -71,10 +71,10 @@ class AdminsController < ApplicationController
       @teachers = @admin.teachers
     elsif teachers_search.present?
       begin
-        if teachers_search.numeric?
-          @teachers = Array(@admin.teachers.find(teachers_search))
+        @teachers = if teachers_search.numeric?
+          Array(@admin.teachers.find(teachers_search))
         else
-          @teachers = @admin.search_teachers(teachers_search)
+          @admin.search_teachers(teachers_search)
         end
       rescue
         flash.now[:error] = "It appears there was an error in the name you were searching"
