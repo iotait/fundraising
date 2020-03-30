@@ -1,7 +1,7 @@
 module ApplicationHelper
   def dollar_format(value)
     if value.present?
-      return "$%.2f" % value
+      return "$" + sprintf("%.2f", value).reverse.scan(/(\d*\.\d{1,3}|\d{1,3})/).join(',').reverse
     end
     "$%.2f" % 0.0
   end

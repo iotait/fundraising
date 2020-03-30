@@ -10,7 +10,6 @@
 }
 
 .social-share {
-  margin-bottom: 26px;
   margin-bottom:1.625rem
 }
 
@@ -47,12 +46,6 @@
 .social-share a {
   display: block;
   padding: 8px 20px;
-  text-decoration: none !important;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-size: .875rem;
-  font-family: pt sans narrow, sans-serif;
-  font-weight: 700;
   color: #fff;
   opacity:.8
 }
@@ -60,8 +53,4 @@
 .social-share a:hover {
   color: #fff;
   opacity:1
-}
-
-.social-share span {
-  display:none
 }

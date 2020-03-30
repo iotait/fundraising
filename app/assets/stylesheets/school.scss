@@ -1,0 +1,82 @@
+.donation {
+  .amount {
+   background-color: $primary;
+   color: $light;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   padding-left: 1rem;
+   padding-right: 1rem;
+   border-radius: 2.25rem;
+  }
+
+  padding-bottom: 3rem;
+}
+
+.school {
+  background-color: $special-bg;
+  border-bottom: 4px solid #fff;
+
+  .highlight {
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2);
+    border: 3px solid #f5f7fa;
+    background-image: radial-gradient(#55AAD4, #3994C1);
+    border-radius: 6rem;
+    margin-bottom: -250px;
+  }
+}
+
+.school {
+  color: $light;
+  .title {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  .received {
+    font-size: 1.2rem;
+  }
+
+  .goal {
+    font-size: 1.5rem;
+  }
+
+  .picture
+  {
+    position: relative;
+  }
+
+  .picture::after
+  {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: inset 0 2px 4px 0px hsla(0, 0%, 0%, .2);
+    -moz-box-shadow: inset 0 2px 4px 0px hsla(0, 0%, 0%, .2);   
+    box-shadow: inset 0 2px 4px 0px hsla(0, 0%, 0%, .2);
+    overflow: hidden;
+  }
+}
+
+ .school-stats {
+  background-color: $light;
+  color: $primary;
+  padding-top: .2rem;
+  padding-bottom: .2rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  border-radius: 2.25rem;
+ }
+
+ .fun {
+   margin-right: 2rem;
+   margin-left: 2rem;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   padding-left: 1rem;
+   padding-right: 1rem;
+   border-radius: 2rem;
+   border: 3px dashed $primary;
+ }
