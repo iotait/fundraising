@@ -1,5 +1,6 @@
 class Student < User
   require "csv"
+  require "securerandom"
   has_many :donations, as: :donatable
   has_many :reading_sessions
   has_one_attached :avatar
@@ -10,6 +11,8 @@ class Student < User
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
+      password = SecureRandom.hex(8)
+      row << {password: password, code: password}
       Student.create! row.to_hash
     end
   end
