@@ -48,27 +48,27 @@
   </div>
 </div>
 
-<div class="row ml-4 mb-7">
+<div class="row ml-3 pb-9 pt-4">
   <div class="col-md-6 col-sm-12">
-    <h3 class="pb-5 pt-1">Donations:</h3>
+    <h3 class="pb-5 pt-3">Donations:</h3>
     <% @student.donations.reverse.each do |donation| %>
       <div class="donation">
         <span class="amount"><%= dollar_format(donation.amount) %></span>
-        "<%= donation.message %>"
-        -<%= donation.donor %>
+        <span>"<%= donation.message %>"
+        -<%= donation.donor %></span>
       </div>
     <% end %>
   </div>
   <div class="col-md-6 col-sm-12">
     <h3 class="pt-3">Reading Sessions:</h3>
     <%= render partial: "reading_sessions/new", locals: {student: @student, session: ReadingSession.new} %>
-    <a href="#new_reading_session_modal" data-toggle="modal">Add Reading Session</a>
+    <a href="#new_reading_session_modal_<%= @student.id %>" data-toggle="modal">Add Reading Session</a>
     <ul>
       <% @student.reading_sessions.reverse.each do |session| %>
         <%= render partial: "reading_sessions/edit", locals: {student: @student, session: session} %>
         <li>
           <%= session.time.to_s + " minutes on " + session.created_at.to_s(:long_ordinal) + " - "%>
-          <a href="#edit_reading_session_modal" data-toggle="modal">Edit</a> | 
+          <a href="#edit_reading_session_modal_<%= session.id %>" data-toggle="modal">Edit | </a>
           <%= link_to("Delete", student_reading_session_path(@student, session), :method => :delete, :class => "delete") %>
         </li>
       <% end %>
