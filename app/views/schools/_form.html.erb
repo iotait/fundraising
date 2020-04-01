@@ -1,19 +1,21 @@
-<%= form_for school do |form| %>
-  <div class="mb-7">
-    <%= form.label :avatar %>
-    <%= form.file_field :avatar %>
-  </div>
-  <div class="mb-7">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  <div class="mb-7">
-    <%= form.label :about %>
-    <div style="border: 1px solid black"><%= form.rich_text_area :about %> </div>
-  </div>
-  <div class="mb-7">
-    <%= form.label :goal %>
-    <%= form.text_field :goal %>
-  </div>
-  <%= form.submit "Submit" %>
-<% end %>
+<div class="container-fluid mt-3">
+  <%= form_for school do |form| %>
+    <div class="mb-7">
+      <%= form.label :avatar %>
+      <%= form.file_field :avatar %>
+    </div>
+    <div class="mb-7">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div class="mb-7">
+      <%= form.label :about %>
+      <div style="border: 1px solid black"><%= form.rich_text_area :about %> </div>
+    </div>
+    <div class="mb-7">
+      <%= form.label :goal %>
+      <%= form.text_field :goal %>
+    </div>
+    <%= form.submit "Submit" %>
+  <% end %>
+</div>

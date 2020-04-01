@@ -43,7 +43,7 @@ class TeachersController < ApplicationController
       Teacher.import(params[:file], current_user.school.id)
       flash[:success] = "Teachers imported!"
     rescue
-      flash[:error] = "Sorry we failed to import all the students!"
+      flash[:error] = "Sorry we failed to import all the teachers!"
     end
     redirect_to admin_dashboard_path(current_user)
   end

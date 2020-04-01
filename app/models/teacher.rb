@@ -1,5 +1,6 @@
 class Teacher < User
   require "csv"
+  require "securerandom"
   has_many :students
   belongs_to :school
 
@@ -11,7 +12,8 @@ class Teacher < User
 
   def self.import(file, school_id)
     CSV.foreach(file.path, headers: true) do |row|
-      row << {school_id: school_id}
+      password = SecureRandom.hex(8)
+      row << {school_id: school_id, password: password, code: password}
       Teacher.create! row.to_hash
     end
   end
