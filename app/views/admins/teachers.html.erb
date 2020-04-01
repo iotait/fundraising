@@ -25,7 +25,7 @@
           <% @teachers.each do |teacher| %>
             <div class="display-4"><%= teacher.name %></div>
             <%= render partial: "teachers/edit", locals: {teacher: teacher} %>
-            <div class="mb-3"><i class="fas fa-user-edit"></i><a href="#edit_teacher_modal" data-toggle="modal"> Edit</a></div>
+            <div class="mb-3"><i class="fas fa-user-edit"></i><a href="#edit_teacher_modal_<%= teacher.id %>" data-toggle="modal"> Edit</a></div>
             <div class="mb-3"><i class="fas fa-file-pdf"></i><a href="/teachers/<%= teacher.id %>/printable.pdf"> Teacher login instructions</a></div>
             <div class="mb-3"><i class="fas fa-file-pdf"></i><a href="/teachers/<%= teacher.id %>/class_printable.pdf"> Class login instructions</a></div>
           <% end %>
