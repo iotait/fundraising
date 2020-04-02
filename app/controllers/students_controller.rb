@@ -1,7 +1,7 @@
 require "securerandom"
 
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy, :dashboard, :printable]
+  before_action :set_student, only: [:show, :edit, :update, :destroy, :dashboard, :printable, :success]
   before_action :authenticate_teacher_or_admin!, only: [:new, :create, :import, :destroy, :printable]
   before_action :authenticate_user!, only: [:edit, :update, :dashboard]
 
@@ -76,7 +76,9 @@ class StudentsController < ApplicationController
     end
   end
 
-  def cancel
+  def success
+    flash[:success] = "Thank you for your donation"
+    redirect_to student_path(@student)
   end
 
   private

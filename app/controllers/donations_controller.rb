@@ -8,10 +8,10 @@ class DonationsController < ApplicationController
 
     # TODO change to actual urls
     # Set success and cancel url
-    success_url = params[:student_id] ? ("https://young-castle-99344.herokuapp.com/students/" + params[:student_id])
-                                      : ("https://young-castle-99344.herokuapp.com/schools/" + params[:school_id])
-    cancel_url = params[:student_id] ? ("https://young-castle-99344.herokuapp.com/students/" + params[:student_id] + "/cancel")
-                                     : ("https://young-castle-99344.herokuapp.com/schools/" + params[:school_id] + "/cancel")
+    success_url = params[:student_id] ? ("https://young-castle-99344.herokuapp.com/students/" + params[:student_id] + "/success")
+                                      : ("https://young-castle-99344.herokuapp.com/schools/" + params[:school_id] + "/success")
+    cancel_url = params[:student_id] ? ("https://young-castle-99344.herokuapp.com/students/" + params[:student_id])
+                                     : ("https://young-castle-99344.herokuapp.com/schools/" + params[:school_id])
 
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ["card"],
@@ -40,7 +40,6 @@ class DonationsController < ApplicationController
     end
 
     Donation.create!(donor: donor, amount: amount, message: message, donatable_type: donatable_type, donatable_id: donatable_id, status: status, session_id: session_id)
-    flash[:success] = "Thank you for your donation"
     render json: {session_id: @session.id}
   end
 end

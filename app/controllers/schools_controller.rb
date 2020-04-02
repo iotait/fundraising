@@ -1,5 +1,5 @@
 class SchoolsController < ApplicationController
-  before_action :set_school, only: [:show, :edit, :update, :destroy]
+  before_action :set_school, only: [:show, :edit, :update, :destroy, :success]
   before_action :authenticate_admin!, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /schools/1
@@ -38,7 +38,9 @@ class SchoolsController < ApplicationController
     redirect_to admin_dashboard_path(current_user)
   end
 
-  def cancel
+  def success
+    flash[:success] = "Thank you for your donation"
+    redirect_to school_path(@school)
   end
 
   private

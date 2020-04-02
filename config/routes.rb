@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   end
 
   resources :schools, only: [:show, :new, :edit, :create, :update, :destroy] do
-    get "cancel"
+    get "success"
 
     resources :donations, only: [:create] do
     end
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
   resources :students, only: [:show, :new, :edit, :create, :update, :destroy] do
     collection { post :import }
-    get "cancel"
+    get "success"
     get "dashboard"
     get "printable"
 
