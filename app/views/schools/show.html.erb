@@ -68,7 +68,11 @@
   <div class="col-md-6 col-sm-12">
     <div class="fun">
       <h3 style="text-align:center;">Why we're fundraising</h3>
-      <%= @school.about %>
+      <% if @school.about.present? %>
+        <%= @school.about %>
+      <% else %>
+        <%= "TODO fill in some automatically generated text" %>
+      <% end %>
     </div>
   </div>
 </div>
