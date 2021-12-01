@@ -2,7 +2,8 @@
   <h1>School</h1>
   <div class="row">
     <div class="col-lg-5 col-12 mb-9">
-      <% if @admin.school.avatar.attached? %>
+      <span class="h4"><%= @admin.school.name %></span>
+      <% if @admin.school&.avatar&.attached? %>
         <img src="<%= url_for(@admin.school.avatar) %>" class="rounded float-left" alt="school" width=100% height=auto>
       <% else %>
         <img src="/students.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
@@ -26,7 +27,7 @@
           <div class="col-6">
             <div class="card mx-6">
               <div class="card-img-top">
-                <a href="/schools/<%=@admin.school.id%>"><i class="fas fa-school"></i></a>
+                <a href="/schools/<%=@admin&.school&.id%>"><i class="fas fa-school"></i></a>
               </div>
               <div class="card-body">
                 <h5 class="card-title">View school</h5>

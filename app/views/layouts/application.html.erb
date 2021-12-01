@@ -46,7 +46,7 @@
               <a class="nav-link" href="/users/edit">Edit Account</a>
             </li>
             <li class="nav-item ml-7">
-              <a class="nav-link" href="/users/sign_out" data-method="delete"><i class="fas fa-sign-out-alt"></i></a>
+              <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
             </li>
           <% elsif current_user.is_a?(Teacher) %>
             <li class="nav-item ml-7">
