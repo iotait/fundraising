@@ -6,6 +6,7 @@ class Student < User
   has_one_attached :avatar
 
   belongs_to :teacher
+  belongs_to :school
 
   validates :teacher_id, presence: true
 
