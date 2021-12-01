@@ -4,10 +4,12 @@
     <title>Fundraising App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+    <%= favicon_link_tag asset_path('favicon.jpg') %>
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-light pt-3 pb-5" style="align-items: flex-end">
