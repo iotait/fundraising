@@ -1,5 +1,6 @@
 <% if @admin.school.blank? %>
   <p>Add a school</p>
+  <%= link_to "New School", new_school_path() %>
 <% else %>
   <div class="snapshot pt-9 pb-10 mb-12">
     <div class="container">
