@@ -1,5 +1,8 @@
 <div class="container-fluid">
   <h1>Students</h1>
+
+  <%= turbo_stream_from "students" %>
+
   <div class="row">
     <div class="col-lg-5 col-sm-12">
       <%= form_tag(admin_students_path(@admin), method: :get) do %>
@@ -14,33 +17,10 @@
           <div class="col-12 mb-9">
             <span>No students found</span>
           </div>
-        <% elsif @students.length > 3 %>
-          <div class="list-group">
-            <% @students.each do |student| %>
-              <a class="list-group-item list-group-item-action"
-                 href="/admins/<%= @admin.id %>/students?students_search=<%= student.id %>&commit=Search">
-                <%= student.name %>
-              </a>
-            <% end %>
-          </div>
         <% else %>
           <div class="row">
-            <% @students.each do |student| %>
-              <div class="col-4">
-                <% if student.avatar.attached? %>
-                  <img src="<%= url_for(student.avatar) %>" class="rounded float-left" alt="student" width=100% height=auto>
-                <% else %>
-                  <img src="/user-circle-solid.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
-                <% end %>
-              </div>
-              <div class="col-8 mb-9">
-                <div class=""><%= student.name %></div>
-                <%= render partial: "students/edit", locals: {student: student} %>
-                <%= render partial: "reading_sessions/new", locals: {student: student, session: ReadingSession.new} %>
-                <div class="mb-3"><i class="fas fa-user-edit"></i><a href="#edit_student_modal_<%= student.id %>" data-toggle="modal"> Edit</a></div>
-                <div class="mb-3"><i class="fas fa-user"></i><a href="/students/<%= student.id %>"> View Student</a></div>
-                <div class="mb-3"><i class="fas fa-columns"></i><a href="/students/<%= student.id %>/dashboard"> Student Dash</a></div>
-              </div>
+            <%= turbo_frame_tag "students" do %>
+              <%= render @students %>
             <% end %>
           </div>
         <% end %>
@@ -51,15 +31,7 @@
       <div class="mx-6">
         <div class="row">
           <div class="col-6">
-            <div class="card mx-6">
-              <div class="card-img-top">
-                <a href="#new_student_modal" data-toggle="modal"><i class="fas fa-user-plus"></i></a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Add student</h5>
-                <p class="card-text">Add a single kiddo to your school</p>
-              </div>
-            </div>
+            <%= render partial: "students/form", locals: {student: Student.new} %>
           </div>
           <div class="col-6">
             <div class="card mx-6">

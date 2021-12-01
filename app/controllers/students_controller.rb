@@ -33,7 +33,6 @@ class StudentsController < ApplicationController
   def create
     password = SecureRandom.hex(8)
     Student.create(student_params.merge(password: password, code: password))
-    redirect_to admin_dashboard_path(current_user)
   end
 
   # PATCH/PUT /students/1

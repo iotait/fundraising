@@ -31,5 +31,8 @@ module FundraisingApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Don't use ujs any more in favor turbo
+    config.action_view.form_with_generates_remote_forms = false
   end
 end

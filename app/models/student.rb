@@ -10,6 +10,8 @@ class Student < User
 
   validates :teacher_id, presence: true
 
+  after_create_commit { broadcast_prepend_to "students" }
+
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       password = SecureRandom.hex(8)

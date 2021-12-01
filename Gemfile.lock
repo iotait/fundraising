@@ -231,6 +231,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.5.1)
     regexp_parser (2.0.3)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -304,9 +305,8 @@ GEM
       stripe (>= 2.8, < 6)
     thor (1.1.0)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
+    turbo-rails (0.9.0)
+      rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     uglifier (4.2.0)
@@ -351,6 +351,7 @@ DEPENDENCIES
   pry-byebug
   puma
   rails (>= 6.0.1)
+  redis
   rspec-rails
   sass-rails
   shoulda-matchers
@@ -359,7 +360,7 @@ DEPENDENCIES
   standard
   stripe
   stripe_event
-  turbolinks
+  turbo-rails
   uglifier
   webpacker
   wicked_pdf (~> 1.1)
