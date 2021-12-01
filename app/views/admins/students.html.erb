@@ -18,11 +18,9 @@
             <span>No students found</span>
           </div>
         <% else %>
-          <div class="row">
             <%= turbo_frame_tag "students" do %>
               <%= render @students %>
             <% end %>
-          </div>
         <% end %>
       </div>
     </div>
