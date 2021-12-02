@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-4">
       <% if student.avatar.attached? %>
-        <img src="<%= url_for(student.avatar) %>" class="rounded float-left" alt="student" width=100% height=auto>
+        <div class="avatar" alt="student" style="background-image: url(<%=url_for(student.avatar)%>)"></div>
       <% else %>
         <img src="/user-circle-solid.png" class="rounded float-left" alt="Avatar" width=100% height=auto>
       <% end %>

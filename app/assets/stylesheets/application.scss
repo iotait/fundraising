@@ -49,6 +49,19 @@
   }
  }
 
+.avatar{
+    width: 150px;
+    height: 150px;
+    -webkit-border-radius: 150px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 150px;
+    -moz-background-clip: padding;
+    border-radius: 150px;
+    background-clip: padding-box;
+    background-size: cover;
+    background-position: center center;
+}
+
  .hp-headline { font-size:48px; color:#fff; text-shadow: 2px 2px 2px #393939; font-weight:lighter; text-align:center; padding-bottom:500px;}
  .hp-kids { background:url("/students.png") no-repeat; background-size:cover; background-position:center; height:800px;}
  .hp-fade{ background:url("/hp-fade.png") repeat-x; background-size:contain; height:100%; max-height:295px;}
