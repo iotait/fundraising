@@ -7,6 +7,7 @@ gem "uglifier"
 gem "coffee-rails"
 gem "jquery-rails"
 gem "turbo-rails"
+gem "administrate"
 gem "redis"
 gem "bootsnap", require: false
 gem "webpacker"

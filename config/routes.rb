@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  namespace :manager do
+      resources :users
+      resources :admins
+      resources :students
+      resources :teachers
+      resources :donations
+      resources :reading_sessions
+      resources :schools
+
+      root to: "users#index"
+    end
   devise_for :users, controllers: {registrations: "registrations"}
   root "dashboard#index"
 
