@@ -24,11 +24,25 @@
       </div>
     </div>
     <div class="col-lg-7 col-sm-12">
-      <%= render partial: "students/new", locals: {student: Student.new} %>
       <div class="mx-6">
         <div class="row">
           <div class="col-6">
-            <%= render partial: "students/form", locals: {student: Student.new} %>
+            <div data-controller="toggle-student-form">
+              <div class="card mx-6">
+                <div class="card-img-top">
+                  <a data-action="click->toggle-student-form#toggle" href="javascript:"><i class="fas fa-user-plus"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Add student</h5>
+                  <p class="card-text">Add a single kiddo to your school</p>
+                </div>
+              </div>
+              <div data-toggle-student-form-target="output">
+              </div>
+              <div class="d-none" data-toggle-student-form-target="studentForm">
+                <%= render partial: "students/form", locals: {student: Student.new} %>
+              </div>
+            </div>
           </div>
           <div class="col-6">
             <div class="card mx-6">
