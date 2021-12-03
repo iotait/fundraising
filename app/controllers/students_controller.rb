@@ -26,7 +26,16 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
-    render "edit", locals: {student: @student}
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream:
+          turbo_stream.replace(
+            :student_form,
+            partial: "students/form",
+            locals: {student: @student}
+          )
+      end
+    end
   end
 
   # POST /students

@@ -1,33 +1,33 @@
 <div class="container-fluid">
-  <h1>Students</h1>
+  <div data-controller="toggle-student-form">
+    <h1>Students</h1>
 
-  <%= turbo_stream_from "students" %>
+    <%= turbo_stream_from "students" %>
 
-  <div class="row">
-    <div class="col-lg-5 col-sm-12">
+    <div class="row">
+      <div class="col-lg-5 col-sm-12">
 
-      <%= form_with url:student_search_admins_path do |form| %>
-        <%= form.label(:students_search, 'Enter first and last name to search', class: 'sr-only') %>
-        <%= form.text_field(:search_term, id: :search_term) %>
-        <%= form.submit("Search", data: { disable_with: false }) %>
-      <% end %>
-      <a href="/admins/<%= @admin.id %>/students" class=" btn btn-link ml-3">Show all students</a>
-
-      <div class="mt-7">
-        <% if @students.blank? %>
-          <div class="col-12 mb-9">
-            <span>No students found</span>
-          </div>
-        <% else %>
-          <%= render partial: 'students/students', locals: { students: @students } %>
+        <%= form_with url:student_search_admins_path do |form| %>
+          <%= form.label(:students_search, 'Enter first and last name to search', class: 'sr-only') %>
+          <%= form.text_field(:search_term, id: :search_term) %>
+          <%= form.submit("Search", data: { disable_with: false }) %>
         <% end %>
+        <a href="/admins/<%= @admin.id %>/students" class=" btn btn-link ml-3">Show all students</a>
+
+        <div class="mt-7">
+          <% if @students.blank? %>
+            <div class="col-12 mb-9">
+              <span>No students found</span>
+            </div>
+          <% else %>
+            <%= render partial: 'students/students', locals: { students: @students } %>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class="col-lg-7 col-sm-12">
-      <div class="mx-6">
-        <div class="row">
-          <div class="col-6">
-            <div data-controller="toggle-student-form">
+      <div class="col-lg-7 col-sm-12">
+        <div class="mx-6">
+          <div class="row">
+            <div class="col-6">
               <div class="card mx-6">
                 <div class="card-img-top">
                   <a data-action="click->toggle-student-form#toggle" href="javascript:"><i class="fas fa-user-plus"></i></a>
@@ -43,15 +43,15 @@
                 <%= render partial: "students/form", locals: {student: Student.new} %>
               </div>
             </div>
-          </div>
-          <div class="col-6">
-            <div class="card mx-6">
-              <div class="card-img-top">
-                <a href="/admins/<%=@admin.id%>/students_csv"><i class="fas fa-file-csv"></i></a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Add all</h5>
-                <p class="card-text">Add a bunch of kiddos to your school</p>
+            <div class="col-6">
+              <div class="card mx-6">
+                <div class="card-img-top">
+                  <a href="/admins/<%=@admin.id%>/students_csv"><i class="fas fa-file-csv"></i></a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Add all</h5>
+                  <p class="card-text">Add a bunch of kiddos to your school</p>
+                </div>
               </div>
             </div>
           </div>

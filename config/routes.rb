@@ -44,11 +44,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :students, only: [:show, :new, :edit, :create, :update, :destroy] do
+  resources :students, only: [:show, :new, :create, :update, :destroy] do
     collection { post :import }
     get "success"
     get "dashboard"
     get "printable"
+    post "edit"
 
     resources :donations, only: [:create] do
     end

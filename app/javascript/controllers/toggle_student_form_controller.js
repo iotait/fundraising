@@ -5,9 +5,13 @@ export default class extends Controller {
 
   toggle(event){
     if (this.studentFormTarget.classList.contains('d-none')){
-      this.studentFormTarget.classList.remove('d-none')
+      this.show()
     } else {
       this.studentFormTarget.classList.add('d-none')
     }
+  }
+
+  show(){
+    this.studentFormTarget.classList.remove('d-none')
   }
 }

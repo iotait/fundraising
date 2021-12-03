@@ -1,23 +1,25 @@
-<%= form_for student do |form| %>
-  <div class="mb-7">
-    <%= form.label :avatar %>
-    <%= form.file_field :avatar %>
-  </div>
-  <div class="mb-7">
-    <%= form.label :teacher_id %>
-    <%= form.collection_select(:teacher_id, Teacher.all, :id, :name) %>
-  </div>
-  <div class="mb-7">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-  <div class="mb-7">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-  <div class="mb-7">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-  <%= form.submit "Submit", data:{ action:"click->toggle-student-form#toggle"} %>
+<%= turbo_frame_tag "student_form" do %>
+  <%= form_for student do |form| %>
+    <div class="mb-7">
+      <%= form.label :avatar %>
+      <%= form.file_field :avatar %>
+    </div>
+    <div class="mb-7">
+      <%= form.label :teacher_id %>
+      <%= form.collection_select(:teacher_id, Teacher.all, :id, :name) %>
+    </div>
+    <div class="mb-7">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name %>
+    </div>
+    <div class="mb-7">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name %>
+    </div>
+    <div class="mb-7">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+    <%= form.submit "Submit", data:{ action:"click->toggle-student-form#toggle"} %>
+  <% end %>
 <% end %>

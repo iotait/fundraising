@@ -9,7 +9,9 @@
       <div class="h5 mt-0 mb-1"><%= student.name.titleize %></div>
       <div class="mb-3"><i class="fas fa-user"></i><a href="/students/<%= student.id %>" data-turbo="false"> View Student</a></div>
       <div class="mb-3"><i class="fas fa-columns"></i><a href="/students/<%= student.id %>/dashboard" data-turbo="false"> Student Dash</a></div>
-      <div class="mb-3"><i class="fas fa-user-edit"></i><a href="#edit_student_modal_<%= student.id %>" data-toggle="modal" data-turbo="false"> Edit</a></div>
+      <div class="mb-3">
+        <%= button_to "Edit", student_edit_path(student), data: {action: 'click->toggle-student-form#show' } %>
+      </div>
     </div>
   </li>
 <% end %>
