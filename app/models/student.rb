@@ -10,6 +10,8 @@ class Student < User
   validates :teacher_id, presence: true
 
   after_create_commit { broadcast_prepend_to "students" }
+  after_update_commit { broadcast_replace_to "students" }
+  after_destroy_commit { broadcast_remove_to "students" }
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
