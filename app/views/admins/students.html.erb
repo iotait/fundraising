@@ -5,22 +5,21 @@
 
   <div class="row">
     <div class="col-lg-5 col-sm-12">
-      <%= form_tag(admin_students_path(@admin), method: :get) do %>
-        <%= label_tag(:students_search, 'Enter first and last name to search', class: 'sr-only') %>
-        <%= text_field_tag(:students_search, '', class:'w-50', placeholder: 'Enter first and last name to search') %>
-        <%= submit_tag ("Search") %>
-        <a href="/admins/<%= @admin.id %>/students" class=" btn btn-link ml-3">Show all students</a>
+
+      <%= form_with url:student_search_admins_path do |form| %>
+        <%= form.label(:students_search, 'Enter first and last name to search', class: 'sr-only') %>
+        <%= form.text_field(:search_term, id: :search_term) %>
+        <%= form.submit("Search", data: { disable_with: false }) %>
       <% end %>
+      <a href="/admins/<%= @admin.id %>/students" class=" btn btn-link ml-3">Show all students</a>
 
       <div class="mt-7">
-        <% if @students.nil? %>
+        <% if @students.blank? %>
           <div class="col-12 mb-9">
             <span>No students found</span>
           </div>
         <% else %>
-            <%= turbo_frame_tag "students" do %>
-              <%= render @students %>
-            <% end %>
+          <%= render partial: 'students/students', locals: { students: @students } %>
         <% end %>
       </div>
     </div>

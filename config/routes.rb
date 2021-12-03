@@ -28,6 +28,9 @@ Rails.application.routes.draw do
     get "school"
     get "students_csv"
     get "students"
+    collection do
+      post "student_search"
+    end
     get "teacher_id_pdf"
     get "teachers_csv"
     get "teachers"

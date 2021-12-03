@@ -20,12 +20,12 @@ class AdminsController < ApplicationController
   def students_csv
   end
 
-  def students
-    students_search = params[:students_search]
+  def student_search
+    students_search = params["search_term"]
 
     if students_search.blank?
       @students = @admin.students
-    elsif !students_search.nil?
+    elsif students_search.present?
       begin
         @students = if students_search.numeric?
           Array(@admin.students.find(students_search))
@@ -39,7 +39,17 @@ class AdminsController < ApplicationController
       if @students.nil?
         flash.now[:error] = "No students match that name"
       end
+
+      respond_to do |format|
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace(:students, partial: "students/students")
+        end
+      end
     end
+  end
+
+  def students
+    @students = @admin.students
   end
 
   def teacher_id_pdf
@@ -89,6 +99,6 @@ class AdminsController < ApplicationController
   private
 
   def set_admin
-    @admin = Admin.find(params[:admin_id])
+    @admin = current_user
   end
 end
