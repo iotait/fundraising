@@ -1,12 +1,15 @@
 <%= turbo_frame_tag "students" do %>
   <%# this is super hacky -- but it's being called from different locations %>
-  <%# gotta be a better way, just not sure right now %>
+  <%# gotta be a better way, just not sure right now%>
   <% if @students.present? %>
     <% students = @students %>
   <% else %>
     <% students = [] %>
   <% end %>
-  <% students.each do |student| %>
-    <%= render partial: 'students/student', locals: { student: student } %>
-  <% end %>
+
+  <ul class="list-unstyled">
+    <% students.each do |student| %>
+      <%= render partial: 'students/student', locals: { student: student } %>
+    <% end %>
+  </ul>
 <% end %>
