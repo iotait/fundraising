@@ -47,7 +47,13 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1
   def update
     if @student.update(student_params)
-      redirect_to "/" + current_user.type.downcase.pluralize + "/" + current_user.id.to_s + "/dashboard"
+      @students = current_user.students
+      respond_to do |format|
+        format.turbo_stream do
+          render turbo_stream:
+            turbo_stream.replace(:students, partial: "students/students")
+        end
+      end
     else
       render :edit
     end
